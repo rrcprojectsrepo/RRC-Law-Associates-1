@@ -10,7 +10,7 @@
     
     <style>
         :root {
-            --primary: #0b1c2d;
+            --primary: #1a1a1a;
             --gold: #c9a24d;
             --cream: #f9f7f3;
             --white: #ffffff;
@@ -43,6 +43,7 @@
             font-weight: 500;
             margin: 0 15px;
             transition: color 0.3s;
+            align-items: right;
         }
 
         .nav-link-custom:hover {
@@ -200,13 +201,13 @@
 </head>
 <body>
 
-    <header class="header">
+    <header class="header hstack">
     <div class="container d-flex align-items-center justify-content-between">
-        <a href="index.html" class="d-flex align-items-center">
+        <a href="index.html" class="d-flex align-items-left">
             <img src="assets/images/law3.png" alt="RRC Logo" class="logo-img">
         </a>
 
-        <div class="d-none d-md-flex align-items-center">
+        <div class="d-none d-md-flex align-items-right p-2 ms-auto ">
             <a href="index.html" class="nav-link-custom">Home</a>
             
             <div class="dropdown mx-3">
@@ -229,7 +230,15 @@
             <a href="index.html#contact" class="btn btn-gold px-4">Book Consultation</a>
         </div>
     </div>
-</header>
+</header>    
+
+    <div class="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="index.html" class="nav-link-custom">Home</a>
+            <a href="index.html#practice-area" class="nav-link-custom">Practice Areas</a>
+            <a href="lawfirm-blog.html" class="nav-link-custom">Blog</a>
+            <a href="index.html#contact" class="nav-link-custom">Contact</a>
+            <a href="index.html#contact" class="btn btn-gold px-4">Book Consultation</a>
 
     <section class="page-header-section container">
         <h1 class="section-title">Civil Lawyer in Thanjavur</h1>

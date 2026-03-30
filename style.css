@@ -112,6 +112,7 @@ html, body {
 /* Desktop Nav */
 .desktop-nav {
   display: flex;
+  flex-direction: row;
   align-items: right;
   gap: 24px;
 }
@@ -1334,6 +1335,7 @@ p {
   color:white;
   font-size: 18px;
   width: auto;
+  align-content: center;
 }
 
 /* Grid */
