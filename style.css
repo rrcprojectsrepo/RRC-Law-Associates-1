@@ -304,10 +304,10 @@ html, body {
   border-radius: 999px;
   background: rgba(212,175,55,0.15);
   border: 1px solid rgba(212,175,55,0.4);
-  color: var(--gold);
   margin-bottom: 40px;
   font-size: 14px;
 }
+
 
 .pulse-dot {
   width: 8px;
@@ -1982,7 +1982,7 @@ p {
 
 .container-sec {
   max-width: 1200px;
-  margin: auto;
+  padding: auto;
 }
 
 .section-header {

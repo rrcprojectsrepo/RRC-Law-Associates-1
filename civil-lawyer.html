@@ -1,846 +1,938 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Civil Lawyer in Thanjavur | RRC Law Associates</title>
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-     <style>
-        :root {
-            --primary: #3c3819;
-            --gold: #c9a24d;
-            --cream: #f9f7f3;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        /* Header Styling */
-        .header {
-            background: #000000 !important; /* Pure Black as requested */
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .logo-img {
-            height: 60px;
-            width: auto;
-        }
-
-        .nav-link-custom {
-            color: #ffffff !important;
-            text-decoration: none;
-            font-weight: 500;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-
-        .nav-link-custom:hover, .dropdown-item:hover {
-            color: #c9a24d !important; /* Gold hover */
-        }
-
-        .dropdown-menu {
-            background-color: #000000 !important;
-            border: 1px solid #c9a24d !important;
-            margin-top: 10px !important;
-        }
-
-        .dropdown-item {
-            color: #ffffff !important;
-            padding: 10px 20px;
-        }
-
-        .dropdown-item:hover {
-            background-color: #1a1a1a !important;
-        }
-
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%; 
-            width: 80%;
-            max-width: 350px;
-            height: 100vh;
-            background: #000000; 
-            z-index: 2000;
-            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-            padding: 20px;
-        }
-
-        .mobile-menu.open {
-            right: 0;
-        }
-
-        .mobile-link {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: block;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .close-menu {
-            background: transparent;
-            border: none;
-            color: #ffffff;
-            font-size: 2rem;
-            float: right;
-            cursor: pointer;
-        }
-
-        .btn-gold {
-            background-color: #c9a24d;
-            color: #000;
-            font-weight: 600;
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: none;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
-            background-color: #b38f40;
-        }
-
-        /* Main Content Styling */
-        .page-header-section {
-            padding-top: 140px;
-            padding-bottom: 40px;
-            text-align: center;
-        }
-
-        /* The Heading Container */
-        .section-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-        }
-
-        /* The Gradient Underline */
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            border-radius: 2px;
-            background: linear-gradient(to right, #0b1c2d, #c9a24d);
-        }
-
-        .eyebrow {
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        /* Card Styling */
-        .service-card {
-            background: var(--white);
-            border: 1px solid rgba(0,0,0,0.06);
-            border-radius: 15px;
-            padding: 25px 15px;
-            height: 100%;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            text-align: center;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .service-icon {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            font-size: 0.85rem;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        /* Advocate Card Styling */
-        .advocate-card {
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            background: var(--white);
-        }
-
-        .image-box img {
-            width: 100%;
-            height: 500px;
-            object-fit: fill;
-        }
-
-        .advocate-content {
-            padding: 20px;
-        }
-
-        .advocate-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        .advocate-content span {
-            color: var(--gold);
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .advocate-content p {
-            font-size: 0.85rem;
-            color: #555;
-        }
-
-        :root {
-            --primary: #3c3819;
-            --gold: #c9a24d;
-            --cream: #f9f7f3;
-            --white: #ffffff;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--white);
-            color: var(--primary);
-        }
-
-        /* Header Styling */
-        .header {
-            background: #000000 !important; /* Pure Black as requested */
-            padding: 10px 0;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .logo-img {
-            height: 60px;
-            width: auto;
-        }
-
-        .nav-link-custom {
-            color: #ffffff !important;
-            text-decoration: none;
-            font-weight: 500;
-            margin: 0 15px;
-            transition: color 0.3s;
-        }
-
-        .nav-link-custom:hover, .dropdown-item:hover {
-            color: #c9a24d !important; /* Gold hover */
-        }
-
-        .dropdown-menu {
-            background-color: #000000 !important;
-            border: 1px solid #c9a24d !important;
-            margin-top: 10px !important;
-        }
-
-        .dropdown-item {
-            color: #ffffff !important;
-            padding: 10px 20px;
-        }
-
-        .dropdown-item:hover {
-            background-color: #1a1a1a !important;
-        }
-
-        .mobile-menu {
-            position: fixed;
-            top: 0;
-            right: -100%; 
-            width: 80%;
-            max-width: 350px;
-            height: 100vh;
-            background: #000000; 
-            z-index: 2000;
-            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: -10px 0 30px rgba(0,0,0,0.5);
-            padding: 20px;
-        }
-
-        .mobile-menu.open {
-            right: 0;
-        }
-
-        .mobile-link {
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 1.1rem;
-            display: block;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .close-menu {
-            background: transparent;
-            border: none;
-            color: #ffffff;
-            font-size: 2rem;
-            float: right;
-            cursor: pointer;
-        }
-
-        .btn-gold {
-            background-color: #c9a24d;
-            color: #000;
-            font-weight: 600;
-            padding: 10px 20px;
-            border-radius: 8px;
-            border: none;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn-gold:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
-            background-color: #b38f40;
-        }
-
-        /* Main Content Styling */
-        .page-header-section {
-            padding-top: 140px;
-            padding-bottom: 40px;
-            text-align: center;
-        }
-
-        /* The Heading Container */
-        .section-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-            margin-bottom: 30px;
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
-        }
-
-        /* The Gradient Underline */
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 4px;
-            border-radius: 2px;
-            background: linear-gradient(to right, #0b1c2d, #c9a24d);
-        }
-
-        .eyebrow {
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        /* Card Styling */
-        .service-card {
-            background: var(--white);
-            border: 1px solid rgba(0,0,0,0.06);
-            border-radius: 15px;
-            padding: 25px 15px;
-            height: 100%;
-            transition: all 0.4s ease;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            text-align: center;
-        }
-
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-        }
-
-        .service-icon {
-            font-size: 2rem;
-            color: var(--gold);
-            margin-bottom: 15px;
-        }
-
-        .service-card h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-
-        .service-card p {
-            font-size: 0.85rem;
-            color: #666;
-            line-height: 1.5;
-        }
-
-        /* Advocate Card Styling */
-        .advocate-card {
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-            background: var(--white);
-        }
-
-        .image-box img {
-            width: 100%;
-            height: 500px;
-            object-fit: fill;
-        }
-
-        .advocate-content {
-            padding: 20px;
-        }
-
-        .advocate-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-            font-weight: 700;
-        }
-
-        .advocate-content span {
-            color: var(--gold);
-            font-weight: 600;
-            font-size: 0.9rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .advocate-content p {
-            font-size: 0.85rem;
-            color: #555;
-        }
-
-        /* Footer */
-        /* Refined Footer Styles */
-        .footer {
-            background: linear-gradient(135deg, #081521, #0b1c2d);
-            padding: 80px 0 30px;
-            color: #ffffff;
-            width: 100%;
-            /* Ensure no bullets are inherited globally */
-            list-style: none;
-        }
-
-        .footer-contain {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* This creates the columns seen in the image */
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr 1fr 1.2fr; /* Adjusts widths of columns */
-            gap: 50px;
-            margin-bottom: 50px;
-        }
-
-        /* RESET LISTS: This removes the bullets and indentation shown in your image */
-        .footer ul {
-            list-style: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
-        }
-
-        .footer h4 {
-            color: #c9a24d;
-            font-size: 1.2rem;
-            margin-bottom: 25px;
-            font-weight: 600;
-            text-transform: none; /* Keeps it professional */
-        }
-
-        .footer-text {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-            line-height: 1.7;
-            margin-top: 15px;
-        }
-
-        .footer li { 
-            margin-bottom: 12px; 
-        }
-
-        .footer a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none !important;
-            transition: 0.3s ease;
-            font-size: 0.95rem;
-        }
-
-        .footer a:hover { 
-            color: #c9a24d; 
-            padding-left: 5px; /* Subtle interaction effect */
-        }
-
-        /* Bottom Bar Styling */
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 25px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 14px;
-        }
-
-        .legal-links a {
-            margin-left: 20px;
-            font-size: 13px;
-        }
-
-        /* Responsive Fixes */
-        @media (max-width: 992px) {
-            .footer-grid {
-                grid-template-columns: 1fr 1fr; /* 2 columns on tablets */
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Civil Lawyer| RRC Law Associates</title>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+        <style>
+            :root {
+                --primary: #3c3819;
+                --gold: #c9a24d;
+                --cream: #f9f7f3;
+                --white: #ffffff;
             }
-        }
 
-        @media (max-width: 768px) {
-            .footer-grid { 
-                grid-template-columns: 1fr; /* 1 column on phones */
-                gap: 30px; 
-                text-align: left;
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: var(--white);
+                color: var(--primary);
             }
-            .footer-bottom { 
-                flex-direction: column; 
-                text-align: center; 
-                gap: 15px;
-            }
-            .legal-links a { margin: 0 10px; }
-        }
 
-        /* Mobile specific adjustments */
-        @media (max-width: 768px) {
+            /* Header Styling */
+            .header {
+                background: #000000 !important;
+                /* Pure Black as requested */
+                padding: 10px 0;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            .logo-img {
+                height: 60px;
+                width: auto;
+            }
+
+            .nav-link-custom {
+                color: #ffffff !important;
+                text-decoration: none;
+                font-weight: 500;
+                margin: 0 15px;
+                transition: color 0.3s;
+            }
+
+            .dropdown-item:hover,
+            .nav-link-custom:hover {
+                color: #c9a24d !important;
+                /* Gold hover */
+            }
+
+            .dropdown-menu {
+                background-color: #000000 !important;
+                border: 1px solid #c9a24d !important;
+                margin-top: 10px !important;
+            }
+
+            .dropdown-item {
+                color: #ffffff !important;
+                padding: 10px 20px;
+            }
+
+            .dropdown-item:hover {
+                background-color: #1a1a1a !important;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: #000000;
+                z-index: 2000;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+                padding: 20px;
+            }
+
+            .mobile-menu.open {
+                right: 0;
+            }
+
+            .mobile-link {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .close-menu {
+                background: transparent;
+                border: none;
+                color: #ffffff;
+                font-size: 2rem;
+                float: right;
+                cursor: pointer;
+            }
+
+            .btn-gold {
+                background-color: #c9a24d;
+                color: #000;
+                font-weight: 600;
+                padding: 10px 20px;
+                border-radius: 8px;
+                border: none;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn-gold:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
+                background-color: #b38f40;
+            }
+
+            /* Main Content Styling */
+            .page-header-section {
+                padding-top: 140px;
+                padding-bottom: 40px;
+                text-align: center;
+            }
+
+            /* The Heading Container */
+            .section-title {
+                position: relative;
+                display: inline-block;
+                padding-bottom: 15px;
+                margin-bottom: 30px;
+                font-family: 'Playfair Display', serif;
+                font-weight: 600;
+            }
+
+            /* The Gradient Underline */
+            .section-title::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 4px;
+                border-radius: 2px;
+                background: linear-gradient(to right, #0b1c2d, #c9a24d);
+            }
+
+            .eyebrow {
+                color: var(--gold);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 700;
+                font-size: 0.85rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            /* Card Styling */
+            .service-card {
+                background: var(--white);
+                border: 1px solid rgba(0,0,0,0.06);
+                border-radius: 15px;
+                padding: 25px 15px;
+                height: 100%;
+                transition: all 0.4s ease;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+                text-align: center;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            }
+
+            .service-icon {
+                font-size: 2rem;
+                color: var(--gold);
+                margin-bottom: 15px;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .service-card p {
+                font-size: 0.85rem;
+                color: #666;
+                line-height: 1.5;
+            }
+
+            /* Advocate Card Styling */
+            .advocate-card {
+                border-radius: 14px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                background: var(--white);
+            }
+
             .image-box img {
-                height: 180px;
+                width: 100%;
+                height: 500px;
+                object-fit: fill;
             }
-            .advocate-content h3 { font-size: 0.9rem; }
-            .advocate-content p { font-size: 0.75rem; }
-            .service-card { padding: 15px 10px; }
-            .service-card h3 { font-size: 0.95rem; }
-            .service-card p { font-size: 0.8rem; }
-        }
-    </style>
-</head>
-<body>
 
-<header class="header">
-    <nav class="container d-flex align-items-center justify-content-between">
-        <a href="index.html">
-            <img src="assets/images/law3.png" alt="RRC Logo" class="logo-img">
-        </a>
+            .advocate-content {
+                padding: 20px;
+            }
 
-        <div class="d-none d-lg-flex align-items-center ms-auto">
-            <a href="index.html" class="nav-link-custom">Home</a>
-            
-            <div class="dropdown mx-3">
-                <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Practice Areas
+            .advocate-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
+                font-weight: 700;
+            }
+
+            .advocate-content span {
+                color: var(--gold);
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .advocate-content p {
+                font-size: 0.85rem;
+                color: #555;
+            }
+
+            :root {
+                --primary: #3c3819;
+                --gold: #c9a24d;
+                --cream: #f9f7f3;
+                --white: #ffffff;
+            }
+
+            body {
+                font-family: 'Inter', sans-serif;
+                background-color: var(--white);
+                color: var(--primary);
+            }
+
+            /* Header Styling */
+            .header {
+                background: #000000 !important;
+                /* Pure Black as requested */
+                padding: 10px 0;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+
+            .logo-img {
+                height: 60px;
+                width: auto;
+            }
+
+            .nav-link-custom {
+                color: #ffffff !important;
+                text-decoration: none;
+                font-weight: 500;
+                margin: 0 15px;
+                transition: color 0.3s;
+            }
+
+            .dropdown-item:hover,
+            .nav-link-custom:hover {
+                color: #c9a24d !important;
+                /* Gold hover */
+            }
+
+            .dropdown-menu {
+                background-color: #000000 !important;
+                border: 1px solid #c9a24d !important;
+                margin-top: 10px !important;
+            }
+
+            .dropdown-item {
+                color: #ffffff !important;
+                padding: 10px 20px;
+            }
+
+            .dropdown-item:hover {
+                background-color: #1a1a1a !important;
+            }
+
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                max-width: 350px;
+                height: 100vh;
+                background: #000000;
+                z-index: 2000;
+                transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+                padding: 20px;
+            }
+
+            .mobile-menu.open {
+                right: 0;
+            }
+
+            .mobile-link {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+
+            .close-menu {
+                background: transparent;
+                border: none;
+                color: #ffffff;
+                font-size: 2rem;
+                float: right;
+                cursor: pointer;
+            }
+
+            .btn-gold {
+                background-color: #c9a24d;
+                color: #000;
+                font-weight: 600;
+                padding: 10px 20px;
+                border-radius: 8px;
+                border: none;
+                text-decoration: none;
+                display: inline-block;
+            }
+
+            .btn-gold:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 20px rgba(201, 162, 77, 0.3);
+                background-color: #b38f40;
+            }
+
+            /* Main Content Styling */
+            .page-header-section {
+                padding-top: 140px;
+                padding-bottom: 40px;
+                text-align: center;
+            }
+
+            /* The Heading Container */
+            .section-title {
+                position: relative;
+                display: inline-block;
+                padding-bottom: 15px;
+                margin-bottom: 30px;
+                font-family: 'Playfair Display', serif;
+                font-weight: 600;
+            }
+
+            /* The Gradient Underline */
+            .section-title::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 60px;
+                height: 4px;
+                border-radius: 2px;
+                background: linear-gradient(to right, #0b1c2d, #c9a24d);
+            }
+
+            .eyebrow {
+                color: var(--gold);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 700;
+                font-size: 0.85rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            /* Card Styling */
+            .service-card {
+                background: var(--white);
+                border: 1px solid rgba(0,0,0,0.06);
+                border-radius: 15px;
+                padding: 25px 15px;
+                height: 100%;
+                transition: all 0.4s ease;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+                text-align: center;
+            }
+
+            .service-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            }
+
+            .service-icon {
+                font-size: 2rem;
+                color: var(--gold);
+                margin-bottom: 15px;
+            }
+
+            .service-card h3 {
+                font-size: 1.1rem;
+                font-weight: 700;
+                margin-bottom: 10px;
+            }
+
+            .service-card p {
+                font-size: 0.85rem;
+                color: #666;
+                line-height: 1.5;
+            }
+
+            /* Advocate Card Styling */
+            .advocate-card {
+                border-radius: 14px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+                background: var(--white);
+            }
+
+            .image-box img {
+                width: 100%;
+                height: 500px;
+                object-fit: fill;
+            }
+
+            .advocate-content {
+                padding: 20px;
+            }
+
+            .advocate-content h3 {
+                font-size: 1.2rem;
+                margin-bottom: 5px;
+                font-weight: 700;
+            }
+
+            .advocate-content span {
+                color: var(--gold);
+                font-weight: 600;
+                font-size: 0.9rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+
+            .advocate-content p {
+                font-size: 0.85rem;
+                color: #555;
+            }
+
+            /* Footer */
+            /* Refined Footer Styles */
+            .footer {
+                background: linear-gradient(135deg, #081521, #0b1c2d);
+                padding: 80px 0 30px;
+                color: #ffffff;
+                width: 100%;
+                /* Ensure no bullets are inherited globally */
+                list-style: none;
+            }
+
+            .footer-contain {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+
+            /* This creates the columns seen in the image */
+            .footer-grid {
+                display: grid;
+                grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+                /* Adjusts widths of columns */
+                gap: 50px;
+                margin-bottom: 50px;
+            }
+
+            /* RESET LISTS: This removes the bullets and indentation shown in your image */
+            .footer ul {
+                list-style: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .footer h4 {
+                color: #c9a24d;
+                font-size: 1.2rem;
+                margin-bottom: 25px;
+                font-weight: 600;
+                text-transform: none;
+                /* Keeps it professional */
+            }
+
+            .footer-text {
+                color: rgba(255, 255, 255, 0.7);
+                font-size: 0.95rem;
+                line-height: 1.7;
+                margin-top: 15px;
+            }
+
+            .footer li {
+                margin-bottom: 12px;
+            }
+
+            .footer a {
+                color: rgba(255, 255, 255, 0.7);
+                text-decoration: none !important;
+                transition: 0.3s ease;
+                font-size: 0.95rem;
+            }
+
+            .footer a:hover {
+                color: #c9a24d;
+                padding-left: 5px;
+                /* Subtle interaction effect */
+            }
+
+            /* Bottom Bar Styling */
+            .footer-bottom {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding-top: 25px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                color: rgba(255, 255, 255, 0.5);
+                font-size: 14px;
+            }
+
+            .legal-links a {
+                margin-left: 20px;
+                font-size: 13px;
+            }
+
+            /* Responsive Fixes */
+            @media (max-width: 992px) {
+                .footer-grid {
+                    grid-template-columns: 1fr 1fr;
+                    /* 2 columns on tablets */
+                }
+            }
+
+            @media (max-width: 768px) {
+                .footer-grid {
+                    grid-template-columns: 1fr;
+                    /* 1 column on phones */
+                    gap: 30px;
+                    text-align: left;
+                }
+                .footer-bottom {
+                    flex-direction: column;
+                    text-align: center;
+                    gap: 15px;
+                }
+                .legal-links a {
+                    margin: 0 10px;
+                }
+            }
+
+            /* Mobile specific adjustments */
+            @media (max-width: 768px) {
+                .image-box img {
+                    height: 180px;
+                }
+                .advocate-content h3 {
+                    font-size: 0.9rem;
+                }
+                .advocate-content p {
+                    font-size: 0.75rem;
+                }
+                .service-card {
+                    padding: 15px 10px;
+                }
+                .service-card h3 {
+                    font-size: 0.95rem;
+                }
+                .service-card p {
+                    font-size: 0.8rem;
+                }
+            }
+        </style>
+    </head>
+    <body>
+
+        <header class="header">
+            <nav class="container d-flex align-items-center justify-content-between">
+                <a href="index.html">
+                    <img src="assets/images/law3.png" alt="RRC Logo" class="logo-img">
                 </a>
-                <ul class="dropdown-menu shadow-lg">
-                    <li><a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a></li>
-                    <li><a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a></li>
-                    <li><a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a></li>
-                    <li><a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a></li>
-                </ul>
-            </div>
-            
-            <a href="lawfirm-blog.html" class="nav-link-custom">Blog</a>
-            <a href="index.html#contact" class="nav-link-custom">Contact</a>
-        </div>
 
-        <div class="d-flex align-items-center gap-3">
-            <div class="cta d-none d-sm-block">
-                <a href="index.html#contact" class="btn btn-gold">Book Consultation</a>
-            </div>
-            <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle">
-                <i class="fa fa-bars"></i>
-            </button>
-        </div>
-    </nav>
-</header>
+                <div class="d-none d-lg-flex align-items-center ms-auto">
+                    <a href="index.html" class="nav-link-custom">Home</a>
 
-<div class="mobile-menu" id="mobileMenu">
-    <button class="close-menu" id="closeMenu">✕</button>
-    <div class="mt-5">
-        <a href="index.html" class="mobile-link">Home</a>
-        <div class="dropdown">
-            <a class="mobile-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Practice Areas</a>
-            <ul class="dropdown-menu dropdown-menu-dark bg-dark border-0">
-                <li><a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a></li>
-                <li><a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a></li>
-                <li><a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a></li>
-                <li><a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a></li>
-            </ul>
-        </div>
-        <a href="lawfirm-blog.html" class="mobile-link">Blog</a>
-        <a href="index.html#contact" class="mobile-link">Contact</a>
-        <div class="mt-4">
-            <a href="index.html#contact" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
-        </div>
-    </div>
-</div>
-
-    <section class="page-header-section container">
-        <h1 class="section-title" style="color: #3c3819;">Civil Lawyer in Thanjavur</h1>
-        <div class="row mt-5 align-items-center text-start">
-            <div class="col-lg-7 pe-lg-5">
-                <p class="lead fw-bold">RRC Law Associates offers comprehensive legal services in civil matters including recovery suits, injunctions, contract disputes, and property-related litigation.</p>
-                <p>We approach every civil matter with meticulous preparation and strategic clarity, ensuring that our clients' interests are protected through rigorous advocacy and deep legal scholarship.</p>
-                <p class="fw-bold mt-4">We provide structured legal strategies for civil disputes to achieve decisive outcomes.</p>
-            </div>
-            <div class="col-lg-5 mt-4 mt-lg-0 text-center">
-                <img src="assets/images/justice.jpeg" alt="Civil Law" class="img-fluid rounded-4 shadow">
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5 bg-light">
-        <div class="container text-center">
-            <span class="eyebrow">Our Service</span>
-            <h2 class="mb-5 fw-bold" style="color: #3c3819; font-family: 'Playfair Display', serif;">Specialized Legal Services</h2>
-            <div class="row g-3 justify-content-center">
-                <div class="col-6 col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-file-alt"></i></div>
-                        <h3>Civil Suits Filing</h3>
-                        <p>Handling formal initiation and management of civil litigation.</p>
+                    <div class="dropdown mx-3">
+                        <a
+                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Practice Areas
+                        </a>
+                        <ul class="dropdown-menu shadow-lg">
+                            <li>
+                                <a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./family-law.html">Family Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                            </li>
+                        </ul>
                     </div>
+
+                    <a href="lawfirm-blog.html" class="nav-link-custom">Blog</a>
+                    <a href="index.html#contact" class="nav-link-custom">Contact</a>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-hand-paper"></i></div>
-                        <h3>Injunction Matters</h3>
-                        <p>Securing legal stay orders to protect property and rights.</p>
+
+                <div class="d-flex align-items-center gap-3">
+                    <div class="cta d-none d-sm-block">
+                        <a href="index.html#contact" class="btn btn-gold">Book Consultation</a>
                     </div>
+                    <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle">
+                        <i class="fa fa-bars"></i>
+                    </button>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-coins"></i></div>
-                        <h3>Recovery Cases</h3>
-                        <p>Strategic representation for monetary and debt recovery suits.</p>
-                    </div>
+            </nav>
+        </header>
+
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="close-menu" id="closeMenu">✕</button>
+            <div class="mt-5">
+                <a href="index.html" class="mobile-link">Home</a>
+                <div class="dropdown">
+                    <a class="mobile-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Practice Areas</a>
+                    <ul class="dropdown-menu dropdown-menu-dark bg-dark border-0">
+                        <li>
+                            <a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./criminal-law.html">Criminal Defense</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./family-law.html">Family Law</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="service-card">
-                        <div class="service-icon"><i class="fas fa-signature"></i></div>
-                        <h3>Contract Disputes</h3>
-                        <p>Resolving conflicts regarding commercial and civil agreements.</p>
-                    </div>
+                <a href="lawfirm-blog.html" class="mobile-link">Blog</a>
+                <a href="index.html#contact" class="mobile-link">Contact</a>
+                <div class="mt-4">
+                    <a href="index.html#contact" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="py-5">
-        <div class="container text-center">
-            <span class="eyebrow">Our Lawyers</span>
-            <h2 class="mb-5 fw-bold" style="color: #3c3819; font-family: 'Playfair Display', serif;">Civil Law Experts</h2>
-            <div class="row g-4 justify-content-center">
-                <div class="col-6 col-md-4">
-                    <div class="advocate-card text-start h-100">
-                        <div class="image-box">
-                            <img src="assets/images/advocate-1.png" alt="Dr. N. Tamilmani">
+        <section class="page-header-section container">
+            <h1 class="section-title" style="color: #3c3819;">Civil Lawyer</h1>
+            <div class="row mt-5 align-items-center text-start">
+                <div class="col-lg-7 pe-lg-5">
+                    <p class="lead fw-bold">RRC Law Associates offers comprehensive legal services
+                        in civil matters including recovery suits, injunctions, contract disputes, and
+                        property-related litigation.</p>
+                    <p>We approach every civil matter with meticulous preparation and strategic
+                        clarity, ensuring that our clients' interests are protected through rigorous
+                        advocacy and deep legal scholarship.</p>
+                    <p class="fw-bold mt-4">We provide structured legal strategies for civil
+                        disputes to achieve decisive outcomes.</p>
+                </div>
+                <div class="col-lg-5 mt-4 mt-lg-0 text-center">
+                    <img
+                        src="assets/images/justice.jpeg"
+                        alt="Civil Law"
+                        class="img-fluid rounded-4 shadow">
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5 bg-light">
+            <div class="container text-center">
+                <span class="eyebrow">Our Service</span>
+                <h2
+                    class="mb-5 fw-bold"
+                    style="color: #3c3819; font-family: 'Playfair Display', serif;">Specialized Legal Services</h2>
+                <div class="row g-3 justify-content-center">
+                    <div class="col-6 col-md-3">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <h3>Civil Suits Filing</h3>
+                            <p>Handling formal initiation and management of civil litigation.</p>
                         </div>
-                        <div class="advocate-content">
-                            <h3>Dr. N. Tamilmani</h3>
-                            <span>Senior Partner & Founder</span>
-                            <p>Extensive experience in Civil Law and trial representation with over 20 years of practice.</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-hand-paper"></i>
+                            </div>
+                            <h3>Injunction Matters</h3>
+                            <p>Securing legal stay orders to protect property and rights.</p>
                         </div>
                     </div>
-                </div>
-                <div class="col-6 col-md-4">
-                    <div class="advocate-card text-start h-100">
-                        <div class="image-box">
-                            <img src="assets/images/advocate-4.png" alt="R. Vidhya">
+                    <div class="col-6 col-md-3">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-coins"></i>
+                            </div>
+                            <h3>Recovery Cases</h3>
+                            <p>Strategic representation for monetary and debt recovery suits.</p>
                         </div>
-                        <div class="advocate-content">
-                            <h3>R. Vidhya, B.A., LL.B.</h3>
-                            <span>Member</span>
-                            <p>Expert in handling civil litigation, contract disputes, and property-related matters.</p>
+                    </div>
+                    <div class="col-6 col-md-3">
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <i class="fas fa-signature"></i>
+                            </div>
+                            <h3>Contract Disputes</h3>
+                            <p>Resolving conflicts regarding commercial and civil agreements.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-<footer class="footer">
-<div class="footer-contain">
+        <section class="py-5">
+            <div class="container text-center">
+                <span class="eyebrow">Our Lawyers</span>
+                <h2
+                    class="mb-5 fw-bold"
+                    style="color: #3c3819; font-family: 'Playfair Display', serif;">Civil Law Experts</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-6 col-md-4">
+                        <div class="advocate-card text-start h-100">
+                            <div class="image-box">
+                                <img src="assets/images/advocate-1.png" alt="Dr. N. Tamilmani">
+                            </div>
+                            <div class="advocate-content">
+                                <h3>Dr. N. Tamilmani</h3>
+                                <span>Senior Partner & Founder</span>
+                                <p>Extensive experience in Civil Law and trial representation with over 20 years
+                                    of practice.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-4">
+                        <div class="advocate-card text-start h-100">
+                            <div class="image-box">
+                                <img src="assets/images/advocate-4.png" alt="R. Vidhya">
+                            </div>
+                            <div class="advocate-content">
+                                <h3>R. Vidhya, B.A., LL.B.</h3>
+                                <span>Member</span>
+                                <p>Expert in handling civil litigation, contract disputes, and property-related
+                                    matters.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <div class="footer-grid">
+        <footer class="footer">
+            <div class="footer-contain">
 
-        <!-- Brand -->
-        <div class="footer-brand">
-            <div class="logo-icon">
-                <a href="index.html" title="Home">
-                    <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
+                <div class="footer-grid">
 
+                    <!-- Brand -->
+                    <div class="footer-brand">
+                        <div class="logo-icon">
+                            <a href="index.html" title="Home">
+                                <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
+
+                                <div>
+                                    <strong>RRC</strong>
+                                    <span>Law Associates</span>
+                                </div>
+                            </div>
+                        </a>
+
+                        <p>
+                            Providing trusted legal solutions with integrity since 2008. Your reliable
+                            partner for all legal matters in Tamil Nadu.
+                        </p>
+
+                        <div class="social"></div>
+                    </div>
+
+                    <!-- Practice Areas -->
                     <div>
-                        <strong>RRC</strong>
-                        <span>Law Associates</span>
+                        <h4>Practice Areas</h4>
+                        <ul>
+                            <li>
+                                <a href="civil-lawyer.html">Civil Litigation</a>
+                            </li>
+                            <li>
+                                <a href="family-law.html">Family Law</a>
+                            </li>
+                            <li>
+                                <a href="corporate-lawyer.html">Corporate Law</a>
+                            </li>
+                            <li>
+                                <a href="criminal-law.html">Criminal Defense</a>
+                            </li>
+                            <li>
+                                <a href="property-dispute-lawyer.html">Property Law</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Quick Links -->
+                    <div>
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li>
+                                <a href="index.html">Home</a>
+                            </li>
+                            <li>
+                                <a href="practiceareas.html">Practice Areas</a>
+                            </li>
+                            <li>
+                                <a href="lawfirm-blog.html">Blog</a>
+                            </li>
+                            <li>
+                                <a href="#contact">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact -->
+                    <div>
+                        <h4>Contact Us</h4>
+                        <ul class="contact">
+                            <li>
+                                <span style="color: #c9a24d;">Address</span>
+                                <br>
+                                No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar,<br>
+                                Thanjavur, Tamil Nadu-613001
+                            </li>
+                            <li>
+                                <span style="color: #c9a24d;">Phone</span>
+                                <br>
+                                <a href="tel:+919876543210">+91 97511 82452</a>
+                            </li>
+                            <li>
+                                <span style="color: #c9a24d;">Email</span>
+                                <br>
+                                <a href="mailto:contact@advocatelawfirm.com">
+                                    durai.balasundaram.advocate@gmail.com
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <!-- Bottom -->
+                <div class="footer-bottom">
+                    <p>©
+                        <span id="year">2026</span>
+                        Branzyne. All rights reserved.</p>
+                    <div class="legal">
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Disclaimer</a>
                     </div>
                 </div>
-            </a>
 
-            <p>
-                Providing trusted legal solutions with integrity since 2008. Your reliable
-                partner for all legal matters in Tamil Nadu.
-            </p>
+            </div>
+        </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const menuToggle = document.getElementById('menuToggle');
+                const closeMenu = document.getElementById('closeMenu');
+                const mobileMenu = document.getElementById('mobileMenu');
 
-            <div class="social"></div>
-        </div>
+                // Open Mobile Menu
+                if (menuToggle) {
+                    menuToggle.addEventListener('click', () => {
+                        mobileMenu
+                            .classList
+                            .add('open');
+                    });
+                }
 
-        <!-- Practice Areas -->
-        <div>
-            <h4>Practice Areas</h4>
-            <ul>
-                <li>
-                    <a href="practiceareas.html">Civil Litigation</a>
-                </li>
-                <li>
-                    <a href="practiceareas.html">Family Law</a>
-                </li>
-                <li>
-                    <a href="practiceareas.html">Corporate Law</a>
-                </li>
-                <li>
-                    <a href="practiceareas.html">Criminal Defense</a>
-                </li>
-                <li>
-                    <a href="practiceareas.html">Property Law</a>
-                </li>
-            </ul>
-        </div>
+                // Close Mobile Menu (X button)
+                if (closeMenu) {
+                    closeMenu.addEventListener('click', () => {
+                        mobileMenu
+                            .classList
+                            .remove('open');
+                    });
+                }
 
-        <!-- Quick Links -->
-        <div>
-            <h4>Quick Links</h4>
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="practiceareas.html">Practice Areas</a>
-                </li>
-                <li>
-                    <a href="lawfirm-blog.html">Blog</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
+                // Close Menu on Background Click
+                document.addEventListener('click', (e) => {
+                    if (mobileMenu.classList.contains('open')) {
+                        if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                            mobileMenu
+                                .classList
+                                .remove('open');
+                        }
+                    }
+                });
+            });
+        </script>
 
-        <!-- Contact -->
-        <div>
-            <h4>Contact Us</h4>
-            <ul class="contact">
-                <li>
-                    <span style="color: #c9a24d;">Address</span> <br>
-                    No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar,<br>
-                    Thanjavur, Tamil Nadu-613001
-                </li>
-                <li>
-                    <span style="color: #c9a24d;">Phone</span> <br>
-                    <a href="tel:+919876543210">+91 97511 82452</a>
-                </li>
-                <li>
-                    <span style="color: #c9a24d;">Email</span> <br>
-                    <a href="mailto:contact@advocatelawfirm.com">
-                        durai.balasundaram.advocate@gmail.com
-                    </a>
-                </li>
-            </ul>
-        </div>
-
-    </div>
-
-    <!-- Bottom -->
-    <div class="footer-bottom">
-        <p>©
-            <span id="year">2026</span>
-            Branzyne. All rights reserved.</p>
-        <div class="legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms</a>
-            <a href="#">Disclaimer</a>
-        </div>
-    </div>
-
-</div>
-</footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menuToggle');
-    const closeMenu = document.getElementById('closeMenu');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    // Open Mobile Menu
-    if (menuToggle) {
-        menuToggle.addEventListener('click', () => {
-            mobileMenu.classList.add('open');
-        });
-    }
-
-    // Close Mobile Menu (X button)
-    if (closeMenu) {
-        closeMenu.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-        });
-    }
-
-    // Close Menu on Background Click
-    document.addEventListener('click', (e) => {
-        if (mobileMenu.classList.contains('open')) {
-            if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                mobileMenu.classList.remove('open');
-            }
-        }
-    });
-});
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </body>
 </html>
