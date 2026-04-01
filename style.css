@@ -3548,3 +3548,47 @@ p {
         flex: 0 0 100%; /* 1 card */
     }
 }
+
+/* --- STORY SECTION (ABOUT US) FIX --- */
+@media (max-width: 1024px) {
+    .story-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .story-image {
+        left: 0;
+        margin-top: 30px;
+    }
+    .story-image img {
+        height: auto;
+        max-width: 100%;
+    }
+}
+
+/* Tablet & Mobile Breakpoint */
+@media (max-width: 991px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Stack into 1 column on tablets */
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .contact-form, .contact-info {
+        padding: 30px 20px; /* Better padding for smaller screens */
+    }
+}
+
+@media (max-width: 1024px) {
+    .hero {
+        margin-top: 10px;
+        min-height: auto;
+        height: 500px;
+    }
+    .law-firm-heading {
+        font-size: 3.5rem; /* Shrink heading for tabs */
+    }
+    .hero-inner {
+        max-width: 90%;
+        margin-top: 0;
+        
+    }
+}
