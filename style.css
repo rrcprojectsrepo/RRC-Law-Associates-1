@@ -38,8 +38,9 @@ html, body {
 }
 
 .logo-img {
-    height: 60px;
+    height: 80px;
     width: auto;
+    padding: 0px;
 }
 
 .nav-link-custom {
@@ -164,7 +165,7 @@ html, body {
 /* Hero */
 .hero {
   margin-top: 150px; /* height of header */
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   overflow: hidden;
   color: var(--white);
@@ -176,18 +177,11 @@ html, body {
 .hero-bg {
   position: absolute;
   inset: 0;
-  height: auto;
-}
-
-.hero-bg img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
  
 .hero-bg img {
   width: 100%;
-  height: 850px;
+  height: auto;
   object-fit: cover;
 
 }
@@ -225,7 +219,7 @@ html, body {
   }
 
   .hero-bg img {
-    height: 100vh;
+    height: 700px;
     object-position: center;
   }
 
@@ -288,11 +282,11 @@ html, body {
   position: absolute;
   z-index: 2;
   padding: 0px 20px; 
-  margin-top: -50px; /* Move UP (negative value) */
+  top: 160px;
 }
 
 .hero-inner {
-  max-width: 550px;   /* Move UP (negative value) */
+  max-width: 800px;   /* Move UP (negative value) */
 }
 
 /* Badge */
@@ -369,11 +363,17 @@ p {
   gap: 16px;
   margin-bottom: 64px;
 }
- .law-firm-heading {
+        .law-firm-heading {
             font-family: 'Playfair Display', serif;
-            font-size: 5rem;
-            font-weight: 900;
-            line-height: 1;
+            font-size: 42px;
+            font-weight: bold;
+            margin-top: 0;
+        }
+
+        .law-firm-subheading {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            font-weight: bold;
             margin-top: 0;
         }
 
@@ -390,9 +390,8 @@ p {
             background-clip: text;
             display: inline-block;
             color: var(--cream);
-            font-size: 1.3rem;
-            line-height: 1.8;
-            font-family: playfair display, serif;
+            font-size: 16px;
+            font-weight: 450;
         }
 
         .law-text {
@@ -401,17 +400,21 @@ p {
             -webkit-text-fill-color: transparent;
             background-clip: text;
             display: inline-block;
+            font-family: playfair display, serif;
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .law-firm-heading {
+            .law-firm-heading h2 {
                 font-size: 3rem;
+            }
+            .rrc-subtext {
+                font-size: 1rem;
             }
         }
 
         @media (max-width: 480px) {
-            .law-firm-heading {
+            .law-firm-heading h2 {
                 font-size: 2.5rem;
             }
         }
@@ -552,7 +555,7 @@ p {
 /* about us */
 /* Story Section */
   .story-section {
-  padding: 50px 20px 120px;
+  padding: 50px 20px 80px;
   background-color: var(--cream);
   position: relative;
   color: #3c3819;
@@ -640,7 +643,7 @@ p {
   position: relative;
   z-index: 2;
   width: auto;
-  height: 600px;
+  height: 700px;
   border-radius: 20px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
@@ -999,7 +1002,7 @@ p {
 /* practice section */
 /* Section */
 .practice {
-  padding: 50px 20px 120px;
+  padding: 50px 20px 70px;
 }
 
 .practice-sec {
@@ -1086,6 +1089,38 @@ p {
 
 /* Lift */
 .card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.12);
+}
+
+.card-law {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+
+.card-law::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(212,175,55,0.08),
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.card-law:hover::before {
+  opacity: 1;
+}
+
+/* Lift */
+.card-law:hover {
   transform: translateY(-12px);
   box-shadow: 0 25px 60px rgba(0,0,0,0.12);
 }
@@ -1217,10 +1252,10 @@ p {
 .advocates-section {
   padding: 10px 20px;
   background: var(--cream);
+  padding-top: 0;
 }
 
 .container {
-  
   max-width: 1200px;
   margin: auto;
 }
@@ -1640,6 +1675,7 @@ p {
   max-width: 1200px;
   margin: auto;
   margin-top: 20px;
+  padding: 0;
 }
 
 .why-grid {
@@ -1836,7 +1872,7 @@ p {
 
 /* Center the main contact section */
 .contact-section {
-    padding: 100px 0;
+    padding: 80px 0;
     display: flex;
     flex-direction: column;
     align-items: center; /* Centers header and badge */
@@ -3149,7 +3185,7 @@ p {
     ════════════════════════════════ */
     #international {
       background: linear-gradient(170deg, #fdfbf7 0%, #f6f2ea 100%);
-      padding: 110px 0 100px;
+      padding: 20px 0 90px;
       position: relative;
       overflow: hidden;
     }

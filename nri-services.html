@@ -151,6 +151,20 @@
             box-shadow: 0 15px 40px rgba(0,0,0,0.1);
         }
 
+        .service-card-nri {
+            background: var(--white);
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 15px;
+            height: 100%;
+            transition: all 0.4s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+        }
+
+        .service-card-nri:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+
         .service-icon { font-size: 2.5rem; color: var(--gold); margin-bottom: 20px; }
 
         .benefit-item {
@@ -412,6 +426,7 @@
 
             <div class="d-none d-lg-flex align-items-center ms-auto">
                 <a href="index.html" class="nav-link-custom">Home</a>
+                <a href="nri-services.html" class="nav-link-custom">NRI Services</a>
                 <div class="dropdown mx-3">
                     <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" href="practiceareas.html" role="button" data-bs-toggle="dropdown" id="practiceDropdown">Practice Areas</a>
                     <ul class="dropdown-menu shadow-lg">
@@ -461,6 +476,7 @@
         <button class="close-menu" id="closeMenu">✕</button>
         <div class="mt-5">
             <a href="index.html" class="mobile-link">Home</a>
+            <a href="nri-services.html" class="mobile-link">NRI Services</a>
             <div class="m-dropdown">
                 <a class="mobile-link m-trigger" href="#">Practice Areas <i class="fa fa-chevron-down ms-2"></i></a>
                 <div class="m-submenu" id="mPracticeMenu">
@@ -535,34 +551,34 @@
 
     <section class="py-5">
     <div class="container">
-        <div class="section-header text-center mb-5">
+        <div class=" section-header text-center mb-5">
             <span class="eyebrow">The Remote Advocacy Process</span>
             <h2 style="color: #3c3819; font-family: 'Playfair Display', serif; font-weight: bold;">How We Represent You Remotely</h2>
         </div>
         <div class="row g-4">
-            <div class="col-md-4">
-                <div class="p-4 border-start border-gold border-4 bg-white shadow-sm">
+            <div class="service-card-nri col-md-4">
+                <div class="p-4 border-start border-gold border-4 bg-white">
                     <h4 class="fw-bold">Virtual Consultation</h4>
                     <p class="text-muted">Initial case assessment via Zoom, Google Meet, or WhatsApp to understand your legal standing in India.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="p-4 border-start border-gold border-4 bg-white shadow-sm">
+            <div class="service-card-nri col-md-4">
+                <div class="p-4 border-start border-gold border-4 bg-white">
                     <h4 class="fw-bold">Digital Documentation</h4>
                     <p class="text-muted">Secure sharing of title deeds, contracts, and evidence through encrypted cloud folders.</p>
                 </div>
             </div>
-            <div class="col-md-4">
-                <div class="p-4 border-start border-gold border-4 bg-white shadow-sm">
+            <div class="service-card-nri col-md-4">
+                <div class="p-4 border-start border-gold border-4 bg-white">
                     <h4 class="fw-bold">Virtual Court Appearance</h4>
                     <p class="text-muted">Utilizing the Indian judiciary's e-court system to represent you without requiring your physical travel.</p>
                 </div>
             </div>
         </div>
     </div>
-</section>
+    </section>
 
-<section class="py-5 bg-dark text-white">
+    <section class="py-5 bg-dark text-white">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6">
@@ -584,9 +600,9 @@
             </div>
         </div>
     </div>
-</section>
+    </section>
 
-<section class="py-5 container">
+    <section class="py-5 container">
     <div class="text-center mb-5">
         <h2 style="font-family: 'Playfair Display', serif; font-weight: bold; color: #3c3819;">Common Concerns for NRIs</h2>
     </div>
@@ -637,7 +653,7 @@
             </div>
         </div>
     </div>
-</section>
+    </section>
 
     <footer class="footer">
             <div class="footer-contain">
@@ -746,7 +762,7 @@
                 </div>
 
             </div>
-        </footer>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
