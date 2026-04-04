@@ -19,142 +19,167 @@
         <script src="script.js" defer="defer"></script>
         <style>
             /* --- 1. Fix Button Clickability & Hover --- */
-.nav-link-custom {
-    color: #ffffff !important;
-    text-decoration: none;
-    font-weight: 500;
-    margin: 0 15px;
-    transition: color 0.3s;
-    cursor: pointer;
-    display: inline-block;
-}
+            .nav-link-custom {
+                color: #ffffff !important;
+                text-decoration: none;
+                font-weight: 500;
+                margin: 0 15px;
+                transition: color 0.3s;
+                cursor: pointer;
+                display: inline-block;
+            }
 
-/* Ensure non-dropdown links don't inherit dropdown behaviors */
-.nav-link-custom:not(.dropdown-toggle) {
-    pointer-events: auto !important;
-}
+            /* Ensure non-dropdown links don't inherit dropdown behaviors */
+            .nav-link-custom:not(.dropdown-toggle) {
+                pointer-events: auto !important;
+            }
 
-@media (min-width: 992px) {
-    .header .dropdown:hover > .dropdown-menu {
-        display: block;
-        margin-top: 0;
-    }
+            @media (min-width: 992px) {
+                .header .dropdown:hover > .dropdown-menu {
+                    display: block;
+                    margin-top: 0;
+                }
 
-    /* Bridge for diagonal mouse movement */
-    .header .dropdown-menu::before {
-        content: "";
-        position: absolute;
-        top: -20px;
-        left: 0;
-        width: 100%;
-        height: 20px;
-        background: transparent;
-    }
+                /* Bridge for diagonal mouse movement */
+                .header .dropdown-menu::before {
+                    content: "";
+                    position: absolute;
+                    top: -20px;
+                    left: 0;
+                    width: 100%;
+                    height: 20px;
+                    background: transparent;
+                }
 
-    /* Important: Allow the main Practice Areas link to be clickable */
-    .nav-link-custom.dropdown-toggle {
-        pointer-events: auto !important;
-    }
-}
+                /* Important: Allow the main Practice Areas link to be clickable */
+                .nav-link-custom.dropdown-toggle {
+                    pointer-events: auto !important;
+                }
+            }
 
-/* --- 2. Fix Header Height & Alignment --- */
-.header {
-    background: #000000 !important;
-    padding: 5px 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1100;
-    min-height: 80px;
-    display: flex;
-    align-items: center;
-}
+            /* --- 2. Fix Header Height & Alignment --- */
+            .header {
+                background: #000000 !important;
+                padding: 5px 0;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1100;
+                min-height: 80px;
+                display: flex;
+                align-items: center;
+            }
 
-/* --- 3. Tablet Responsiveness Fixes --- */
-@media (max-width: 1024px) {
-    .header-content {
-        height: 350px;
-        margin-top: 80px;
-    }
-    
-    /* Ensure the contact grid stacks correctly on iPads */
-    .contact-grid {
-        grid-template-columns: 1fr !important;
-        gap: 30px;
-        max-width: 650px;
-        margin: 0 auto;
-    }
+            /* --- 3. Tablet Responsiveness Fixes --- */
+            @media (max-width: 1024px) {
+                .header-content {
+                    height: 350px;
+                    margin-top: 80px;
+                }
+                
+                /* Ensure the contact grid stacks correctly on iPads */
+                .contact-grid {
+                    grid-template-columns: 1fr !important;
+                    gap: 30px;
+                    max-width: 650px;
+                    margin: 0 auto;
+                }
 
-    .story-content {
-        grid-template-columns: 1fr !important;
-        text-align: center;
-    }
+                .story-content {
+                    grid-template-columns: 1fr !important;
+                    text-align: center;
+                }
 
-    .story-image {
-        left: 0 !important;
-        margin-top: 20px;
-    }
+                .story-image {
+                    left: 0 !important;
+                    margin-top: 20px;
+                }
 
-    .practice-area {
-        width: 100% !important;
-        max-width: 500px;
-    }
-}
+                .practice-area {
+                    width: 100% !important;
+                    max-width: 500px;
+                }
+            }
 
-/* --- 4. Footer Bullet Fix --- */
-.footer ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
+            /* --- 4. Footer Bullet Fix --- */
+            .footer ul {
+                list-style: none !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
 
-.footer li::before {
-    content: none !important;
-}
-/* Custom Mobile Sidebar Styles */
-.m-link {
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    display: block;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-    width: 100%;
-    text-align: left;
-}
+            .footer li::before {
+                content: none !important;
+            }
+            /* Custom Mobile Sidebar Styles */
+            .m-link {
+                color: #ffffff;
+                text-decoration: none;
+                font-size: 1.1rem;
+                display: block;
+                padding: 15px 0;
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+                width: 100%;
+                text-align: left;
+            }
 
-.m-trigger {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+            .m-trigger {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
 
-.m-submenu {
-    display: none; /* Hidden by default */
-    background: rgba(255, 255, 255, 0.05);
-    padding-left: 20px;
-}
+            .m-submenu {
+                display: none; /* Hidden by default */
+                background: rgba(255, 255, 255, 0.05);
+                padding-left: 20px;
+            }
 
-.m-submenu.active {
-    display: block; /* Shown when toggled */
-}
+            .m-submenu.active {
+                display: block; /* Shown when toggled */
+            }
 
-.m-sub-item {
-    display: block;
-    color: rgba(255,255,255,0.7);
-    text-decoration: none;
-    padding: 10px 0;
-    font-size: 0.95rem;
-}
+            .m-sub-item {
+                display: block;
+                color: rgba(255,255,255,0.7);
+                text-decoration: none;
+                padding: 10px 0;
+                font-size: 0.95rem;
+            }
 
-.m-sub-item:hover {
-    color: #c9a24d;
-}
+            .m-sub-item:hover {
+                color: #c9a24d;
+            }
+            .text-gold { color: var(--gold) !important; }
+            .bg-gold { background-color: var(--gold) !important; }
+            .border-gold { border-color: var(--gold) !important; }
+
+            .table-dark {
+                background-color: #3c3819 !important;
+                border-color: var(--gold);
+            }
+
+            .icon-circle {
+                width: 40px;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-shrink: 0;
+            }
+
+            /* Animations for Table */
+            .table-responsive {
+                transition: transform 0.3s ease;
+            }
+            .table-responsive:hover {
+                transform: scale(1.01);
+            }
         </style>
     </head>
 
     <body>
-        <header class="header">
+        <header class="header"> 
             <nav class="container d-flex align-items-center justify-content-between">
                 <a href="index.html">
                     <img src="assets/images/law3.png" alt="RRC Logo" class="logo-img">
@@ -171,7 +196,16 @@
                             Home
                         </a>
                     </div>    
-
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="nri-services.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            NRI Services
+                        </a>
+                    </div> 
                     <div class="dropdown">
                         <a
                             class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
@@ -183,7 +217,7 @@
                         </a>
                         <ul class="dropdown-menu shadow-lg">
                             <li>
-                                <a class="dropdown-item" href="./civil-lawyer.html">Civil litigation</a>
+                                <a class="dropdown-item" href="./civil-lawyer.html">Property Dispute</a>
                             </li>
                             <li>
                                 <a class="dropdown-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a>
@@ -195,11 +229,11 @@
                                 <a class="dropdown-item" href="./family-law.html">Family Law</a>
                             </li>
                             <li>
-                                <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
-                            </li>
-                            <li>
                                 <a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
                             </li>
+                            <li>
+                                <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
+                            </li> 
                         </ul>
                     </div>
                     <div class="dropdown mx-3 mega-dropdown-static">
@@ -281,18 +315,17 @@
             <button class="close-menu" id="closeMenu">✕</button>
             <div class="mt-5">
                 <a href="index.html" class="m-link">Home</a>
-
+                <a href="nri-services.html" class="m-link">NRI Services</a>
                 <div class="m-dropdown">
                     <a class="m-link m-trigger" href="practiceareas.html">
                         Practice Areas <i class="fa fa-chevron-down ms-2"></i>
                     </a>
                     <div class="m-submenu" id="mPracticeMenu">
-                        <a class="m-sub-item" href="./civil-lawyer.html">Civil litigation</a>
-                        <a class="m-sub-item" href="./property-dispute-lawyer.html">Real Estate & Property Law</a>
+                        <a class="m-sub-item" href="./civil-lawyer.html">Property Dispute</a>
+                        <a class="m-sub-item" href="./property-dispute-lawyer.html">Family Law</a>
                         <a class="m-sub-item" href="./criminal-law.html">Criminal Defense</a>
-                        <a class="m-sub-item" href="./family-law.html">Family Law</a>
-                        <a class="m-sub-item" href="./corporate-law.html">Corporate Law</a>
                         <a class="m-sub-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                        <a class="m-sub-item" href="./corporate-law.html">Corporate Law</a>
                     </div>
                 </div>
                 <div class="m-dropdown">
@@ -378,19 +411,20 @@
             </div>
 
             <!-- Content -->
+            
             <div class="hero-content">
                 <div class="hero-inner text-start">
                     <!-- Heading -->
-                    <h1 class="law-firm-heading p-3">
-                        <span class="rrc-text">Trusted Criminal & Civil Lawyers</span>
+                    <h1 class="law-firm-heading p-2">
+                        <span class="rrc-text"> RRC Law Associates</span>
                     </h1>
                     <!-- Subheading -->
-                    <h2 class="subheading rrc-subtext p-3">
-                        Providing strategic legal solutions in Criminal, Civil, Property and Cheque
-                        Bounce matters across Tamil Nadu courts.
+                    <h2 class="law-firm-subheading p-2 text-white">
+                        Trusted Indian Legal Experts for Global Clients
                     </h2>
+                    <p class="rrc-subtext p-2">We assist NRIs and international clients with litigation, property disputes, criminal defense, and cross-border legal matters across India—especially Tamil Nadu.</p>
                     <h2 class="law-text p-3">
-                        Need Legal Assistance? Speak to an Advocate Today
+                        Need Legal Assistance?
                     </h2>
                     <div class="hero-cta d-flex gap-3">
                         <div>
@@ -409,28 +443,17 @@
             <div class="story-content">
                 <div class="story-text">
                     <p>
-                        <strong>RRC Law Associates</strong>
-                        is a boutique litigation firm built on precision, principle, and courtroom
-                        strength. We represent clients before District Courts, High Courts, and the
-                        Supreme Court of India, delivering strategic advocacy grounded in deep legal
-                        scholarship and disciplined preparation.</p>
-                    <p>The firm carries forward the legacy of its founder,
-                        <b>Durai Balasundaram, M.A., B.L., Senior Advocate</b>
-                        — a first-generation lawyer of exceptional distinction. Born on 04 January 1937
-                        in Thanjavur, Tamil Nadu, he established a formidable reputation through decades
-                        of practice in both criminal and civil litigation.</p>
-                    <p>A Gold Medalist in M.A. Economics from Pachaiyappa's College, he earned his
-                        B.L. degree from Madras Law College and enrolled as an Advocate in 1964
-                        (Enrollment No. 227/1964). His advocacy was marked by analytical rigor,
-                        strategic clarity, and unwavering professional ethics — values that continue to
-                        define the firm.</p>
-                    <p>Established in 2025,
-                        <strong>RRC Law Associates</strong>
-                        combines legacy with contemporary litigation strategy. We approach every brief
-                        with meticulous preparation, decisive argumentation, and a clear objective: to
-                        protect our clients’ rights with authority and integrity.</p>
-                    <p>We believe that effective litigation is not merely about appearing in court —
-                        it is about mastering facts, law, and strategy long before the matter is called.</p>
+                        <strong>RRC Law Associates</strong> is a boutique litigation firm defined by precision, principle, and courtroom strength. Established in 2025, the firm carries forward the legacy of its founder, 
+                        <strong>Durai Balasundaram, M.A., B.L., Senior Advocate</strong> - A first-generation lawyer and 1964 enrollee, he built a formidable reputation in criminal and civil litigation through analytical rigor and unwavering ethics. 
+                        Today, we represent clients across 
+                        <strong>District Courts, High Courts, and the Supreme Court of India</strong>, combining deep legal scholarship with disciplined, contemporary strategy to protect our clients' rights with authority.</p>
+                    <p>
+                        We specialize in representing 
+                        <strong>NRIs, overseas citizens, and foreign nationals</strong>, serving as a transparent bridge to the Indian judicial system. Our team provides comprehensive management of 
+                        <strong>cross-border interests</strong> —including property disputes, inheritance, and matrimonial matters—leveraging technology to ensure international clients remain informed and protected regardless of distance.</p>
+                    <p>By combining meticulous preparation with a 
+                        <strong>"boots on the ground" presence</strong>, 
+                        we navigate the nuances of Indian law to offer our global clientele peace of mind. Whether resolving ancestral land issues or complex regulatory hurdles, we deliver high-stakes representation that upholds your interests with the integrity and authority of our founding legacy.</p>
                 </div>
                 <div class="story-image">
                     <img src="assets/images/founder1.png" alt="justice">
@@ -508,6 +531,36 @@
                 </div>
             </div>
         </section>
+
+        <section class="py-5">
+            <div class="container">
+                <div class="section-header text-center mb-5">
+                    <span class="eyebrow">Seamless Representation</span>
+                    <h2 class="section-title" style="color: #3c3819;">Bridging the Distance</h2>
+                </div>
+                <div class="row g-4 text-start">
+                    <div class="col-md-4">
+                        <div class="p-4 bg-white shadow-sm rounded-4 border-top border-gold border-4">
+                            <h4 class="fw-bold"><i class="fas fa-clock text-gold me-2"></i> Time-Zone Flexibility</h4>
+                            <p class="text-muted">We schedule consultations that suit your local time in the USA, UK, UAE, or Australia, ensuring you are never out of the loop.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 bg-white shadow-sm rounded-4 border-top border-gold border-4">
+                            <h4 class="fw-bold"><i class="fas fa-video text-gold me-2"></i> Virtual Hearings</h4>
+                            <p class="text-muted">Leveraging the Indian Judiciary’s VC (Video Conferencing) facilities, we enable you to attend court proceedings virtually when permitted.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="p-4 bg-white shadow-sm rounded-4 border-top border-gold border-4">
+                            <h4 class="fw-bold"><i class="fas fa-shield-check text-gold me-2"></i> Zero-Travel Litigation</h4>
+                            <p class="text-muted">Our strategic use of registered Power of Attorney (POA) allows us to file suits and execute documents on your behalf in Tamil Nadu.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- practise section -->
         <section id="practice-areas" class="practice">
             <div class="practice-sec">
@@ -545,7 +598,7 @@
                             </svg>
                             <i data-lucide="scale"></i>
                         </div>
-                        <h3>Civil & Constitutional Litigation</h3>
+                        <h3 style="font-weight: bold;">Civil & Constitutional Litigation</h3>
                         <p>District Courts, High Courts, and Supreme Court representation.</p>
                         <a href="practiceareas.html">
                             <div class="learn">Learn More
@@ -595,7 +648,7 @@
                             </svg>
                             <i data-lucide="building-2"></i>
                         </div>
-                        <h3>Corporate & Commercial Law</h3>
+                        <h3 style="font-weight: bold;">Corporate & Commercial Law</h3>
                         <p>Advisory, structuring, compliance, and commercial dispute management.</p>
                         <a href="practiceareas.html">
                             <div class="learn">Learn More
@@ -640,7 +693,7 @@
                             </svg>
                             <i data-lucide="file-text"></i>
                         </div>
-                        <h3>Real Estate & Property Law</h3>
+                        <h3 style="font-weight: bold;">Real Estate & Property Law</h3>
                         <p>Title disputes, development advisory, and land litigation.</p>
                         <a href="practiceareas.html">
                             <div class="learn">Learn More
@@ -690,7 +743,7 @@
                             </svg>
                             <i data-lucide="building-2"></i>
                         </div>
-                        <h3>Cyber Crime & Digital Law</h3>
+                        <h3 style="font-weight: bold;">Cyber Crime & Digital Law</h3>
                         <p>Advocacy against unfair business practices and defective services.</p>
                         <a href="practiceareas.html">
                             <div class="learn">Learn More
@@ -735,7 +788,7 @@
                             </svg>
                             <i data-lucide="gavel"></i>
                         </div>
-                        <h3>Criminal Defense & Appellate Practice</h3>
+                        <h3 style="font-weight: bold;">Criminal Defense & Appellate Practice</h3>
                         <p>Strategic defense, discharge, quashing, bail, and appellate advocacy.</p>
                         <a href="practiceareas.html">
                             <div class="learn">Learn More
@@ -770,7 +823,7 @@
                             </svg>
                             <i data-lucide="shield"></i>
                         </div>
-                        <h3>Employment & Immigration Law</h3>
+                        <h3 style="font-weight: bold;">Employment & Immigration Law</h3>
                         <p>Workforce structuring, regulatory compliance, and immigration representation.</p>
                         <a href="practiceareas.html">
                             <div class="learn">Learn More
@@ -785,610 +838,672 @@
     </div>
 
 </div>
-</section>
+        </section>
 
-<section id="philosophy">
-<div class="container">
-    <div class="reveal">
+        <section class="py-5 bg-light">
+    <div class="container">
+        <div class="section-header text-center mb-5">
+            <h2 class="section-title" style="color: #3c3819;">Professional vs. Informal Management</h2>
+        </div>
+        <div class="table-responsive shadow rounded-4 bg-white p-3">
+            <table class="table align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Feature</th>
+                        <th>RRC Law Associates</th>
+                        <th>Informal (Friends/Family)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="fw-bold">Documentation</td>
+                        <td class="text-success"><i class="fas fa-check-circle"></i> Legally verified & stamped</td>
+                        <td class="text-danger"><i class="fas fa-times-circle"></i> Risk of forgery/loss</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Updates</td>
+                        <td class="text-success"><i class="fas fa-check-circle"></i> Formal case tracking reports</td>
+                        <td class="text-danger"><i class="fas fa-times-circle"></i> Inconsistent communication</td>
+                    </tr>
+                    <tr>
+                        <td class="fw-bold">Authority</td>
+                        <td class="text-success"><i class="fas fa-check-circle"></i> Direct courtroom representation</td>
+                        <td class="text-danger"><i class="fas fa-times-circle"></i> No legal standing</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+        </section>
+
+        <section id="philosophy">
+        <div class="container pb-2">
+            <div class="reveal">
+                <div class="section-header">
+                    <span class="eyebrow">Who We Are</span>
+                    <h2 class="section-title" style="color: #3c3819;">Our Philosophy</h2>
+                    <center>
+                        <p>
+                            Three founding principles that define every matter we take — from the first
+                            consultation to the final judgment.
+                        </p>
+                    </center>
+                </div>
+            </div>
+
+            <!-- Cards -->
+            <div class="phil-grid">
+
+                <!-- Card 1 -->
+                <div class="phil-card reveal d1">
+                    <h3 class="card-title">Strategic Precision</h3>
+                    <div class="card-rule"></div>
+                    <p class="card-body">Every case is built on structured analysis and deliberate legal positioning.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="phil-card reveal d2">
+
+                    <h3 class="card-title">Courtroom Authority</h3>
+                    <div class="card-rule"></div>
+                    <p class="card-body">Disciplined advocacy, grounded in preparation and precedent.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="phil-card reveal d3">
+
+                    <h3 class="card-title">Client Confidence</h3>
+                    <div class="card-rule"></div>
+                    <p class="card-body">Transparent advice. Realistic assessment. Relentless representation.</p>
+                </div>
+
+            </div>
+        </div>
+        </section>
+
+        <!-- ══════════════════════════════════ NATIONAL & INTERNATIONAL SECTION
+        ══════════════════════════════════ -->
+        <section id="international">
+        <div class="container pb-1">
+            <div class="section-header">
+                <h2 class="section-title" style="color: #3c3819;">
+                    National & International Clients
+                </h2>
+            </div>
+            <!-- Top: heading + intro + stats -->
+            <div class="intl-top">
+
+                <!-- Left -->
+                <div>
+
+                    <p class="intl-intro-text reveal d2">
+                        We assist
+                        <strong>foreign investors, corporations,</strong>
+                        and instructing law firms requiring
+                        <strong>reliable Indian counsel.</strong>
+                        Our services include regulatory advisory, cross-border commercial structuring,
+                        immigration strategy, and high-stakes dispute resolution. We function as
+                        strategic partners, ensuring clarity in Indian legal processes while maintaining
+                        global professional standards.
+                    </p>
+
+                </div>
+
+                <!-- Right: stat rows -->
+                <div class="intl-right">
+                    <div class="feature-visual">
+                        <img src="assets/images/justice.jpeg" alt="justice">
+                    </div>
+                </div>
+
+            </div>
+            <!-- Service Cards -->
+            <div class="services-grid">
+
+                <!-- Card 1 -->
+                <div class="svc-card reveal d1">
+                    <span class="svc-num">01</span>
+
+                    <h4 class="svc-title">Regulatory Advisory</h4>
+                    <div class="svc-rule"></div>
+                    <p class="svc-body">Navigating India's complex regulatory landscape for foreign
+                        entities seeking market entry, operational compliance, and strategic clarity.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="svc-card reveal d2">
+                    <span class="svc-num">02</span>
+                    <!-- <div class="svc-icon"> </div> -->
+                    <h4 class="svc-title">Cross-Border Commercial Structuring</h4>
+                    <div class="svc-rule"></div>
+                    <p class="svc-body">Sophisticated deal architecture across jurisdictions —
+                        mergers, acquisitions, joint ventures, and cross-border investment frameworks.</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="svc-card reveal d3">
+                    <span class="svc-num">03</span>
+                    <!-- <div class="svc-icon"> <svg viewBox="0 0 40 40" fill="none"
+                    stroke="#c9a24d" stroke-width="1.4" stroke-linecap="round"
+                    stroke-linejoin="round"> <path d="M20 6 L20 14"/> <circle cx="20" cy="20"
+                    r="8"/> <path d="M10 34 Q20 26 30 34"/> <path d="M6 20 L12 20 M28 20 L34 20"/>
+                    </svg> </div> -->
+                    <h4 class="svc-title">Immigration Strategy</h4>
+                    <div class="svc-rule"></div>
+                    <p class="svc-body">End-to-end immigration counsel for executives, skilled
+                        professionals, and corporate mobility programmes entering or operating within
+                        India.</p>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="svc-card reveal d4">
+                    <span class="svc-num">04</span>
+
+                    <h4 class="svc-title">High-Stakes Dispute Resolution</h4>
+                    <div class="svc-rule"></div>
+                    <p class="svc-body">Arbitration, litigation, and mediation for commercial
+                        disputes with international dimensions — argued with precision and authority at
+                        every level.</p>
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+        </div>
+        </section>
+
+        <section class="py-5 bg-dark text-white">
+    <div class="container text-center">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-start">
+                <h2 style="color: var(--gold); font-family: 'Playfair Display', serif;">Security of Title Deeds</h2>
+                <p class="lead">We provide a secure custodial service for original property documents and title deeds for our international retainers.</p>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="icon-circle bg-gold me-3 p-2 rounded-circle text-black"><i class="fas fa-lock"></i></div>
+                    <span>Bank-grade security for physical documents.</span>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="icon-circle bg-gold me-3 p-2 rounded-circle text-black"><i class="fas fa-cloud"></i></div>
+                    <span>Encrypted digital backup accessible 24/7.</span>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="p-5 border border-gold rounded-4">
+                    <i class="fas fa-passport fa-4x text-gold mb-3"></i>
+                    <h4>Apostille & Attestation</h4>
+                    <p>Guidance on Indian Embassy attestation and Hague Convention Apostille services for foreign documents.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        </section>
+
+        <!-- why choose us -->
+        <section id="about" class="why-section">
+        <div class="container">
+
+        <div class="why-grid">
+
+        <!-- Image Column -->
+        <div class="image-column">
+            <div class="image-wrapper">
+                <img
+                    src="assets/images/law-office-meeting.jpg"
+                    alt="Professional law office meeting">
+                <!-- Overlay Badge -->
+                <div class="award-badge">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="64"
+                        height="64"
+                        viewbox="0 0 24 24"
+                        fill="none"
+                        stroke="#d4af37"
+                        stroke-width="1.8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <!-- Base -->
+                        <path d="M8 21h8"/>
+                        <path d="M12 17v4"/>
+
+                        <!-- Trophy Cup -->
+                        <path d="M7 4h10v4a5 5 0 0 1-10 0V4z"/>
+
+                        <!-- Handles -->
+                        <path d="M4 6a3 3 0 0 0 3 3"/>
+                        <path d="M20 6a3 3 0 0 1-3 3"/>
+
+                        <!-- Star -->
+                        <path d="M12 8l.9 1.8 2 .3-1.45 1.4.35 2-1.8-.9-1.8.9.35-2-1.45-1.4 2-.3z"/>
+                    </svg>
+                    <div>
+                        <strong>Award Winning</strong>
+                        <span>Best Law Firm 2023</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decorative Shape -->
+            <div class="decorative-bg"></div>
+        </div>
+
+        <!-- Content Column -->
+        <div class="content-column">
+            <span class="section-tag">Why Choose Us</span>
+
+            <h2>Dedicated to Your Legal Success</h2>
+
+            <p class="intro">
+                With over 20 years of experience, our team of dedicated advocates brings
+                unmatched expertise and a commitment to excellence in every case we handle.
+            </p>
+
+            <!-- Features -->
+            <div class="features-grid">
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="award">
+                            <svg
+                                class="award-icon"
+                                viewbox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                width="40"
+                                height="40">
+                                <!-- Medallion -->
+                                <circle cx="12" cy="8" r="5"/>
+                                <!-- Left ribbon -->
+                                <path d="M7 13l2 6 3-3"/>
+                                <!-- Right ribbon -->
+                                <path d="M17 13l-2 6-3-3"/>
+                            </svg>
+                        </i>
+                    </div>
+                    <div>
+                        <h3>20+ Years of Legal Experience</h3>
+                        <p>Decades of courtroom experience handling complex cases across Tamil Nadu.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="eye">
+                            <svg
+                                class="eye-icon"
+                                viewbox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                width="40"
+                                height="40">
+                                <!-- Eye outline -->
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <!-- Pupil -->
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </i>
+                    </div>
+                    <div>
+                        <h3>Ethical & Transparent Practice</h3>
+                        <p>Complete transparency in billing, case progress, and legal strategies.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="heart">
+                            <svg
+                                class="legal-solution-icon"
+                                viewbox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                width="40"
+                                height="40">
+                                <!-- Shield -->
+                                <path d="M12 2 L4 6 V12 C4 17 8 21 12 22 C16 21 20 17 20 12 V6 L12 2 Z"/>
+                                <!-- Checkmark -->
+                                <path d="M9 12 L11 14 L15 10"/>
+                            </svg>
+                        </i>
+                    </div>
+                    <div>
+                        <h3>Client-Focused Legal Solutions</h3>
+                        <p>Personalized attention and tailored strategies for every unique case.</p>
+                    </div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i data-lucide="users">
+                            <!-- Courtroom Representation Icon (Gavel) -->
+                            <svg
+                                class="courtroom-icon"
+                                viewbox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                width="40"
+                                height="40">
+                                <!-- Handle -->
+                                <path d="M2 21l10-10"/>
+                                <!-- Head of Gavel -->
+                                <rect x="12" y="2" width="8" height="4" transform="rotate(45 12 2)"/>
+                                <!-- Base -->
+                                <line x1="16" y1="8" x2="22" y2="14"/>
+                            </svg>
+                        </i>
+                    </div>
+                    <div>
+                        <h3>Strong Courtroom Representation</h3>
+                        <p>Confident and compelling advocacy in all court proceedings.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        </div>
+        </div>
+        </section>
+
+        <!-- Blog -->
+        <section class="blog-section">
+        <div class="container">
         <div class="section-header">
-            <span class="eyebrow">Who We Are</span>
-            <h2 class="section-title" style="color: #3c3819;">Our Philosophy</h2>
+        <span class="eyebrow">Blog</span>
+        <h2 class="section-title" style="color: #3c3819;">Latest Articles</h2>
+        <center>
+            <p>Stay informed with our expert legal insights</p>
+        </center>
+        </div>
+
+        <div class="blog-grid" id="blogGrid">
+        <!-- Blog Card 1 -->
+        <div class="blog-card">
+            <div class="blog-card-image">
+                <img src="assets/images/iplaw.jpeg" alt="Blog Post">
+            </div>
+            <div class="blog-card-content">
+                <span class="category-tag">IP Law</span>
+                <h3>Patent Protection Strategies for Tech Startups</h3>
+                <p class="blog-card-excerpt">
+                    Discover essential patent protection strategies that every tech startup should
+                    implement to safeguard their innovations and maintain competitive advantages.
+                </p>
+                <div class="blog-card-footer">
+                    <div class="author-info">
+                        <div class="author-avatar">JD</div>
+                        <span>John Davis</span>
+                    </div>
+                    <span class="read-time">5 min</span>
+                </div>
+            </div>
+        </div>
+        <!-- Blog Card 2 -->
+        <div class="blog-card">
+            <div class="blog-card-image">
+                <img src="assets/images/el.jpeg" alt="Blog Post">
+            </div>
+            <div class="blog-card-content">
+                <span class="category-tag">Employment</span>
+                <h3>Remote Work Policies: Legal Considerations</h3>
+                <p class="blog-card-excerpt">
+                    Explore the legal framework surrounding remote work policies, including
+                    compliance requirements, employee rights, and best practices for employers.
+                </p>
+                <div class="blog-card-footer">
+                    <div class="author-info">
+                        <div class="author-avatar">ER</div>
+                        <span>Emma Roberts</span>
+                    </div>
+                    <span class="read-time">6 min</span>
+                </div>
+            </div>
+        </div>
+        <!-- Blog Card 3 -->
+        <div class="blog-card">
+            <div class="blog-card-image">
+                <img src="assets/images/property.jpeg" alt="Blog Post">
+            </div>
+            <div class="blog-card-content">
+                <span class="category-tag">Property</span>
+                <h3>Commercial Lease Negotiations: A Complete Guide</h3>
+                <p class="blog-card-excerpt">
+                    Master the art of commercial lease negotiations with insights on key terms,
+                    common pitfalls, and strategies for securing favorable agreements.
+                </p>
+                <div class="blog-card-footer">
+                    <div class="author-info">
+                        <div class="author-avatar">MW</div>
+                        <span>Michael Wong</span>
+                    </div>
+                    <span class="read-time">7 min</span>
+                </div>
+            </div>
+        </div>
+        </div>
+        </section>
+
+        <!-- contact section -->
+        <section id="contact" class="contact-section">
+        <div class="container-sec">
+        <!-- Header -->
+        <div class="section-header reveal-up">
+            <span class="badge text-black">Get In Touch</span>
+            <h2 class="p-3 section-title" style="color: #3c3819;">Schedule Your Legal Consultation</h2>
             <center>
-                <p>
-                    Three founding principles that define every matter we take — from the first
-                    consultation to the final judgment.
+                <p class="p-2">
+                    Take the first step towards resolving your legal matters. Contact us today for a
+                    confidential consultation.
                 </p>
             </center>
         </div>
-    </div>
 
-    <!-- Cards -->
-    <div class="phil-grid">
+        <div class="contact-grid">
 
-        <!-- Card 1 -->
-        <div class="phil-card reveal d1">
-            <h3 class="card-title">Strategic Precision</h3>
-            <div class="card-rule"></div>
-            <p class="card-body">Every case is built on structured analysis and deliberate legal positioning.</p>
-        </div>
+            <!-- FORM (LEFT) -->
+            <div class="contact-form reveal-left">
+                <h3>Send us a Message</h3>
 
-        <!-- Card 2 -->
-        <div class="phil-card reveal d2">
+                <form class="contact-form">
 
-            <h3 class="card-title">Courtroom Authority</h3>
-            <div class="card-rule"></div>
-            <p class="card-body">Disciplined advocacy, grounded in preparation and precedent.</p>
-        </div>
+                    <div class="form-group">
+                        <input type="text" id="name" required="required"/>
+                        <label for="name">Full Name</label>
+                    </div>
 
-        <!-- Card 3 -->
-        <div class="phil-card reveal d3">
+                    <div class="form-group">
+                        <input type="tel" id="phone" required="required"/>
+                        <label for="phone">Phone Number</label>
+                    </div>
 
-            <h3 class="card-title">Client Confidence</h3>
-            <div class="card-rule"></div>
-            <p class="card-body">Transparent advice. Realistic assessment. Relentless representation.</p>
-        </div>
+                    <div class="form-group">
+                        <input type="email" id="email" required="required"/>
+                        <label for="email">Email Address</label>
+                    </div>
 
-    </div>
-</div>
-</section>
+                    <div class="form-group textarea-group">
+                        <textarea id="message" rows="5" required="required"></textarea>
+                        <label for="message">How Can We Help? *</label>
+                    </div>
 
-<!-- ══════════════════════════════════ NATIONAL & INTERNATIONAL SECTION
-══════════════════════════════════ -->
-<section id="international">
-<div class="container">
-    <div class="section-header">
-        <h2 class="section-title" style="color: #3c3819;">
-            National & International Clients
-        </h2>
-    </div>
-    <!-- Top: heading + intro + stats -->
-    <div class="intl-top">
+                    <button type="submit" class="submit-btn">
+                        Submit Request →
+                    </button>
+                </div>
 
-        <!-- Left -->
-        <div>
+            </form>
 
-            <p class="intl-intro-text reveal d2">
-                We assist
-                <strong>foreign investors, corporations,</strong>
-                and instructing law firms requiring
-                <strong>reliable Indian counsel.</strong>
-                Our services include regulatory advisory, cross-border commercial structuring,
-                immigration strategy, and high-stakes dispute resolution. We function as
-                strategic partners, ensuring clarity in Indian legal processes while maintaining
-                global professional standards.
-            </p>
+            <!-- INFO (RIGHT) -->
+            <div class="contact-info">
 
-        </div>
+                <h3>Contact Information</h3>
+                <p>
+                    Our team is ready to assist you with your legal needs. Reach out to us through
+                    any channel below.
+                </p>
 
-        <!-- Right: stat rows -->
-        <div class="intl-right">
-            <div class="feature-visual">
-                <img src="assets/images/justice.jpeg" alt="justice">
-            </div>
-        </div>
+                <div class="info-card">
+                    📞
+                    <span>+91 97511 82452</span>
+                </div>
 
-    </div>
-    <!-- Service Cards -->
-    <div class="services-grid">
+                <div class="info-card">
+                    ✉️
+                    <span>durai.balasundaram.advocate@gmail.com</span>
+                </div>
 
-        <!-- Card 1 -->
-        <div class="svc-card reveal d1">
-            <span class="svc-num">01</span>
+                <div class="info-card">
+                    📍
+                    <span>No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar,
+                        <br>
+                        Thanjavur, Tamil Nadu 613001</span>
+                </div>
 
-            <h4 class="svc-title">Regulatory Advisory</h4>
-            <div class="svc-rule"></div>
-            <p class="svc-body">Navigating India's complex regulatory landscape for foreign
-                entities seeking market entry, operational compliance, and strategic clarity.</p>
-        </div>
+                <div class="info-card">
+                    🕒
+                    <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
+                </div>
 
-        <!-- Card 2 -->
-        <div class="svc-card reveal d2">
-            <span class="svc-num">02</span>
-            <!-- <div class="svc-icon"> </div> -->
-            <h4 class="svc-title">Cross-Border Commercial Structuring</h4>
-            <div class="svc-rule"></div>
-            <p class="svc-body">Sophisticated deal architecture across jurisdictions —
-                mergers, acquisitions, joint ventures, and cross-border investment frameworks.</p>
-        </div>
+                <!-- MAP -->
+                <div class="map-box">
+                    <div class="map-content">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.455708022919!2d79.13827177480488!3d10.776366989372395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baab968786be449%3A0xf3215151eb7dfc74!2sRRC%20Academy%20NEET-JEE-CBSE-State%20Board%20Coaching%20Centre!5e0!3m2!1sen!2sin!4v1772106310137!5m2!1sen!2sin"
+                            width="600"
+                            height="450"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
 
-        <!-- Card 3 -->
-        <div class="svc-card reveal d3">
-            <span class="svc-num">03</span>
-            <!-- <div class="svc-icon"> <svg viewBox="0 0 40 40" fill="none"
-            stroke="#c9a24d" stroke-width="1.4" stroke-linecap="round"
-            stroke-linejoin="round"> <path d="M20 6 L20 14"/> <circle cx="20" cy="20"
-            r="8"/> <path d="M10 34 Q20 26 30 34"/> <path d="M6 20 L12 20 M28 20 L34 20"/>
-            </svg> </div> -->
-            <h4 class="svc-title">Immigration Strategy</h4>
-            <div class="svc-rule"></div>
-            <p class="svc-body">End-to-end immigration counsel for executives, skilled
-                professionals, and corporate mobility programmes entering or operating within
-                India.</p>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="svc-card reveal d4">
-            <span class="svc-num">04</span>
-
-            <h4 class="svc-title">High-Stakes Dispute Resolution</h4>
-            <div class="svc-rule"></div>
-            <p class="svc-body">Arbitration, litigation, and mediation for commercial
-                disputes with international dimensions — argued with precision and authority at
-                every level.</p>
-        </div>
-
-    </div>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- why choose us -->
-<section id="about" class="why-section">
-<div class="container">
-
-<div class="why-grid">
-
-<!-- Image Column -->
-<div class="image-column">
-    <div class="image-wrapper">
-        <img
-            src="assets/images/law-office-meeting.jpg"
-            alt="Professional law office meeting">
-        <!-- Overlay Badge -->
-        <div class="award-badge">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="64"
-                height="64"
-                viewbox="0 0 24 24"
-                fill="none"
-                stroke="#d4af37"
-                stroke-width="1.8"
-                stroke-linecap="round"
-                stroke-linejoin="round">
-                <!-- Base -->
-                <path d="M8 21h8"/>
-                <path d="M12 17v4"/>
-
-                <!-- Trophy Cup -->
-                <path d="M7 4h10v4a5 5 0 0 1-10 0V4z"/>
-
-                <!-- Handles -->
-                <path d="M4 6a3 3 0 0 0 3 3"/>
-                <path d="M20 6a3 3 0 0 1-3 3"/>
-
-                <!-- Star -->
-                <path d="M12 8l.9 1.8 2 .3-1.45 1.4.35 2-1.8-.9-1.8.9.35-2-1.45-1.4 2-.3z"/>
-            </svg>
-            <div>
-                <strong>Award Winning</strong>
-                <span>Best Law Firm 2023</span>
-            </div>
-        </div>
-    </div>
-
-    <!-- Decorative Shape -->
-    <div class="decorative-bg"></div>
-</div>
-
-<!-- Content Column -->
-<div class="content-column">
-    <span class="section-tag">Why Choose Us</span>
-
-    <h2>Dedicated to Your Legal Success</h2>
-
-    <p class="intro">
-        With over 20 years of experience, our team of dedicated advocates brings
-        unmatched expertise and a commitment to excellence in every case we handle.
-    </p>
-
-    <!-- Features -->
-    <div class="features-grid">
-
-        <div class="feature-card">
-            <div class="feature-icon">
-                <i data-lucide="award">
-                    <svg
-                        class="award-icon"
-                        viewbox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        width="40"
-                        height="40">
-                        <!-- Medallion -->
-                        <circle cx="12" cy="8" r="5"/>
-                        <!-- Left ribbon -->
-                        <path d="M7 13l2 6 3-3"/>
-                        <!-- Right ribbon -->
-                        <path d="M17 13l-2 6-3-3"/>
-                    </svg>
-                </i>
-            </div>
-            <div>
-                <h3>20+ Years of Legal Experience</h3>
-                <p>Decades of courtroom experience handling complex cases across Tamil Nadu.</p>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">
-                <i data-lucide="eye">
-                    <svg
-                        class="eye-icon"
-                        viewbox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        width="40"
-                        height="40">
-                        <!-- Eye outline -->
-                        <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
-                        <!-- Pupil -->
-                        <circle cx="12" cy="12" r="3"/>
-                    </svg>
-                </i>
-            </div>
-            <div>
-                <h3>Ethical & Transparent Practice</h3>
-                <p>Complete transparency in billing, case progress, and legal strategies.</p>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">
-                <i data-lucide="heart">
-                    <svg
-                        class="legal-solution-icon"
-                        viewbox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        width="40"
-                        height="40">
-                        <!-- Shield -->
-                        <path d="M12 2 L4 6 V12 C4 17 8 21 12 22 C16 21 20 17 20 12 V6 L12 2 Z"/>
-                        <!-- Checkmark -->
-                        <path d="M9 12 L11 14 L15 10"/>
-                    </svg>
-                </i>
-            </div>
-            <div>
-                <h3>Client-Focused Legal Solutions</h3>
-                <p>Personalized attention and tailored strategies for every unique case.</p>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <div class="feature-icon">
-                <i data-lucide="users">
-                    <!-- Courtroom Representation Icon (Gavel) -->
-                    <svg
-                        class="courtroom-icon"
-                        viewbox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.8"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        width="40"
-                        height="40">
-                        <!-- Handle -->
-                        <path d="M2 21l10-10"/>
-                        <!-- Head of Gavel -->
-                        <rect x="12" y="2" width="8" height="4" transform="rotate(45 12 2)"/>
-                        <!-- Base -->
-                        <line x1="16" y1="8" x2="22" y2="14"/>
-                    </svg>
-                </i>
-            </div>
-            <div>
-                <h3>Strong Courtroom Representation</h3>
-                <p>Confident and compelling advocacy in all court proceedings.</p>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- Blog -->
-<section class="blog-section">
-<div class="container">
-<div class="section-header">
-<span class="eyebrow">Blog</span>
-<h2 class="section-title" style="color: #3c3819;">Latest Articles</h2>
-<center>
-    <p>Stay informed with our expert legal insights</p>
-</center>
-</div>
-
-<div class="blog-grid" id="blogGrid">
-<!-- Blog Card 1 -->
-<div class="blog-card">
-    <div class="blog-card-image">
-        <img src="assets/images/iplaw.jpeg" alt="Blog Post">
-    </div>
-    <div class="blog-card-content">
-        <span class="category-tag">IP Law</span>
-        <h3>Patent Protection Strategies for Tech Startups</h3>
-        <p class="blog-card-excerpt">
-            Discover essential patent protection strategies that every tech startup should
-            implement to safeguard their innovations and maintain competitive advantages.
-        </p>
-        <div class="blog-card-footer">
-            <div class="author-info">
-                <div class="author-avatar">JD</div>
-                <span>John Davis</span>
-            </div>
-            <span class="read-time">5 min</span>
-        </div>
-    </div>
-</div>
-<!-- Blog Card 2 -->
-<div class="blog-card">
-    <div class="blog-card-image">
-        <img src="assets/images/el.jpeg" alt="Blog Post">
-    </div>
-    <div class="blog-card-content">
-        <span class="category-tag">Employment</span>
-        <h3>Remote Work Policies: Legal Considerations</h3>
-        <p class="blog-card-excerpt">
-            Explore the legal framework surrounding remote work policies, including
-            compliance requirements, employee rights, and best practices for employers.
-        </p>
-        <div class="blog-card-footer">
-            <div class="author-info">
-                <div class="author-avatar">ER</div>
-                <span>Emma Roberts</span>
-            </div>
-            <span class="read-time">6 min</span>
-        </div>
-    </div>
-</div>
-<!-- Blog Card 3 -->
-<div class="blog-card">
-    <div class="blog-card-image">
-        <img src="assets/images/property.jpeg" alt="Blog Post">
-    </div>
-    <div class="blog-card-content">
-        <span class="category-tag">Property</span>
-        <h3>Commercial Lease Negotiations: A Complete Guide</h3>
-        <p class="blog-card-excerpt">
-            Master the art of commercial lease negotiations with insights on key terms,
-            common pitfalls, and strategies for securing favorable agreements.
-        </p>
-        <div class="blog-card-footer">
-            <div class="author-info">
-                <div class="author-avatar">MW</div>
-                <span>Michael Wong</span>
-            </div>
-            <span class="read-time">7 min</span>
-        </div>
-    </div>
-</div>
-</div>
-</section>
-
-<!-- contact section -->
-<section id="contact" class="contact-section">
-<div class="container-sec">
-<!-- Header -->
-<div class="section-header reveal-up">
-    <span class="badge text-black">Get In Touch</span>
-    <h2 class="p-3 section-title" style="color: #3c3819;">Schedule Your Legal Consultation</h2>
-    <center>
-        <p class="p-2">
-            Take the first step towards resolving your legal matters. Contact us today for a
-            confidential consultation.
-        </p>
-    </center>
-</div>
-
-<div class="contact-grid">
-
-    <!-- FORM (LEFT) -->
-    <div class="contact-form reveal-left">
-        <h3>Send us a Message</h3>
-
-        <form class="contact-form">
-
-            <div class="form-group">
-                <input type="text" id="name" required="required"/>
-                <label for="name">Full Name</label>
-            </div>
-
-            <div class="form-group">
-                <input type="tel" id="phone" required="required"/>
-                <label for="phone">Phone Number</label>
-            </div>
-
-            <div class="form-group">
-                <input type="email" id="email" required="required"/>
-                <label for="email">Email Address</label>
-            </div>
-
-            <div class="form-group textarea-group">
-                <textarea id="message" rows="5" required="required"></textarea>
-                <label for="message">How Can We Help? *</label>
-            </div>
-
-            <button type="submit" class="submit-btn">
-                Submit Request →
-            </button>
-        </div>
-
-    </form>
-
-    <!-- INFO (RIGHT) -->
-    <div class="contact-info">
-
-        <h3>Contact Information</h3>
-        <p>
-            Our team is ready to assist you with your legal needs. Reach out to us through
-            any channel below.
-        </p>
-
-        <div class="info-card">
-            📞
-            <span>+91 97511 82452</span>
-        </div>
-
-        <div class="info-card">
-            ✉️
-            <span>durai.balasundaram.advocate@gmail.com</span>
-        </div>
-
-        <div class="info-card">
-            📍
-            <span>No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar,
-                <br>
-                Thanjavur, Tamil Nadu 613001</span>
-        </div>
-
-        <div class="info-card">
-            🕒
-            <span>Mon - Sat: 9:00 AM - 6:00 PM</span>
-        </div>
-
-        <!-- MAP -->
-        <div class="map-box">
-            <div class="map-content">
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.455708022919!2d79.13827177480488!3d10.776366989372395!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baab968786be449%3A0xf3215151eb7dfc74!2sRRC%20Academy%20NEET-JEE-CBSE-State%20Board%20Coaching%20Centre!5e0!3m2!1sen!2sin!4v1772106310137!5m2!1sen!2sin"
-                    width="600"
-                    height="450"
-                    style="border:0;"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-            </div>
-        </div>
-    </div>
-</div>
-</section>
-
-<!-- Scroll to Top Button -->
-<div class="scroll-top" id="scrollTop">↑</div>
-
-<footer class="footer">
-<div class="footer-contain">
-
-    <div class="footer-grid">
-
-        <!-- Brand -->
-        <div class="footer-brand">
-            <div class="logo-icon">
-                <a href="index.html" title="Home">
-                    <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
-
-                    <div>
-                        <strong>RRC</strong>
-                        <span>Law Associates</span>
                     </div>
                 </div>
-            </a>
-
-            <p>
-                Providing trusted legal solutions with integrity since 2008. Your reliable
-                partner for all legal matters in Tamil Nadu.
-            </p>
-
-            <div class="social"></div>
+            </div>
         </div>
+        </section>
 
-        <!-- Practice Areas -->
-        <div>
-            <h4>Practice Areas</h4>
-            <ul>
-                <li>
-                    <a href="civil-lawyer.html">Civil Litigation</a>
-                </li>
-                <li>
-                    <a href="family-law.html">Family Law</a>
-                </li>
-                <li>
-                    <a href="corporate-lawyer.html">Corporate Law</a>
-                </li>
-                <li>
-                    <a href="criminal-law.html">Criminal Defense</a>
-                </li>
-                <li>
-                    <a href="property-dispute-lawyer.html">Property Law</a>
-                </li>
-            </ul>
-        </div>
+        <!-- Scroll to Top Button -->
+        <div class="scroll-top" id="scrollTop">↑</div>
 
-        <!-- Quick Links -->
-        <div>
-            <h4>Quick Links</h4>
-            <ul>
-                <li>
-                    <a href="index.html">Home</a>
-                </li>
-                <li>
-                    <a href="practiceareas.html">Practice Areas</a>
-                </li>
-                <li>
-                    <a href="lawfirm-blog.html">Blog</a>
-                </li>
-                <li>
-                    <a href="#contact">Contact</a>
-                </li>
-            </ul>
-        </div>
+        <footer class="footer">
+        <div class="footer-contain">
 
-        <!-- Contact -->
-        <div>
-            <h4>Contact Us</h4>
-            <ul class="contact">
-                <li>
-                    <span>Address</span>
-                    <p>
-                        No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar, Thanjavur, Tamil Nadu-613001
-                    </p>
-                </li>
-                <li>
-                    <span>Phone</span>
-                    <a href="tel:+919876543210">+91 97511 82452</a>
-                </li>
-                <li>
-                    <span>Email</span>
-                    <a href="mailto:contact@advocatelawfirm.com">
-                        durai.balasundaram.advocate@gmail.com
+            <div class="footer-grid">
+
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="logo-icon">
+                        <a href="index.html" title="Home">
+                            <img src="assets/images/logo.png" alt="Law Firm Logo" class="logo-img">
+
+                            <div>
+                                <strong>RRC</strong>
+                                <span>Law Associates</span>
+                            </div>
+                        </div>
                     </a>
-                </li>
-            </ul>
+
+                    <p>
+                        Providing trusted legal solutions with integrity since 2008. Your reliable
+                        partner for all legal matters in Tamil Nadu.
+                    </p>
+
+                    <div class="social"></div>
+                </div>
+
+                <!-- Practice Areas -->
+                <div>
+                    <h4>Practice Areas</h4>
+                    <ul>
+                        <li>
+                            <a href="civil-lawyer.html">Civil Litigation</a>
+                        </li>
+                        <li>
+                            <a href="family-law.html">Family Law</a>
+                        </li>
+                        <li>
+                            <a href="corporate-lawyer.html">Corporate Law</a>
+                        </li>
+                        <li>
+                            <a href="criminal-law.html">Criminal Defense</a>
+                        </li>
+                        <li>
+                            <a href="property-dispute-lawyer.html">Property Law</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+                        <li>
+                            <a href="practiceareas.html">Practice Areas</a>
+                        </li>
+                        <li>
+                            <a href="lawfirm-blog.html">Blog</a>
+                        </li>
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4>Contact Us</h4>
+                    <ul class="contact">
+                        <li>
+                            <span>Address</span>
+                            <p>
+                                No 82/6B, Deen Complex,Mary's Corner, Parisutham Nagar, Thanjavur, Tamil Nadu-613001
+                            </p>
+                        </li>
+                        <li>
+                            <span>Phone</span>
+                            <a href="tel:+919876543210">+91 97511 82452</a>
+                        </li>
+                        <li>
+                            <span>Email</span>
+                            <a href="mailto:contact@advocatelawfirm.com">
+                                durai.balasundaram.advocate@gmail.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Bottom -->
+            <div class="footer-bottom">
+                <p>©
+                    <span id="year">2026</span>
+                    Branzyne. All rights reserved.</p>
+                <div class="legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">Disclaimer</a>
+                </div>
+            </div>
+
         </div>
-
-    </div>
-
-    <!-- Bottom -->
-    <div class="footer-bottom">
-        <p>©
-            <span id="year">2026</span>
-            Branzyne. All rights reserved.</p>
-        <div class="legal">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms</a>
-            <a href="#">Disclaimer</a>
-        </div>
-    </div>
-
-</div>
-</footer>
+        </footer>
 
 <a
     href="https://wa.me/919751182452?text=Hello! I'm interested in booking a desk at RRC Co-Workspace."
