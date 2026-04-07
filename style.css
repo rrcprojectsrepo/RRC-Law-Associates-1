@@ -38,7 +38,7 @@ html, body {
 }
 
 .logo-img {
-    height: 80px;
+    height: 90px;
     width: auto;
     padding: 0px;
 }
@@ -208,7 +208,7 @@ html, body {
     rgba(11, 28, 45, 0.6),
     rgba(11, 28, 45, 0.2)
   );
-  height: 850px;
+  height: 900px;
 }
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
@@ -219,10 +219,15 @@ html, body {
   }
 
   .hero-bg img {
-    height: 700px;
+    height: 800px;
     object-position: center;
   }
 
+  #home {
+    scroll-margin-top: 80px; /* height of header */
+    margin-top: 300px;
+    margin-bottom: 0;
+  }
   /* Adjust overlays for better mobile visibility */
   .overlay-x {
     background: linear-gradient(
@@ -265,8 +270,14 @@ html, body {
 
   .hero-bg img {
     animation: heroZoom 18s ease-in-out infinite;
+    height: 850px;
   }
 
+  #home {
+    scroll-margin-top: 80px; /* height of header */
+    margin-top: 350px;
+    margin-bottom: 0;
+  }
   .overlay-y {
     background: linear-gradient(
       to top,
@@ -1024,7 +1035,7 @@ p {
   color: var(--gold);
   font-size: 13px;
   letter-spacing: 3px;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
   margin: auto;
 }
