@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NRI & International Client Services | RRC Law Associates</title>
-    
+    <meta name="description" content="Legal support in India for NRIs—without traveling. Remote litigation, property audits, and family law services for the diaspora in Singapore, USA, and UK.">
+    <link rel="icon" type="image/png" href="assets/images/logo.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style2.css">
@@ -498,6 +502,33 @@
                     pointer-events: none; 
                 }
             }
+            /* Styling for the Timeline Section */
+.step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(201, 162, 77, 0.2); /* Faded gold number */
+    line-height: 1;
+}
+
+.transition-hover {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.transition-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08) !important;
+    background-color: #fff;
+}
+
+.transition-hover:hover .step-number {
+    color: var(--gold); /* Number lights up on hover */
+}
+
+.italic {
+    font-style: italic;
+}
     </style>
 </head>
 <body>
@@ -669,7 +700,7 @@
     <section class="page-header-section-nri container">
         <div class="row mt-5 align-items-center text-start">
             <div class="col-lg-7 pe-lg-5">
-                <p class="lead fw-bold">Legal Support in India for NRIs — Without You Traveling</p>
+                <p class="lead fw-bold">RRC Law Associates — Legal Support in India for NRIs</p>
                 <p>Handling legal matters from abroad can be complex. We act as your trusted legal representative in India, ensuring your interests are protected without requiring your physical presence for every hearing.</p>
                 
                 <div class="mt-4">
@@ -731,34 +762,45 @@
         </div>
     </section>
 
-    <section class="py-5">
-    <div class="container">
-        <div class=" section-header text-center mb-5">
-            <span class="eyebrow">The Remote Advocacy Process</span>
-            <h2 style="color: #3c3819; font-family: 'Playfair Display', serif; font-weight: bold;">How We Represent You Remotely</h2>
+    <section class="py-5" style="background-color: #ffffff; border-bottom: 1px solid rgba(0,0,0,0.05);">
+    <div class="container text-center">
+        <span class="eyebrow" style="color: var(--gold); letter-spacing: 3px;">Seamless Local Presence</span>
+        <h2 class="section-title mb-5" style="color: #3c3819;">How We Represent You From Abroad</h2>
+        
+        <div class="row g-4 mt-2">
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-4 h-100 shadow-sm border-bottom border-gold border-4 transition-hover">
+                    <div class="step-number mb-3">01</div>
+                    <h5 class="fw-bold mb-3">Virtual Strategy</h5>
+                    <p class="small text-muted mb-0">Initial assessment via Zoom or WhatsApp, scheduled according to your local time zone (US, UK, Singapore, UAE) to ensure seamless communication.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-4 h-100 shadow-sm border-bottom border-gold border-4 transition-hover">
+                    <div class="step-number mb-3">02</div>
+                    <h5 class="fw-bold mb-3">Remote Authorization</h5>
+                    <p class="small text-muted mb-0">Secure drafting and local adjudication of Power of Attorney (POA) documents, allowing our firm to act as your legal anchor on the ground in Tamil Nadu.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <div class="p-4 bg-white rounded-4 h-100 shadow-sm border-bottom border-gold border-4 transition-hover">
+                    <div class="step-number mb-3">03</div>
+                    <h5 class="fw-bold mb-3">Active Litigation</h5>
+                    <p class="small text-muted mb-0">Filing suits and attending court hearings on your behalf. You receive regular digital case reports and video updates without ever needing to travel.</p>
+                </div>
+            </div>
         </div>
-        <div class="row g-4">
-            <div class="service-card-nri col-md-4">
-                <div class="p-4 border-start border-gold border-4 bg-white">
-                    <h4 class="fw-bold">Virtual Consultation</h4>
-                    <p class="text-muted">Initial case assessment via Zoom, Google Meet, or WhatsApp to understand your legal standing in India.</p>
-                </div>
-            </div>
-            <div class="service-card-nri col-md-4">
-                <div class="p-4 border-start border-gold border-4 bg-white">
-                    <h4 class="fw-bold">Digital Documentation</h4>
-                    <p class="text-muted">Secure sharing of title deeds, contracts, and evidence through encrypted cloud folders.</p>
-                </div>
-            </div>
-            <div class="service-card-nri col-md-4">
-                <div class="p-4 border-start border-gold border-4 bg-white">
-                    <h4 class="fw-bold">Virtual Court Appearance</h4>
-                    <p class="text-muted">Utilizing the Indian judiciary's e-court system to represent you without requiring your physical travel.</p>
-                </div>
-            </div>
+
+        <div class="mt-5 pt-4">
+            <h3 class="fw-light italic" style="color: #3c3819; font-family: 'Playfair Display', serif;">
+                "Legal Support in India for NRIs — <span class="text-gold fw-bold">Without You Traveling.</span>"
+            </h3>
+            <p class="text-muted small mt-2">Authorized local advocacy for the global Indian diaspora.</p>
         </div>
     </div>
-    </section>
+</section>
 
     <section class="py-5 bg-dark text-white">
     <div class="container">

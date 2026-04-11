@@ -1011,7 +1011,7 @@ p {
 /* practice section */
 /* Section */
 .practice {
-  padding: 4  0px 20px 50px;
+  padding: 40px 20px 50px;
 }
 
 .practice-sec {
@@ -3837,6 +3837,49 @@ p {
 }
 
 .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* --- New Section Enhancements --- */
+.transition-hover {
+    transition: all 0.3s ease;
+}
+
+.transition-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(201, 162, 77, 0.15) !important;
+}
+
+.transition-hover:hover .step-number {
+    color: var(--gold) !important;
+    opacity: 1 !important;
+}
+
+.glass-container {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: background 0.3s ease;
+}
+
+.glass-container:hover {
+    background: rgba(201, 162, 77, 0.1) !important;
+}
+
+/* Ensure the reveal animations work with the new content */
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal-left.visible, .reveal-right.visible {
     opacity: 1;
     transform: translateX(0);
 }
