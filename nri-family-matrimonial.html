@@ -705,6 +705,45 @@
             .m-sub-item:hover {
                 color: #c9a24d;
             }
+            /* --- BREADCRUMBS STYLING --- */
+.breadcrumb-nav {
+    padding-top: 70px !important; /* Adjust based on your 80px fixed header */
+    padding-bottom: 15px !important;
+    background-color: var(--cream) !important;
+    border-bottom: 1px solid rgba(201, 162, 77, 0.2) !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "\f105" !important; /* FontAwesome chevron right */
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    color: var(--gold) !important;
+    font-size: 1rem !important;
+}
+
+.breadcrumb-item a {
+    color: var(--primary) !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    transition: color 0.3s ease !important;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--gold) !important;
+}
+
+.breadcrumb-item.active {
+    color: var(--gold) !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-nav {
+        padding-top: 90px !important;
+    }
+}
     </style>
 </head>
 <body>
@@ -896,6 +935,16 @@
         </div>
     </div>
 
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="./nri-services.html">NRI Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">NRI Family & Matrimonial</li>
+            </ol>
+        </div>
+    </nav>
+
     <section class="nri-hero">
         <div class="container">
             <div class="row align-items-center">
@@ -954,6 +1003,34 @@
             </div>
         </div>
     </section>
+
+    <nav aria-label="Page navigation" class="py-5">
+        <ul class="pagination justify-content-center custom-pagination">
+            <li class="page-item">
+                <a class="page-link" href="./nri-criminal-case.html">
+                    <i class="fas fa-chevron-left me-1"></i> Prev
+                </a>
+            </li>
+            
+            <li class="page-item" aria-current="page">
+                <a class="page-link" href="./nri-property-disputes.html">1</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="./nri-power-of-attorney.html">2</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="./nri-criminal-case.html">3</a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" href="./nri-family-matrimonial.html">4</a>
+            </li>
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                    Next <i class="fas fa-chevron-right ms-1"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
 
     <footer class="footer">
             <div class="footer-contain">

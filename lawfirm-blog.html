@@ -135,39 +135,6 @@
         color: var(--cream);
         animation: fadeInUp 1s ease-out 0.3s both;
     }
-
-    /* Breadcrumb */
-    .breadcrumb {
-        background: var(--white);
-        padding: 1rem 5%;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        transition: all 0.3s ease;
-    }
-
-    .breadcrumb.scrolled {
-        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    }
-
-    .breadcrumb-links {
-        display: flex;
-        gap: 0.5rem;
-        align-items: center;
-        font-size: 0.9rem;
-    }
-
-    .breadcrumb-links a {
-        color: var(--gold);
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-
-    .breadcrumb-links a:hover {
-        color: var(--dark);
-    }
-
     /* Main Container */
     .container {
         max-width: 1400px;
@@ -955,6 +922,45 @@
 .m-sub-item:hover {
     color: #c9a24d;
 }
+
+.breadcrumb-nav {
+    padding-top: 70px !important; /* Adjust based on your 80px fixed header */
+    padding-bottom: 0rem !important;
+    background-color: var(--cream) !important;
+    border-bottom: 1px solid rgba(201, 162, 77, 0.2) !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "\f105" !important; /* FontAwesome chevron right */
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    color: var(--gold) !important;
+    font-size: 1rem !important;
+}
+
+.breadcrumb-item a {
+    color: var(--primary) !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    transition: color 0.3s ease !important;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--gold) !important;
+}
+
+.breadcrumb-item.active {
+    color: var(--gold) !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-nav {
+        padding-top: 90px !important;
+    }
+}
     </style>
 </head>
 
@@ -1147,6 +1153,17 @@
             </div>
         </div>
     </div>
+
+    <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container pb-0">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Blog</li>
+                <li class="breadcrumb-item active" aria-current="page">Legal Insights & Updates</li>
+            </ol>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
     <div class="header-content">
         <div class="header-text">
@@ -1666,14 +1683,6 @@
                 scrollTopBtn.classList.add('visible');
             } else {
                 scrollTopBtn.classList.remove('visible');
-            }
-
-            // Sticky breadcrumb shadow
-            const breadcrumb = document.querySelector('.breadcrumb');
-            if (window.pageYOffset > 100) {
-                breadcrumb.classList.add('scrolled');
-            } else {
-                breadcrumb.classList.remove('scrolled');
             }
         });
 

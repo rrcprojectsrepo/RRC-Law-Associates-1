@@ -44,7 +44,7 @@
             .header-content {
                 position: relative;
                 width: 100%;
-                margin-top: 3rem;
+                margin-top: 0px !important;
                 height: 400px;
                 display: flex;
                 align-items: center;
@@ -715,6 +715,45 @@
   width: 100px;
 }
 
+ /* --- BREADCRUMBS STYLING --- */
+.breadcrumb-nav {
+    padding-top: 100px !important; /* Adjust based on your 80px fixed header */
+    padding-bottom: 15px !important;
+    background-color: var(--cream) !important;
+    border-bottom: 1px solid rgba(201, 162, 77, 0.2) !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "\f105" !important; /* FontAwesome chevron right */
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    color: var(--gold) !important;
+    font-size: 1rem !important;
+}
+
+.breadcrumb-item a {
+    color: var(--primary) !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    transition: color 0.3s ease !important;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--gold) !important;
+}
+
+.breadcrumb-item.active {
+    color: var(--gold) !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-nav {
+        padding-top: 90px !important;
+    }
+}
         </style>
     </head>
 
@@ -942,8 +981,15 @@
                 </div>
             </div>
         </div>
-        <br>
-        <br>
+        <nav aria-label="breadcrumb" class="breadcrumb-nav">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Practice Areas</li>
+            </ol>
+        </div>
+    </nav>
+
         <div class="header-content">
             <div class="header-text">
                 <h1>Our Practice Areas</h1>

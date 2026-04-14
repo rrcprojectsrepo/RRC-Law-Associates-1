@@ -284,3 +284,130 @@
         font-size: 18px;
     }
 }
+
+                /* --- CUSTOM PAGINATION STYLING --- */
+.custom-pagination .page-item {
+    margin: 0 5px;
+}
+
+.custom-pagination .page-link {
+    background-color: transparent;
+    border: 1px solid rgba(60, 56, 25, 0.1);
+    color: var(--primary);
+    padding: 10px 18px;
+    border-radius: 8px !important;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.custom-pagination .page-link:hover {
+    background-color: var(--gold);
+    border-color: var(--gold);
+    color: #000;
+    transform: translateY(-2px);
+}
+
+.custom-pagination .page-item.active .page-link {
+    background-color: var(--gold) !important;
+    border-color: var(--gold) !important;
+    color: #000 !important;
+    box-shadow: 0 4px 10px rgba(201, 162, 77, 0.3);
+}
+
+.custom-pagination .page-item.disabled .page-link {
+    background-color: #f8f9fa;
+    border-color: #dee2e6;
+    color: #6c757d;
+    opacity: 0.6;
+}
+
+/* Ensure icons in pagination are vertically aligned */
+.custom-pagination i {
+    font-size: 0.8rem;
+}
+
+/* --- BREADCRUMBS STYLING --- */
+.breadcrumb-nav {
+    padding-top: 90px !important; /* Adjust based on your 80px fixed header */
+    padding-bottom: 15px !important;
+    background-color: var(--cream) !important;
+    border-bottom: 1px solid rgba(201, 162, 77, 0.2) !important;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    content: "\f105" !important; /* FontAwesome chevron right */
+    font-family: "Font Awesome 6 Free" !important;
+    font-weight: 900 !important;
+    color: var(--gold) !important;
+    font-size: 1rem !important;
+}
+
+.breadcrumb-item a {
+    color: var(--primary) !important;
+    text-decoration: none !important;
+    font-size: 0.9rem !important;
+    font-weight: 500 !important;
+    transition: color 0.3s ease !important;
+}
+
+.breadcrumb-item a:hover {
+    color: var(--gold) !important;
+}
+
+.breadcrumb-item.active {
+    color: var(--gold) !important;
+    font-weight: 600 !important;
+    font-size: 0.9rem !important;
+}
+
+@media (max-width: 768px) {
+    .breadcrumb-nav {
+        padding-top: 90px !important;
+    }
+}
+
+/* CTA */
+.cta {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.cta {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+  .cta.fade-up.delay-4 {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 64px;
+  }
+
+  @media (max-width: 768px) {
+
+  .hero {
+    min-height: 62vh;
+    text-align: center;
+  }
+
+  .overlay-x {
+    background: rgba(0,0,0,0.75);
+  }
+
+  .hero-inner {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .cta {
+    justify-content: center;
+  }
+}
