@@ -909,42 +909,85 @@
             </div>
         </section>
 
-        <section class="py-5">
-            <div class="container text-center">
-                <span class="eyebrow">Our Lawyers</span>
-                <h2
-                    class="mb-5 fw-bold section-title"
-                    style="color: #3c3819; font-family: 'Playfair Display', serif;">Corporate Law Experts</h2>
-                <div class="row g-4 justify-content-center">
-                    <div class="col-6 col-md-4">
-                        <div class="advocate-card text-start h-100">
-                            <div class="image-box">
-                                <img src="assets/images/advocate-1.png" alt="Dr. N. Tamilmani">
-                            </div>
-                            <div class="advocate-content">
-                                <h3>Dr. N. Tamilmani</h3>
-                                <span>Senior Partner & Founder</span>
-                                <p>Extensive experience in Civil Law and trial representation with over 20 years
-                                    of practice.</p>
-                            </div>
-                        </div>
+        <section id="advocates" class="advocates-section">
+    <div class="container">
+        <div class="section-header text-center">
+            <span class="eyebrow">Our Team</span>
+            <h2 class="section-title" style="color: #3c3819;">Meet Our Advocates</h2>
+            <p>RRC Law Associates is composed of experienced advocates...</p>
+        </div>
+
+        <div class="advocates-slider-wrapper" style="overflow: hidden; position: relative;">
+            <div class="advocates-grid" id="advocatesGrid" style="display: flex; transition: transform 0.5s ease; gap: 24px;">
+                
+                <div class="advocate-card" style="flex: 0 0 auto; width: calc(33.333% - 16px);">
+                    <div class="image-box">
+                        <img src="assets/images/advocate5.jpeg" alt="Advocate" style="width: 100%; height: 400px; object-fit: cover;">
                     </div>
-                    <div class="col-6 col-md-4">
-                        <div class="advocate-card text-start h-100">
-                            <div class="image-box">
-                                <img src="assets/images/advocate-4.png" alt="R. Vidhya">
-                            </div>
-                            <div class="advocate-content">
-                                <h3>R. Vidhya, B.A., LL.B.</h3>
-                                <span>Member</span>
-                                <p>Expert in handling civil litigation, contract disputes, and property-related
-                                    matters.</p>
-                            </div>
-                        </div>
+                    <div class="content p-4">
+                        <h3>Hon'ble Mr. Justice (Retd) M.Karpaga Vinayagam</h3>
+                        <span class="text-gold d-block mb-2">Former Chief Justice - Jharkhand High Court</span>
+                        <p class="small">Senior Advocate - Supreme Court of India</p>
+                        <small class="text-muted">50+ Years Experience</small>
+                    </div>
+                </div>
+
+                <div class="advocate-card" style="flex: 0 0 auto; width: calc(33.333% - 16px);">
+                    <div class="image-box">
+                        <img src="assets/images/advocate3.png" alt="Advocate" style="width: 100%; height: 400px; object-fit: cover;">
+                    </div>
+                    <div class="content p-4">
+                        <h3>R. Muthukumaraswamy</h3>
+                        <span class="text-gold d-block mb-2">Senior Advocate & Co-Founder</span>
+                        <p class="small">President of the Madras Bar Association (2012-2014)</p>
+                        <small class="text-muted">19+ Years Experience</small>
+                    </div>
+                </div>
+
+                <div class="advocate-card" style="flex: 0 0 auto; width: calc(33.333% - 16px);">
+                    <div class="image-box">
+                        <img src="assets/images/advocate-2.png" alt="Advocate" style="width: 100%; height: 400px; object-fit: cover;">
+                    </div>
+                    <div class="content p-4">
+                        <h3>Adv. Mathimugam, LL.B. (Hons)</h3>
+                        <span class="text-gold d-block mb-2">Senior Associate</span>
+                        <p class="small">Family/Civil/Tort (accident claims)</p>
+                        <small class="text-muted">30+ Years Experience</small>
+                    </div>
+                </div>
+
+                <div class="advocate-card" style="flex: 0 0 auto; width: calc(33.333% - 16px);">
+                    <div class="image-box">
+                        <img src="assets/images/advocate-1.png" alt="Advocate" style="width: 100%; height: 400px; object-fit: cover;">
+                    </div>
+                    <div class="content p-4">
+                        <h3>Dr. N. Tamilmani</h3>
+                        <span class="text-gold d-block mb-2">Senior Partner & Founder</span>
+                        <p class="small">Civil, Criminal, and Constitutional Law</p>
+                        <small class="text-muted">20+ Years Experience</small>
+                    </div>
+                </div>
+
+                <div class="advocate-card" style="flex: 0 0 auto; width: calc(33.333% - 16px);">
+                    <div class="image-box">
+                        <img src="assets/images/advocate-4.png" alt="Advocate" style="width: 100%; height: 400px; object-fit: cover;">
+                    </div>
+                    <div class="content p-4">
+                        <h3>R. Vidhya, B.A., LL.B.</h3>
+                        <span class="text-gold d-block mb-2">Member</span>
+                        <p class="small">Civil, Criminal, Family Law, and Cyber Law</p>
+                        <small class="text-muted">16+ Years Experience</small>
                     </div>
                 </div>
             </div>
-        </section>
+
+            <div class="slider-controls text-center mt-4">
+                <button class="adv-prev btn btn-outline-dark rounded-circle me-2">❮</button>
+                <button class="adv-next btn btn-outline-dark rounded-circle">❯</button>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section class="py-5">
             <div class="container">
@@ -1083,6 +1126,89 @@
             <span class="float-text">Chat with us</span>
         </a>
 
+         <script>
+            document.addEventListener("DOMContentLoaded", () => {
+    const advGrid = document.getElementById("advocatesGrid");
+    const advCards = document.querySelectorAll(".advocate-card");
+    const advPrevBtn = document.querySelector(".adv-prev");
+    const advNextBtn = document.querySelector(".adv-next");
+
+    if (advGrid && advCards.length > 0) {
+        let advIndex = 0;
+        const advGap = 24; // Matches the gap in CSS
+        let autoScrollInterval;
+
+        // Calculate how many cards are visible based on screen width
+        function getVisibleCards() {
+            if (window.innerWidth > 968) return 3;
+            if (window.innerWidth > 768) return 2;
+            return 1;
+        }
+
+        function updateAdvocateSlider() {
+            const visible = getVisibleCards();
+            const cardWidth = advCards[0].offsetWidth + advGap;
+            advGrid.style.transform = `translateX(-${advIndex * cardWidth}px)`;
+        }
+
+        function moveAdvNext() {
+            const visible = getVisibleCards();
+            // Loop back to start if we reach the end
+            if (advIndex >= advCards.length - visible) {
+                advIndex = 0; 
+            } else {
+                advIndex++;
+            }
+            updateAdvocateSlider();
+        }
+
+        function moveAdvPrev() {
+            const visible = getVisibleCards();
+            if (advIndex > 0) {
+                advIndex--;
+            } else {
+                advIndex = advCards.length - visible;
+            }
+            updateAdvocateSlider();
+        }
+
+        // Auto Scroll Management
+        function startAdvAutoScroll() {
+            stopAdvAutoScroll();
+            autoScrollInterval = setInterval(moveAdvNext, 4000); // 4 seconds
+        }
+
+        function stopAdvAutoScroll() {
+            if (autoScrollInterval) clearInterval(autoScrollInterval);
+        }
+
+        // Event Listeners
+        advNextBtn?.addEventListener("click", () => {
+            moveAdvNext();
+            startAdvAutoScroll(); // Reset timer on click
+        });
+
+        advPrevBtn?.addEventListener("click", () => {
+            moveAdvPrev();
+            startAdvAutoScroll();
+        });
+
+        // Pause scroll when mouse is over the slider
+        advGrid.addEventListener("mouseenter", stopAdvAutoScroll);
+        advGrid.addEventListener("mouseleave", startAdvAutoScroll);
+
+        // Responsive handling
+        window.addEventListener("resize", () => {
+            advIndex = 0; // Reset position on resize to avoid alignment issues
+            updateAdvocateSlider();
+        });
+
+        // Initial Start
+        updateAdvocateSlider();
+        startAdvAutoScroll();
+    }
+});
+        </script>
         <script>
     document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menuToggle');
