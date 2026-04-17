@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industry Sectors | RRC Law Associates</title>
+    <meta name="description" content="Legal expertise across diverse industry sectors including Real Estate, Banking, Technology, and Defense in Tamil Nadu.">
+    
+    <link rel="icon" type="image/png" href="assets/images/law3.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style2.css">
+    <script src="./script.js"></script>
+    <script src="./script2.js"></script>
+    <style>
+        :root {
+            --primary: #3c3819;
+            --gold: #c9a24d;
+            --cream: #f9f7f3;
+            --white: #ffffff;
+            --dark: #000000;
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--primary); overflow-x: hidden; }
+
+        /* --- NAVIGATION --- */
+        .header { background: #000 !important; padding: 10px 0; position: fixed; top: 0; width: 100%; z-index: 1000; height: 80px; display: flex; align-items: center; }
+        .logo-img { height: 60px; width: auto; }
+        .nav-link-custom { color: #ffffff !important; text-decoration: none; font-weight: 500; margin: 0 15px; transition: 0.3s; }
+        .nav-link-custom:hover { color: var(--gold) !important; }
+        .dropdown-menu { background-color: #000 !important; border: 1px solid var(--gold) !important; margin-top: 10px !important; }
+        .dropdown-item { color: #fff !important; padding: 10px 20px; }
+        .dropdown-item:hover { background-color: #1a1a1a !important; color: var(--gold) !important; }
+
+        /* --- MOBILE MENU --- */
+        .mobile-menu { position: fixed; top: 0; right: -100%; width: 80%; max-width: 350px; height: 100vh; background: #000; z-index: 2000; transition: 0.4s ease; padding: 20px; overflow-y: auto; }
+        .mobile-menu.open { right: 0; }
+        .m-link { color: #fff !important; text-decoration: none; display: block; padding: 15px 0; border-bottom: 1px solid rgba(255,255,255,0.1); font-size: 1.1rem; }
+        .m-trigger { display: flex; justify-content: space-between; align-items: center; }
+        .m-submenu { display: none; background: rgba(255, 255, 255, 0.05); padding-left: 20px; }
+        .m-submenu.active { display: block; }
+        .m-sub-item { display: block; color: rgba(255,255,255,0.7); text-decoration: none; padding: 10px 0; font-size: 0.95rem; }
+
+        /* --- HERO --- */
+        .sectors-hero {
+            padding: 180px 0 80px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('./assets/images/nri-law-1.jpg');
+            background-size: cover;
+            color: white;
+            text-align: center;
+        }
+
+        .section-title { font-family: 'Playfair Display', serif; position: relative; padding-bottom: 20px; display: inline-block; }
+        .section-title::after { content: ""; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: var(--gold); }
+
+        /* --- SECTOR CONTENT SECTIONS --- */
+        .sector-row { padding: 80px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+        .bg-soft { background-color: var(--cream); }
+        .strategic-focus { border-left: 4px solid var(--gold); padding-left: 25px; margin-top: 20px; }
+        .list-expertise li { margin-bottom: 12px; font-weight: 500; font-size: 0.95rem; }
+        .list-expertise i { color: var(--gold); margin-right: 10px; }
+
+        /* --- FOOTER --- */
+        .footer { background: #081521; color: white; padding: 80px 0 30px; }
+        .reveal { opacity: 0; transform: translateY(30px); transition: 0.8s all ease; }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .btn-gold { background-color: var(--gold); color: #000; font-weight: 700; padding: 15px; border-radius: 10px; width: 100%; border: none; transition: 0.3s; }
+        .btn-gold:hover { background-color: #b38f40; transform: translateY(-2px); }
+        .eyebrow {
+                color: var(--gold);
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                font-weight: 700;
+                font-size: 0.85rem;
+                display: block;
+                margin-bottom: 10px;
+            }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+            <nav class="container d-flex align-items-center justify-content-between">
+                <a href="index.html">
+                    <img src="assets/images/law3.png" alt="RRC Logo" class="logo-img">
+                </a>
+
+                <div class="d-none d-lg-flex align-items-center ms-auto">
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="index.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+                    </div>    
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="nri-services.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            NRI Services
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
+                            href="practiceareas.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Practice Areas
+                        </a>
+                        <ul class="dropdown-menu shadow-lg">
+                            <li>
+                                <a class="dropdown-item" href="./property-disputes.html">Property Dispute</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./property-law.html">Real Estate & Property Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="family-law.html">Family Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./criminal-defense.html">Criminal Defense</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
+                            </li> 
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <a class="nav-link-custom border-0 bg-transparent p-0" 
+                        href="./sectors.html" 
+                        role="button" 
+                        data-bs-toggle="dropdown">
+                            Sectors
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="lawfirm-blog.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Blog
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="index.html#contact"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <div class="cta d-none d-sm-block">
+                        <a href="./booking.html" class="btn btn-gold">Book Consultation</a>
+                    </div>
+                    <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="close-menu" id="closeMenu">✕</button>
+        <div class="mt-5">
+            <a href="index.html" class="m-link">Home</a>
+            <a href="nri-services.html" class="m-link">NRI Services</a>
+            <div class="m-dropdown">
+                <a class="m-link m-trigger" href="practiceareas.html">
+                    Practice Areas <i class="fa fa-chevron-down ms-2"></i>
+                </a>
+                <div class="m-submenu" id="mPracticeMenu">
+                    <a class="m-sub-item" href="./property-disputes.html">Property Dispute</a>
+                    <a class="m-sub-item" href="./property-law.html">Real Estate & Property Law</a>
+                    <a class="m-sub-item" href="./family-law.html">Family Law</a>
+                    <a class="m-sub-item" href="./criminal-defense.html">Criminal Defense</a>
+                    <a class="m-sub-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                    <a class="m-sub-item" href="./corporate-law.html">Corporate Law</a>
+                </div>
+            </div>
+            <div class="m-dropdown">
+                <a class="m-link m-trigger" href="">
+                    Sectors
+                </a>
+                <div class="m-submenu" id="mSectorMenu">
+                    <a class="m-sub-item" href="#">Agriculture and Forestry</a>
+                    <a class="m-sub-item" href="#">Banking and Financial Services</a>
+                    <a class="m-sub-item" href="#">Capital Markets and Securities</a>
+                    <a class="m-sub-item" href="#">Construction and Engineering</a>
+                    <a class="m-sub-item" href="#">Defence and Internal Security</a>
+                    <a class="m-sub-item" href="#">Education</a>
+                    <a class="m-sub-item" href="#">Energy - Power & Hydrocarbons</a>
+                    <a class="m-sub-item" href="#">Hospitality, Tourism & Retail</a>
+                    <a class="m-sub-item" href="#">Insurance & Pension</a>
+                    <a class="m-sub-item" href="#">Investment Funds & Assets Management</a>
+                    <a class="m-sub-item" href="#">Life Sciences, Healthcare & Pharma</a>
+                    <a class="m-sub-item" href="#">Manufacturing</a>
+                    <a class="m-sub-item" href="#">Mines & Minerals</a>
+                    <a class="m-sub-item" href="#">Non Governmental Sector</a>
+                    <a class="m-sub-item" href="#">Real Estate</a>
+                    <a class="m-sub-item" href="#">Services</a>
+                    <a class="m-sub-item" href="#">Technology, Media & Sports</a>
+                    <a class="m-sub-item" href="#">Telecommunications & Broadcasting</a>
+                    <a class="m-sub-item" href="#">Transportation & Logistics</a>
+                    <a class="m-sub-item" href="#">Urban Infrastructure</a>
+                </div>
+            </div>
+
+            <a href="lawfirm-blog.html" class="m-link">Blog</a>
+            <a href="index.html#contact" class="m-link">Contact</a>
+
+            <div class="mt-4">
+                <a href="./booking.html" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
+            </div>
+        </div>
+    </div>
+
+    <section class="sectors-hero">
+        <div class="container">
+            <span class="eyebrow text-gold">Global Industrial Practice</span>
+            <h1 class="display-4 fw-bold section-title">Industry Sectors</h1>
+            <p class="lead opacity-75 mt-3 mx-auto" style="max-width: 800px;">Providing a definitive legal framework tailored to the regulatory and operational demands of modern industry.</p>
+        </div>
+    </section>
+
+    <section id="one" class="sector-row bg-white reveal">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">01. Real Estate, Infrastructure & Construction</h2>
+                    <p class="text-muted">Specializing in high-value land sub-divisions, urban infrastructure legalities, and FIDIC-based construction contracts. We act as a definitive shield for developers and institutional investors.</p>
+                    <ul class="list-unstyled list-expertise row mt-4">
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Title Due Diligence</li>
+                            <li><i class="fas fa-check"></i> RERA & TNRERA Compliance</li>
+                        </div>
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Smart City Legalities</li>
+                            <li><i class="fas fa-check"></i> Urban Infrastructure PPP</li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="strategic-focus">
+                        <h6 class="text-gold fw-bold">STRATEGIC FOCUS</h6>
+                        <p class="small">Protecting family heritage and corporate capital through aggressive revenue record verification and title protection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="two" class="sector-row bg-soft reveal">
+        <div class="container">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">02. Banking, Finance & Capital Markets</h2>
+                    <p class="text-muted">Representing financial institutions in debt recovery and regulatory matters. Expert navigation of SEBI frameworks and Portfolio Investment Schemes (PIS) for global investors.</p>
+                    <ul class="list-unstyled list-expertise row mt-4">
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> SARFAESI & DRT Litigation</li>
+                            <li><i class="fas fa-check"></i> Investment Fund Structuring</li>
+                        </div>
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> SEBI Compliance</li>
+                            <li><i class="fas fa-check"></i> IPO & Securities Advice</li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="strategic-focus">
+                        <h6 class="text-gold fw-bold">FINANCIAL INTEGRITY</h6>
+                        <p class="small">Ensuring seamless capital flow and asset protection through robust legal audits of financial instruments.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="three" class="sector-row bg-white reveal">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">03. Technology, Defense & Manufacturing</h2>
+                    <p class="text-muted">Strategic counsel for the digital and industrial age. We handle industrial licensing, SaaS frameworks, and internal security procurement legalities.</p>
+                    <ul class="list-unstyled list-expertise row mt-4">
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Data Privacy & Cybersecurity</li>
+                            <li><i class="fas fa-check"></i> Industrial Licensing</li>
+                        </div>
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Defense Procurement</li>
+                            <li><i class="fas fa-check"></i> SaaS & IP Management</li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="strategic-focus">
+                        <h6 class="text-gold fw-bold">DIGITAL TRUST</h6>
+                        <p class="small">Building bulletproof contractual frameworks to protect intellectual property and industrial trade secrets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="four" class="sector-row bg-soft reveal">
+        <div class="container">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">04. Agriculture, Forestry & Natural Resources</h2>
+                    <p class="text-muted">Legal expertise in land reforms, plantation laws, and resource extraction. We help clients navigate environmental clearances and complex mineral rights litigation across Tamil Nadu.</p>
+                    <ul class="list-unstyled list-expertise row mt-4">
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> AgriTech Frameworks</li>
+                            <li><i class="fas fa-check"></i> Mining Leases & Rights</li>
+                        </div>
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Environmental Compliance</li>
+                            <li><i class="fas fa-check"></i> Plantation Management</li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="strategic-focus">
+                        <h6 class="text-gold fw-bold">RESOURCE GOVERNANCE</h6>
+                        <p class="small">Balancing industrial extraction with stringent environmental and land-use regulations to ensure long-term operational viability.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="five" class="sector-row bg-white reveal">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">05. Life Sciences, Healthcare & Education</h2>
+                    <p class="text-muted">Serving the vital infrastructure of society. We provide regulatory advisory for pharmaceutical entities and comprehensive legal frameworks for educational institutions.</p>
+                    <ul class="list-unstyled list-expertise row mt-4">
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Pharma Regulatory</li>
+                            <li><i class="fas fa-check"></i> Medical Negligence Defense</li>
+                        </div>
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Institutional Accreditation</li>
+                            <li><i class="fas fa-check"></i> Clinical Trial Compliance</li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="strategic-focus">
+                        <h6 class="text-gold fw-bold">COMPLIANCE RIGOR</h6>
+                        <p class="small">Navigating the high-stakes regulatory landscape of healthcare and the evolving policy standards of the education sector.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="six" class="sector-row bg-soft reveal">
+        <div class="container">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">06. Energy, Power & Hydrocarbons</h2>
+                    <p class="text-muted">Strategic counsel for renewable energy projects and traditional power distribution. We manage Power Purchase Agreements (PPA) and oil & gas concession legalities.</p>
+                    <ul class="list-unstyled list-expertise row mt-4">
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Renewable Energy PPA</li>
+                            <li><i class="fas fa-check"></i> Hydrocarbon Licensing</li>
+                        </div>
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Electricity Law Disputes</li>
+                            <li><i class="fas fa-check"></i> Project Finance for Power</li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="strategic-focus">
+                        <h6 class="text-gold fw-bold">ENERGY SECURITY</h6>
+                        <p class="small">Securing the legal foundations of infrastructure that powers the nation, focusing on sustainability and regulatory foresight.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="seven" class="sector-row bg-white reveal">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">07. Transportation, Hospitality & B2B Services</h2>
+                    <p class="text-muted">Comprehensive support for the service economy. From multi-modal logistics and maritime law to high-end hospitality leasing and professional service agreements.</p>
+                    <ul class="list-unstyled list-expertise row mt-4">
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Supply Chain Contracts</li>
+                            <li><i class="fas fa-check"></i> Tourism & Hotel Licensing</li>
+                        </div>
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Maritime & Port Legalities</li>
+                            <li><i class="fas fa-check"></i> Professional Liability</li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="strategic-focus">
+                        <h6 class="text-gold fw-bold">OPERATIONAL EXCELLENCE</h6>
+                        <p class="small">Mitigating B2B risks and ensuring consumer compliance for global hospitality brands and logistics giants.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="eight" class="sector-row bg-soft reveal">
+        <div class="container">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-7">
+                    <h2 class="fw-bold mb-4" style="font-family: 'Playfair Display';">08. NGO, Insurance & Social Infrastructure</h2>
+                    <p class="text-muted">Expertise in social and financial security frameworks. We guide NGOs through FCRA compliance and represent entities in IRDAI-related insurance disputes.</p>
+                    <ul class="list-unstyled list-expertise row mt-4">
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> FCRA & NGO Compliance</li>
+                            <li><i class="fas fa-check"></i> Insurance Claim Litigation</li>
+                        </div>
+                        <div class="col-md-6">
+                            <li><i class="fas fa-check"></i> Pension Fund Structuring</li>
+                            <li><i class="fas fa-check"></i> Charitable Trust Law</li>
+                        </div>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="strategic-focus">
+                        <h6 class="text-gold fw-bold">SOCIAL TRUST</h6>
+                        <p class="small">Protecting the legal integrity of organizations dedicated to social welfare and financial protection.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <h5 class="text-gold fw-bold mb-4">RRC Law Associates</h5>
+            <p class="small opacity-50">Authoritative legal solutions since 1964. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const closeMenu = document.getElementById('closeMenu');
+
+            // 1. Mobile Menu Toggle
+            menuToggle?.addEventListener('click', () => mobileMenu.classList.add('open'));
+            closeMenu?.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+            // 2. Scroll Reveal Logic
+            const reveal = () => {
+                const reveals = document.querySelectorAll(".reveal");
+                reveals.forEach(el => {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = el.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - 100) el.classList.add("visible");
+                });
+            };
+            window.addEventListener("scroll", reveal);
+            reveal(); // Initial check
+
+            // 3. Desktop Nav Click-through
+            const practiceBtn = document.getElementById('practiceDropdown');
+            if (practiceBtn && window.innerWidth > 992) {
+                practiceBtn.addEventListener('click', function() {
+                    window.location.href = "practiceareas.html";
+                });
+            }
+
+            // 4. Mobile Dropdown Logic
+            const trigger = document.querySelector('.m-trigger');
+            const submenu = document.getElementById('mPracticeMenu');
+            trigger?.addEventListener('click', function(e) {
+                if (!submenu.classList.contains('active')) {
+                    e.preventDefault();
+                    submenu.classList.add('active');
+                    this.querySelector('i').style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+    </script>
+        <script>
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+        document.getElementById('closeMenu').addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const closeMenu = document.getElementById('closeMenu');
+
+    // 1. Open/Close Mobile Sidebar
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+    }
+    if (closeMenu) {
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+    }
+
+    // 2. Custom Mobile Dropdown Logic
+    const trigger = document.querySelector('.m-trigger');
+    const submenu = document.getElementById('mPracticeMenu');
+
+    if (trigger) {
+        trigger.addEventListener('click', function(e) {
+            if (!submenu.classList.contains('active')) {
+                e.preventDefault(); // Stop navigation on first click
+                submenu.classList.add('active');
+                this.querySelector('i').style.transform = 'rotate(180deg)';
+            }
+            // If already active, the link (practiceareas.html) will naturally follow.
+        });
+    }
+
+    // 3. FORCE NAVIGATION for all mobile links
+    const mobileLinks = document.querySelectorAll('.m-link, .m-sub-item');
+    mobileLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const url = this.getAttribute('href');
+            // If it's a normal link (Home, Blog, Contact) and NOT the Practice Areas trigger
+            if (url && url !== '#' && !this.classList.contains('m-trigger')) {
+                window.location.href = url;
+            }
+        });
+    });
+    
+    // 4. Desktop Navigation (Clicking parent link)
+    const practiceDropdown = document.getElementById('practiceDropdown');
+    if (practiceDropdown) {
+        practiceDropdown.addEventListener('click', function() {
+            if (window.innerWidth > 992) {
+                window.location.href = this.getAttribute('href');
+            }
+        });
+    }
+});
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+        // 1. Mobile Menu Sidebar Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+
+        if (menuToggle && mobileMenu) {
+            menuToggle.addEventListener('click', (e) => {
+                e.preventDefault();
+                mobileMenu.classList.add('open');
+            });
+        }
+
+        if (closeMenu) {
+            closeMenu.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+            });
+        }
+
+        // 2. THE ULTIMATE LINK FIX
+        // Select all nav links that have an actual destination
+        const allLinks = document.querySelectorAll('.nav-link-custom, .mobile-link');
+        
+        allLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                const destination = this.getAttribute('href');
+                
+                // If it's a real URL (not just #) and not a mobile dropdown toggle
+                if (destination && destination !== '#' && !this.classList.contains('dropdown-toggle')) {
+                    window.location.href = destination;
+                } 
+                // If it's the Practice Areas link on Desktop, force navigation
+                else if (this.id === 'practiceDropdown' && window.innerWidth > 992) {
+                    window.location.href = destination;
+                }
+            });
+        });
+    });
+    </script>
+    <script>
+                document.addEventListener('DOMContentLoaded', function() {
+        // Force direct navigation for desktop links
+        if (window.innerWidth > 992) {
+            const links = document.querySelectorAll('.nav-link-custom');
+            links.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const href = this.getAttribute('href');
+                    if (href && href !== '#' && !this.classList.contains('dropdown-toggle')) {
+                        window.location.href = href;
+                    }
+                });
+            });
+
+            // Special case for Practice Areas clickable parent
+            const practiceBtn = document.getElementById('practiceDropdown');
+            if (practiceBtn) {
+                practiceBtn.addEventListener('click', function() {
+                    window.location.href = "practiceareas.html";
+                });
+            }
+        }
+    });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuToggle = document.getElementById('menuToggle');
+            const closeMenu = document.getElementById('closeMenu');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            // Open Mobile Menu
+            if (menuToggle) {
+                menuToggle.addEventListener('click', () => {
+                    mobileMenu
+                        .classList
+                        .add('open');
+                });
+            }
+
+            // Close Mobile Menu (X button)
+            if (closeMenu) {
+                closeMenu.addEventListener('click', () => {
+                    mobileMenu
+                        .classList
+                        .remove('open');
+                });
+            }
+
+            // Close Menu on Background Click
+            document.addEventListener('click', (e) => {
+                if (mobileMenu.classList.contains('open')) {
+                    if (!mobileMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                        mobileMenu
+                            .classList
+                            .remove('open');
+                    }
+                }
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+        // Select the Practice Areas link
+        const practiceLink = document.querySelector('.dropdown-toggle[href="practiceareas.html"]');
+
+        if (practiceLink && window.innerWidth > 992) {
+            practiceLink.addEventListener('click', function(e) {
+                // Redirect to the page immediately on click
+                window.location.href = this.getAttribute('href');
+            });
+        }
+    });
+    </script>
+</body>
+</html>
