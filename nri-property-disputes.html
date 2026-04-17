@@ -693,6 +693,80 @@
                 .text-gold{
                     color: var(--gold);
                 }
+                /* --- FAQ/ACCORDION STYLES --- */
+.custom-accordion .accordion-item {
+    background-color: transparent;
+    border-color: rgba(201, 162, 77, 0.2) !important;
+}
+
+.custom-accordion .accordion-button {
+    background-color: transparent;
+    color: var(--primary);
+    padding: 20px 0;
+    box-shadow: none !important;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: var(--gold);
+    background-color: transparent;
+}
+
+/* Custom indicator icon */
+.custom-accordion .accordion-button::after {
+    background-image: none !important;
+    content: "\f067"; /* FontAwesome Plus */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--gold);
+    transform: scale(0.8);
+    transition: transform 0.3s ease;
+}
+
+.custom-accordion .accordion-button:not(.collapsed)::after {
+    content: "\f068"; /* FontAwesome Minus */
+    transform: rotate(180deg) scale(0.8);
+}
+
+.custom-accordion .accordion-body {
+    padding: 0 0 30px 0;
+    line-height: 1.8;
+}
+/* --- Step Number Styling --- */
+.step-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: rgba(201, 162, 77, 0.15); /* Faded gold behind the text */
+    line-height: 1;
+    margin-bottom: -15px;
+    margin-left: -5px;
+}
+
+/* --- Card Transition --- */
+.service-card {
+    transition: all 0.3s ease-in-out;
+    border: 1px solid rgba(0,0,0,0.05);
+    background: #fff;
+    z-index: 1;
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold);
+    box-shadow: 0 15px 30px rgba(201, 162, 77, 0.1) !important;
+}
+
+.service-card:hover .step-number {
+    color: var(--gold);
+    opacity: 0.4;
+}
+
+.service-card h5 {
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
     </style>
 </head>
 <body>
@@ -933,6 +1007,66 @@
         </div>
     </section>
 
+    <section id="how-it-works" class="py-5" style="background-color: var(--cream);">
+    <div class="container">
+        <div class="text-center mb-5 reveal">
+            <span class="eyebrow">The Remote Advocacy Process</span>
+            <h2 class="section-title" style="color: #3c3819;">Zero-Travel Legal Solutions</h2>
+            <p class="text-muted mx-auto" style="max-width: 700px;">We serve as your definitive legal anchor in Tamil Nadu, managing every aspect of your case while you remain with your family and career abroad.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4 reveal d1">
+                <div class="service-card text-start">
+                    <div class="step-number mb-3">01</div>
+                    <h5 class="fw-bold"><i class="fas fa-video text-gold me-2"></i> Video Consultation</h5>
+                    <p class="small text-muted">Initial strategy session via Zoom or WhatsApp, scheduled according to your local time zone (Singapore, UAE, USA, UK).</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal d2">
+                <div class="service-card text-start">
+                    <div class="step-number mb-3">02</div>
+                    <h5 class="fw-bold"><i class="fas fa-file-signature text-gold me-2"></i> Document Review</h5>
+                    <p class="small text-muted">Digital audit of your current deeds, Patta, Chitta, and EC to identify discrepancies or administrative gaps.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal d3">
+                <div class="service-card text-start">
+                    <div class="step-number mb-3">03</div>
+                    <h5 class="fw-bold"><i class="fas fa-gavel text-gold me-2"></i> Power of Attorney Setup</h5>
+                    <p class="small text-muted">Guidance on drafting, embassy attestation, and local adjudication of POA to allow us to represent you legally.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal d1">
+                <div class="service-card text-start">
+                    <div class="step-number mb-3">04</div>
+                    <h5 class="fw-bold"><i class="fas fa-map-marked-alt text-gold me-2"></i> Ground Verification</h5>
+                    <p class="small text-muted">Physical site inspection by our team in Tamil Nadu, including boundary checks and revenue office record cross-matching.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal d2">
+                <div class="service-card text-start">
+                    <div class="step-number mb-3">05</div>
+                    <h5 class="fw-bold"><i class="fas fa-briefcase text-gold me-2"></i> Case Filing / Negotiation</h5>
+                    <p class="small text-muted">Initiating litigation in District or High Courts, or engaging in high-stakes negotiations to resolve disputes out of court.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal d3">
+                <div class="service-card text-start">
+                    <div class="step-number mb-3">06</div>
+                    <h5 class="fw-bold"><i class="fas fa-calendar-check text-gold me-2"></i> Monthly Updates</h5>
+                    <p class="small text-muted">Transparent reporting through monthly case logs and digital updates, ensuring you are never out of the loop.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     <section class="py-5">
         <div class="container">
             <div class="row">
@@ -946,14 +1080,97 @@
                     </ul>
                     
                     <div class="p-5 bg-dark text-white rounded-4 text-center">
-                        <h3>Need a Reliable Legal Partner in India?</h3>
+                        <h3>Recover Control of Your Property Today !</h3>
                         <p class="opacity-75">Connect with our Senior Partners today for a strategy session.</p>
+                        <a href="./booking.html" target="_blank" class="btn btn-gold btn-lg mt-3">Book a Consultation</a>
                         <a href="https://wa.me/919751182452?text=Hello RRC Law Associates, I am an NRI looking for legal assistance regarding property disputes." target="_blank" class="btn btn-gold btn-lg mt-3">Chat on WhatsApp</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="faqs" class="py-5 bg-white">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="eyebrow">Common Questions</span>
+            <h2 class="section-title" style="color: #3c3819;">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="accordion accordion-flush custom-accordion" id="nriFaqAccordion">
+                    
+                    <div class="accordion-item border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                Can I file a case without coming to India?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#nriFaqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes. Through a registered Power of Attorney (POA) and leveraging the Indian Judiciary’s Video Conferencing (VC) facilities, we can initiate litigation, file documents, and represent you in court while you remain abroad[cite: 57, 59].
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                Can I give POA from abroad?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#nriFaqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes. NRIs can execute a Power of Attorney at the Indian Embassy or Consulate in their country of residence. Once sent to India, it must be adjudicated at the District Registrar's office within the legal timeframe to become valid for property transactions[cite: 58, 60].
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                How long do land disputes take?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#nriFaqAccordion">
+                            <div class="accordion-body text-muted">
+                                Property litigation timelines vary based on the complexity of the title and the court's backlog. However, by ensuring all digital records (Patta/Chitta) and revenue documents are perfectly prepared at the filing stage, we aim for the most efficient resolution possible.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                Can you inspect property physically?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#nriFaqAccordion">
+                            <div class="accordion-body text-muted">
+                                Absolutely. RRC Law Associates provides a "boots on the ground" service where we conduct physical site inspections, verify boundaries against FMB sketches, and provide timestamped digital reports to our international clients.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                Can relatives sell my property without consent?
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#nriFaqAccordion">
+                            <div class="accordion-body text-muted">
+                                Legally, no. However, misuse of an old General Power of Attorney or forged documents can occur. We recommend a regular audit of your Encumbrance Certificate (EC) and revoking any broad POAs that are no longer necessary to prevent such risks.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <nav aria-label="Page navigation" class="py-5">
         <ul class="pagination justify-content-center custom-pagination">
@@ -1069,12 +1286,13 @@
                             <li>
                                 <span style="color: #c9a24d;">Phone</span>
                                 <br>
-                                <a href="tel:+919876543210">+91 97511 82452</a>
+                                <a href="tel:+919751182452">+91 97511 82452</a>
                             </li>
                             <li>
                                 <span style="color: #c9a24d;">Email</span>
                                 <br>
-                                <a href="mailto:contact@advocatelawfirm.com">
+                                <a href="mailto:
+durai.balasundaram.advocate@gmail.com">
                                     durai.balasundaram.advocate@gmail.com
                                 </a>
                             </li>

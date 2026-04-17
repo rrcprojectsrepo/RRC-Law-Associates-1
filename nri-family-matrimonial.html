@@ -744,6 +744,151 @@
         padding-top: 90px !important;
     }
 }
+
+/* --- NRI REMOTE HELP SECTION STYLES --- */
+
+/* 1. Card Base Styling */
+.service-card {
+    background: var(--white);
+    border: 1px solid rgba(0, 0, 0, 0.05); /* Subtle border for minimalist look */
+    border-radius: 15px;
+    padding: 30px 25px;
+    height: 100%;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+}
+
+/* 2. Interactive Hover Effects */
+.transition-hover:hover {
+    transform: translateY(-10px);
+    border-color: var(--gold) !important; /* Branded gold border on hover */
+    box-shadow: 0 15px 40px rgba(201, 162, 77, 0.15) !important;
+}
+
+/* 3. Iconography Styling */
+.icon-box {
+    height: 60px;
+    width: 60px;
+    display: flex;             /* Uses flexbox to center the <i> inside */
+    align-items: center;       /* Vertical centering */
+    justify-content: center;    /* Horizontal centering */
+    background: rgba(201, 162, 77, 0.08); /* Light gold background */
+    border-radius: 12px;
+    
+    /* This centers the box itself within the card */
+    margin: 0 auto 20px auto;  
+}
+
+.service-card {
+    text-align: center;
+    padding: 30px 25px;
+}
+
+.icon-box i {
+    color: var(--gold);
+    font-size: 1.8rem;
+    
+}
+
+/* 4. Text and Hierarchy */
+.service-card h5 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+    letter-spacing: -0.02em;
+}
+
+.service-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 5. Special CTA Card (Dark Mode) */
+.service-card.bg-dark {
+    background: linear-gradient(135deg, #0b1c2d 0%, #000000 100%) !important;
+    border: 1px solid var(--gold) !important;
+}
+
+.service-card.bg-dark .text-gold {
+    color: var(--gold) !important;
+    letter-spacing: 1px;
+}
+
+/* 6. Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-card {
+        padding: 20px;
+    }
+    
+    .icon-box {
+        height: 50px;
+        width: 50px;
+    }
+}
+/* --- FAQ & ACCORDION CUSTOM STYLING --- */
+
+/* 1. Accordion Container */
+.custom-accordion .accordion-item {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(201, 162, 77, 0.2) !important; /* Gold divider */
+    margin-bottom: 0;
+}
+
+.custom-accordion .accordion-item:last-child {
+    border-bottom: none !important;
+}
+
+/* 2. Accordion Button (The Question) */
+.custom-accordion .accordion-button {
+    background-color: transparent !important;
+    color: var(--primary);
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 25px 10px;
+    box-shadow: none !important;
+    transition: all 0.3s ease;
+}
+
+/* Question color when expanded */
+.custom-accordion .accordion-button:not(.collapsed) {
+    color: var(--gold) !important;
+}
+
+/* 3. Custom Toggle Icons (Plus/Minus) */
+.custom-accordion .accordion-button::after {
+    background-image: none !important; /* Remove default Bootstrap arrow */
+    content: "\f067"; /* FontAwesome Plus Icon */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: var(--gold);
+    font-size: 0.9rem;
+    transition: transform 0.4s ease;
+}
+
+.custom-accordion .accordion-button:not(.collapsed)::after {
+    content: "\f068"; /* FontAwesome Minus Icon */
+    transform: rotate(180deg);
+}
+
+/* 4. Accordion Body (The Answer) */
+.custom-accordion .accordion-body {
+    padding: 0 10px 30px 10px;
+    color: #666;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+/* 5. Responsive Tweaks */
+@media (max-width: 768px) {
+    .custom-accordion .accordion-button {
+        font-size: 0.95rem;
+        padding: 20px 5px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -982,6 +1127,76 @@
         </div>
     </section>
 
+    <section id="remote-family-help" class="py-5" style="background-color: var(--cream);">
+    <div class="container">
+        <div class="text-center mb-5 reveal">
+            <span class="eyebrow">Compassionate Remote Advocacy</span>
+            <h2 class="section-title" style="color: #3c3819;">How We Help Remotely</h2>
+            <p class="text-muted mx-auto" style="max-width: 750px;">Matrimonial and family disputes involving NRIs require a delicate balance of emotional empathy and aggressive legal strategy. We manage the complexities of Indian family law while you maintain your life abroad.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4 reveal d1">
+                <div class="service-card p-4 h-100 border-0 shadow-sm rounded-4 bg-white transition-hover">
+                    <div class="icon-box mb-3 text-gold">
+                        <i class="fas fa-handshake fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">Confidential Consultation</h5>
+                    <p class="small text-muted mb-0">Private strategy sessions scheduled at your convenience to discuss sensitive matrimonial or custodial matters under strict legal privilege.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal d2">
+                <div class="service-card p-4 h-100 border-0 shadow-sm rounded-4 bg-white transition-hover">
+                    <div class="icon-box mb-3 text-gold">
+                        <i class="fas fa-file-contract fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">Document Review</h5>
+                    <p class="small text-muted mb-0">Comprehensive digital audit of marriage certificates, foreign court orders, and financial disclosures to build a robust legal standing.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal d3">
+                <div class="service-card p-4 h-100 border-0 shadow-sm rounded-4 bg-white transition-hover">
+                    <div class="icon-box mb-3 text-gold">
+                        <i class="fas fa-balance-scale fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">Jurisdiction Assessment</h5>
+                    <p class="small text-muted mb-0">Expert analysis to determine the appropriate forum for filing, preventing "forum shopping" and protecting you against conflicting international orders.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal d1">
+                <div class="service-card p-4 h-100 border-0 shadow-sm rounded-4 bg-white transition-hover">
+                    <div class="icon-box mb-3 text-gold">
+                        <i class="fas fa-chess-knight fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">Filing / Response Planning</h5>
+                    <p class="small text-muted mb-0">Strategic planning for divorce petitions, child custody responses, or maintenance claims, including remote representation through a Power of Attorney.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 reveal d2">
+                <div class="service-card p-4 h-100 border-0 shadow-sm rounded-4 bg-white transition-hover">
+                    <div class="icon-box mb-3 text-gold">
+                        <i class="fas fa-bell fa-2x"></i>
+                    </div>
+                    <h5 class="fw-bold">Ongoing Updates</h5>
+                    <p class="small text-muted mb-0">Regular, transparent reporting on court dates, mediation progress, and procedural milestones in India, delivered directly to your inbox or WhatsApp.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 reveal d3">
+                <div class="service-card p-4 h-100 border-gold border-2 bg-dark text-white rounded-4 shadow d-flex flex-column justify-content-center align-items-center text-center">
+                    <h5 class="fw-bold text-gold">Seek Professional Advice</h5>
+                    <p class="small opacity-75 mb-3">Family matters are deeply personal. Let us handle the legal burden for you.</p>
+                    <a href="./booking.html" class="btn btn-gold btn-sm w-100">Schedule a Strategy Call</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
     <section class="py-5">
         <div class="container">
             <div class="row">
@@ -997,12 +1212,95 @@
                     <div class="p-5 bg-dark text-white rounded-4 text-center">
                         <h3>Secure Your Peace of Mind</h3>
                         <p class="opacity-75">Speak to our family law specialists about your cross-border matrimonial concerns.</p>
+                        <a href="./booking.html" target="_blank" class="btn btn-gold btn-lg mt-3">Book Consultation</a>
                         <a href="https://wa.me/919751182452?text=Hello RRC Law Associates, I am an NRI looking for legal assistance in family matrimonial matters." target="_blank" class="btn btn-gold btn-lg mt-3">Chat on WhatsApp</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="family-faqs" class="py-5 bg-white">
+    <div class="container">
+        <div class="text-center mb-5 reveal">
+            <span class="eyebrow">Legal Clarity</span>
+            <h2 class="section-title" style="color: #3c3819;">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="accordion accordion-flush custom-accordion shadow-sm rounded-4 border p-4" id="familyFaqAccordion">
+                    
+                    <div class="accordion-item border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#ff1">
+                                Can I file for divorce in India if I live abroad?
+                            </button>
+                        </h2>
+                        <div id="ff1" class="accordion-collapse collapse" data-bs-parent="#familyFaqAccordion">
+                            <div class="accordion-body text-muted">
+                                Yes. If your marriage was solemnized in India or you last resided as a couple in India, you can file through a Power of Attorney (POA). Most family courts now allow appearances via video conferencing for initial stages and mutual consent petitions.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#ff2">
+                                Do I need to travel to India for mediation?
+                            </button>
+                        </h2>
+                        <div id="ff2" class="accordion-collapse collapse" data-bs-parent="#familyFaqAccordion">
+                            <div class="accordion-body text-muted">
+                                Not necessarily. We actively move applications to conduct mediation sessions via online platforms. Our Senior Partners represent your interests during these sessions to ensure a fair negotiation without requiring your physical presence.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#ff3">
+                                How is child custody handled for NRI parents?
+                            </button>
+                        </h2>
+                        <div id="ff3" class="accordion-collapse collapse" data-bs-parent="#familyFaqAccordion">
+                            <div class="accordion-body text-muted">
+                                Indian courts prioritize the "best interest of the child." We help you navigate the complexities of the Guardian and Wards Act, including managing visitation rights and ensuring foreign court orders are recognized or contested effectively in India.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#ff4">
+                                What if my spouse files a case in India while I am abroad?
+                            </button>
+                        </h2>
+                        <div id="ff4" class="accordion-collapse collapse" data-bs-parent="#familyFaqAccordion">
+                            <div class="accordion-body text-muted">
+                                If you receive a notice or summons, it is critical to respond through a lawyer immediately. We can represent you to challenge the jurisdiction, file a counter-response, or seek a stay on proceedings if a similar case is already active in your country of residence.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-bottom">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#ff5">
+                                Is a foreign divorce decree valid in India?
+                            </button>
+                        </h2>
+                        <div id="ff5" class="accordion-collapse collapse" data-bs-parent="#familyFaqAccordion">
+                            <div class="accordion-body text-muted">
+                                A foreign decree is valid only if it meets specific conditions under Section 13 of the Civil Procedure Code (CPC). If the decree was granted ex-parte or on grounds not recognized in India, it may need to be "confirmed" or "contested" in an Indian court.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
     <nav aria-label="Page navigation" class="py-5">
         <ul class="pagination justify-content-center custom-pagination">
@@ -1118,12 +1416,13 @@
                             <li>
                                 <span style="color: #c9a24d;">Phone</span>
                                 <br>
-                                <a href="tel:+919876543210">+91 97511 82452</a>
+                                <a href="tel:+919751182452">+91 97511 82452</a>
                             </li>
                             <li>
                                 <span style="color: #c9a24d;">Email</span>
                                 <br>
-                                <a href="mailto:contact@advocatelawfirm.com">
+                                <a href="mailto:
+durai.balasundaram.advocate@gmail.com">
                                     durai.balasundaram.advocate@gmail.com
                                 </a>
                             </li>
