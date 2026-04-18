@@ -136,6 +136,15 @@
 }
 
 /* Specific Flag Images */
+.loc-usa::before {
+    background-image: url('https://flagcdn.com/w1160/us.webp');
+}
+.loc-uk::before {
+    background-image: url('https://flagcdn.com/w1160/gb.webp');
+}
+.loc-uae::before {
+    background-image: url('https://flagcdn.com/w1160/ae.webp');
+}
 .loc-singapore::before {
     background-image: url('https://flagcdn.com/w640/sg.png');
 }
@@ -297,6 +306,7 @@
 
 .text-gold {
     color: var(--gold) !important;
+    font-size: 29px !important;
 }
 
 .bg-dark {
@@ -530,6 +540,18 @@
 .italic {
     font-style: italic;
 }
+
+.card-cont{
+    gap: 24px;
+   
+}
+
+.card{
+background: #fff;
+width: 350px;
+padding: 28px;
+border-radius:8px;
+}
     </style>
 </head>
 <body>
@@ -692,18 +714,39 @@
         <div class="section-header text-center mb-5">
             <span class="eyebrow">Global Reach</span>
             <h2 class="section-title" style="color: var(--gold);">Serving the Indian Diaspora Globally</h2>
-            <p class="mt-3 text-white-50">We provide seamless legal representation for NRIs residing in these major international hubs.</p>
+            <p class="mt-3 text-white-50">We provide seamless legal representation.</p>
         </div>
 
         <div class="row g-4 text-center justify-content-center">
-            <div class="col-6 col-md-4 col-lg-3">
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="location-box loc-usa p-5 px-3 border border-secondary rounded-4 h-100 position-relative overflow-hidden">
+                    <div class=" location-content position-relative" style="z-index: 2;">
+                        <h5 class="fw-bold mb-0">USA</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="location-box loc-uk p-5 px-3 border border-secondary rounded-4 h-100 position-relative overflow-hidden">
+                    <div class=" location-content position-relative" style="z-index: 2;">
+                        <h5 class="fw-bold mb-0">UK</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
+                <div class="location-box loc-uae p-5 px-3 border border-secondary rounded-4 h-100 position-relative overflow-hidden">
+                    <div class=" location-content position-relative" style="z-index: 2;">
+                        <h5 class="fw-bold mb-0">UAE</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-2">
                 <div class="location-box loc-singapore p-5 px-3 border border-secondary rounded-4 h-100 position-relative overflow-hidden">
                     <div class=" location-content position-relative" style="z-index: 2;">
                         <h5 class="fw-bold mb-0">Singapore</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-6 col-md-4 col-lg-3">
+            <div class="col-6 col-md-4 col-lg-2">
                 <div class="location-box loc-malaysia p-5 border border-secondary rounded-4 h-100 position-relative overflow-hidden">
                     <div class="location-content position-relative" style="z-index: 2;">
                         <h5 class="fw-bold mb-0">Malaysia</h5>
@@ -714,6 +757,30 @@
         
         <div class="text-center mt-5">
             <p class="small text-white-50 italic">*Our remote litigation and documentation services are available for NRIs across Southeast Asia.</p>
+        </div>
+    </div>
+    </section>
+
+    <section class="py-5" style="background-color: #ffffff; border-bottom: 1px solid rgba(0,0,0,0.05);">
+    <div class="container text-center">
+        <h2 class="section-title mb-5" style="color: #3c3819;">Facing Legal Issues in India While You Are Abroad?</h2>
+        
+        <div class="row card-cont justify-content-center">
+            <div class="col-6 col-md-4 card border-gold border-2 transition-hover">
+                <span style="font-weight: bold;">Property illegally occupied</span>
+            </div>
+            <div class="col-6 col-md-4 card border-gold border-2 transition-hover">
+                <span style="font-weight: bold;">Unable to attend court hearings</span>
+            </div>
+            <div class="col-6 col-md-4 card border-gold border-2 transition-hover">
+                <span style="font-weight: bold;">No trusted legal support in India</span>
+            </div>
+        </div>
+
+        <div class="mt-5 pt-4">
+            <h3 class="fw-light italic" style="color: #3c3819; font-family: 'Playfair Display', serif;">
+                "We handle everything legally and professionally — <span class="text-gold fw-bold">without requiring your presence.</span>"
+            </h3>
         </div>
     </div>
     </section>
@@ -732,6 +799,8 @@
                 
                 <div class="mt-5">
                     <a href="./booking.html" class="btn btn-gold">Book Consultation</a>
+                </div>
+                <div class="mt-2">
                     <a href="mailto:durai.balasundaram.advocate@gmail.com" class="btn btn-gold">Email Documents</a>
                 </div>
             </div>
@@ -999,6 +1068,9 @@
                             </li>
                             <li>
                                 <a href="practiceareas.html">Practice Areas</a>
+                            </li>
+                            <li>
+                                <a href="sectors.html">Sectors</a>
                             </li>
                             <li>
                                 <a href="lawfirm-blog.html">Blog</a>

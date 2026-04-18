@@ -1435,34 +1435,38 @@
             <div class="contact-form reveal-left">
                 <h3>Send us a Message</h3>
 
-                <form class="contact-form">
+                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                    <input type="hidden" name="access_key" value="9224da32-10aa-4778-9846-3ee9be7df950">
+                    
+                    <input type="hidden" name="subject" value="New Inquiry from RRC Law Associates">
+                    
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
                     <div class="form-group">
-                        <input type="text" id="name" required="required"/>
+                        <input type="text" id="name" name="name" required="required"/>
                         <label for="name">Full Name</label>
                     </div>
 
                     <div class="form-group">
-                        <input type="tel" id="phone" required="required"/>
+                        <input type="tel" id="phone" name="phone" required="required"/>
                         <label for="phone">Phone Number</label>
                     </div>
 
                     <div class="form-group">
-                        <input type="email" id="email" required="required"/>
+                        <input type="email" id="email" name="email" required="required"/>
                         <label for="email">Email Address</label>
                     </div>
 
                     <div class="form-group textarea-group">
-                        <textarea id="message" rows="5" required="required"></textarea>
+                        <textarea id="message" name="message" rows="5" required="required"></textarea>
                         <label for="message">How Can We Help? *</label>
                     </div>
 
                     <button type="submit" class="submit-btn">
                         Submit Request →
                     </button>
-                </div>
-
-            </form>
+                </form>
+            </div>
 
             <!-- INFO (RIGHT) -->
             <div class="contact-info">
@@ -1578,6 +1582,9 @@
                         </li>
                         <li>
                             <a href="practiceareas.html">Practice Areas</a>
+                        </li>
+                        <li>
+                            <a href="sectors.html">Sectors</a>
                         </li>
                         <li>
                             <a href="lawfirm-blog.html">Blog</a>

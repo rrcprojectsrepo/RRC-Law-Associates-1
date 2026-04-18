@@ -62,6 +62,9 @@
             content: ""; position: absolute; top:0; left:0; width:100%; height:100%;
             opacity: 0.7; z-index: 0; background-size: cover; 
         }
+        .loc-usa::before { background-image: url('https://flagcdn.com/w1160/us.webp'); }
+        .loc-uk::before { background-image: url('https://flagcdn.com/w1160/gb.webp'); }
+        .loc-uae::before { background-image: url('https://flagcdn.com/w1160/ae.webp'); }
         .loc-sg::before { background-image: url('https://flagcdn.com/w640/sg.png'); }
         .loc-my::before { background-image: url('https://flagcdn.com/w640/my.png'); }
 
@@ -993,15 +996,25 @@
         <div class="container text-center">
             <h2 class="mb-5" style="font-family: 'Playfair Display'; font-weight: bold;">Global NRI Desk Availability</h2>
             <div class="row g-4 justify-content-center">
-                <div class="col-6 col-md-3">
-                    <div class="location-box loc-sg p-4">
-                    </div>
-                    <div class="location-content"><h5>Singapore</h5></div>
+                <div class="col-6 col-md-2">
+                    <div class="location-box loc-usa p-4"></div>
+                    <div class="location-content mt-2"><h5>USA</h5></div>
                 </div>
-                <div class="col-6 col-md-3">
-                    <div class="location-box loc-my p-4">
-                    </div>
-                    <div class="location-content"><h5>Malaysia</h5></div>
+                <div class="col-6 col-md-2">
+                    <div class="location-box loc-uk p-4"></div>
+                    <div class="location-content mt-2"><h5>UK</h5></div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="location-box loc-uae p-4"></div>
+                    <div class="location-content mt-2"><h5>UAE</h5></div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="location-box loc-sg p-4"></div>
+                    <div class="location-content mt-2"><h5>Singapore</h5></div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="location-box loc-my p-4"></div>
+                    <div class="location-content mt-2"><h5>Malaysia</h5></div>
                 </div>
             </div>
         </div>
@@ -1263,6 +1276,9 @@
                             </li>
                             <li>
                                 <a href="practiceareas.html">Practice Areas</a>
+                            </li>
+                            <li>
+                                <a href="sectors.html">Sectors</a>
                             </li>
                             <li>
                                 <a href="lawfirm-blog.html">Blog</a>
