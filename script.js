@@ -385,3 +385,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
   }); 
+
+  
+    document.addEventListener('DOMContentLoaded', function() {
+    // Select the Practice Areas link
+    const practiceLink = document.querySelector('.dropdown-toggle[href="nri-services.html"]');
+
+    if (practiceLink && window.innerWidth > 992) {
+        practiceLink.addEventListener('click', function(e) {
+            // Redirect to the page immediately on click
+            window.location.href = this.getAttribute('href');
+        });
+    }
+});
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Select the Practice Areas link
+    const practiceLink = document.querySelector('.dropdown-toggle[href="sectors.html"]');
+
+    if (practiceLink && window.innerWidth > 992) {
+        practiceLink.addEventListener('click', function(e) {
+            // Redirect to the page immediately on click
+            window.location.href = this.getAttribute('href');
+        });
+    }
+});
+
+    document.addEventListener('DOMContentLoaded', function() {
+    // Select the Practice Areas link
+    const practiceLink = document.querySelector('.dropdown-toggle[href="practiceareas.html"]');
+
+    if (practiceLink && window.innerWidth > 992) {
+        practiceLink.addEventListener('click', function(e) {
+            // Redirect to the page immediately on click
+            window.location.href = this.getAttribute('href');
+        });
+    }
+});

@@ -760,35 +760,217 @@
 </head>
 <body>
 
-    <header class="header">
-        <nav class="container d-flex align-items-center justify-content-between">
-            <a href="index.html"><img src="assets/images/rrclogo.png" alt="RRC Logo" class="logo-img"></a>
-            <div class="d-none d-lg-flex align-items-center ms-auto">
-                <a href="index.html" class="nav-link-custom">Home</a>
-                <a href="nri-services.html" class="nav-link-custom">NRI Services</a>
-                <a href="practiceareas.html" class="nav-link-custom">Practice Areas</a>
-                <a href="sectors.html" class="nav-link-custom">Sectors</a>
-                <a href="lawfirm-blog.html" class="nav-link-custom">Blog</a>
-                <a href="contact.html" class="nav-link-custom">Contact</a>
-            </div>
-            <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle"><i class="fa fa-bars"></i></button>
-        </nav>
-    </header>
+            <header class="header"> 
+            <nav class="container d-flex align-items-center justify-content-between">
+                <a href="index.html">
+                    <img src="assets/images/rrclogo.png" alt="RRC Logo" class="logo-img">
+                </a>
 
-            <div class="mobile-menu" id="mobileMenu">
+                <div class="d-none d-lg-flex align-items-center ms-auto">
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="index.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Home
+                        </a>
+                    </div>    
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
+                            href="nri-services.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            NRI Services
+                        </a>
+                        <ul class="dropdown-menu shadow-lg">
+                            <li>
+                                <a class="dropdown-item" href="nri-property-disputes.html">Property Dispute</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="nri-power-of-attorney.html">Power of Attorney</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="nri-criminal-case.html">Criminal Cases</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="nri-family-matrimonial.html">Family & Matrimonial</a>
+                            </li>
+                        </ul>
+                    </div> 
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
+                            href="practiceareas.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Practice Areas
+                        </a>
+                        <ul class="dropdown-menu shadow-lg">
+                            <li>
+                                <a class="dropdown-item" href="./property-disputes.html">Property Dispute</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./property-law.html">Real Estate & Property Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="family-law.html">Family Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./criminal-defense.html">Criminal Defense</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./cyber-crime-law.html">Cyber Crime Law</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="./corporate-law.html">Corporate Law</a>
+                            </li> 
+                        </ul>
+                    </div>
+                    <div class="dropdown mx-3 mega-dropdown-static">
+                        <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" 
+                        href="./sectors.html" 
+                        role="button" 
+                        data-bs-toggle="dropdown">
+                            Sectors
+                        </a>
+                        <div class="dropdown-menu mega-menu shadow-lg border-0">
+                            <div class="container-fluid">
+                                <div class="row g-0">
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="./sectors.html#four">Agriculture and Forestry</a>
+                                        <a class="dropdown-item" href="./sectors.html#three">Defence and Internal Security</a>
+                                        <a class="dropdown-item" href="./sectors.html#eight">Insurance & Pension</a>
+                                        <a class="dropdown-item" href="./sectors.html#four">Mines & Minerals</a>
+                                        <a class="dropdown-item" href="./sectors.html#three">Technology, Media & Sports</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="./sectors.html#two">Banking and Financial Services</a>
+                                        <a class="dropdown-item" href="./sectors.html#five">Education</a>
+                                        <a class="dropdown-item" href="./sectors.html#two">Investment Funds & Assets Management</a>
+                                        <a class="dropdown-item" href="./sectors.html#eight">Non Governmental Sector</a>
+                                        <a class="dropdown-item" href="./sectors.html#three">Telecommunications & Broadcasting</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="./sectors.html#two">Capital Markets and Securities</a>
+                                        <a class="dropdown-item" href="./sectors.html#six">Energy - Power & Hydrocarbons</a>
+                                        <a class="dropdown-item" href="./sectors.html#five">Life Sciences, Healthcare & Pharma</a>
+                                        <a class="dropdown-item" href="./sectors.html#one">Real Estate</a>
+                                        <a class="dropdown-item" href="./sectors.html#seven">Transportation & Logistics</a>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <a class="dropdown-item" href="./sectors.html#one">Construction and Engineering</a>
+                                        <a class="dropdown-item" href="./sectors.html#seven">Hospitality, Tourism & Retail</a>
+                                        <a class="dropdown-item" href="./sectors.html#three">Manufacturing</a>
+                                        <a class="dropdown-item" href="./sectors.html#seven">Services</a>
+                                        <a class="dropdown-item" href="./sectors.html#one">Urban Infrastructure</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="lawfirm-blog.html"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Blog
+                        </a>
+                    </div>
+                    <div class="dropdown">
+                        <a
+                            class="nav-link-custom border-0 bg-transparent p-0"
+                            href="index.html#contact"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Contact
+                        </a>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center gap-3">
+                    <div class="cta d-none d-sm-block">
+                        <a href="./booking.html" class="btn btn-gold">Book Consultation</a>
+                    </div>
+                    <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <div class="mobile-menu" id="mobileMenu">
             <button class="close-menu" id="closeMenu">✕</button>
             <div class="mt-5">
                 <a href="index.html" class="m-link">Home</a>
-                <a href="nri-services.html" class="m-link">NRI Services</a>
-                <a class="m-link m-trigger" href="practiceareas.html">
-                    Practice Areas
-                </a>
-                <a href="./sectors.html" class="m-link">Sectors</a>
+                <div class="m-dropdown">
+                    <a class="m-link m-trigger" href="nri-services.html">
+                        NRI Services <i class="fa fa-chevron-down ms-2"></i>
+                    </a>
+                    <div class="m-submenu" id="mPracticeMenu">
+                        <a class="m-sub-item" href="nri-property-disputes.html">Property Dispute</a>
+                        <a class="m-sub-item" href="nri-power-of-attorney.html">Power of Attorney</a>
+                        <a class="m-sub-item" href="nri-criminal-case.html">Criminal Case</a>
+                        <a class="m-sub-item" href="nri-family-matrimonial.html">Family & Matrimonial</a>
+                    </div>
+                </div>
+                <div class="m-dropdown">
+                    <a class="m-link m-trigger" href="practiceareas.html">
+                        Practice Areas <i class="fa fa-chevron-down ms-2"></i>
+                    </a>
+                    <div class="m-submenu" id="mPracticeMenu">
+                        <a class="m-sub-item" href="./property-disputes.html">Property Dispute</a>
+                        <a class="m-sub-item" href="./property-law.html">Real Estate & Property Law</a>
+                        <a class="m-sub-item" href="./family-law.html">Family Law</a>
+                        <a class="m-sub-item" href="./criminal-defense.html">Criminal Defense</a>
+                        <a class="m-sub-item" href="./cyber-crime-law.html">Cyber Crime Law</a>
+                        <a class="m-sub-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                        <a class="m-sub-item" href="./corporate-law.html">Corporate Law</a>
+                    </div>
+                </div>
+                <div class="m-dropdown">
+                    <a class="m-link m-trigger" href="">
+                        Sectors <i class="fa fa-chevron-down ms-2"></i>
+                    </a>
+                    <div class="m-submenu" id="mSectorMenu">
+                        <a class="m-sub-item" href="./sectors.html#four">Agriculture and Forestry</a>
+                        <a class="m-sub-item" href="./sectors.html#two">Banking and Financial Services</a>
+                        <a class="m-sub-item" href="./sectors.html#two">Capital Markets and Securities</a>
+                        <a class="m-sub-item" href="./sectors.html#one">Construction and Engineering</a>
+                        <a class="m-sub-item" href="./sectors.html#three">Defence and Internal Security</a>
+                        <a class="m-sub-item" href="./sectors.html#five">Education</a>
+                        <a class="m-sub-item" href="./sectors.html#six">Energy - Power & Hydrocarbons</a>
+                        <a class="m-sub-item" href="./sectors.html#seven">Hospitality, Tourism & Retail</a>
+                        <a class="m-sub-item" href="./sectors.html#eight">Insurance & Pension</a>
+                        <a class="m-sub-item" href="./sectors.html#two">Investment Funds & Assets Management</a>
+                        <a class="m-sub-item" href="./sectors.html#five">Life Sciences, Healthcare & Pharma</a>
+                        <a class="m-sub-item" href="./sectors.html#three">Manufacturing</a>
+                        <a class="m-sub-item" href="./sectors.html#four">Mines & Minerals</a>
+                        <a class="m-sub-item" href="./sectors.html#eight">Non Governmental Sector</a>
+                        <a class="m-sub-item" href="./sectors.html#one">Real Estate</a>
+                        <a class="m-sub-item" href="./sectors.html#seven">Services</a>
+                        <a class="m-sub-item" href="./sectors.html#three">Technology, Media & Sports</a>
+                        <a class="m-sub-item" href="./sectors.html#three">Telecommunications & Broadcasting</a>
+                        <a class="m-sub-item" href="./sectors.html#seven">Transportation & Logistics</a>
+                        <a class="m-sub-item" href="./sectors.html#one">Urban Infrastructure</a>
+                    </div>
+                </div>
+
                 <a href="lawfirm-blog.html" class="m-link">Blog</a>
                 <a href="index.html#contact" class="m-link">Contact</a>
 
                 <div class="mt-4">
-                    <a href="index.html#contact" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
+                    <a href="./booking.html" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
                 </div>
             </div>
         </div>
@@ -1013,8 +1195,8 @@
                         <li>
                             <span>Email</span>
                             <a href="mailto:
-durai.balasundaram.advocate@gmail.com">
-                                durai.balasundaram.advocate@gmail.com
+dr.kumar@rrclawassociates.com">
+                                dr.kumar@rrclawassociates.com
                             </a>
                         </li>
                     </ul>

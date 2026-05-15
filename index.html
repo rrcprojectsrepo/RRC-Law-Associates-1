@@ -212,7 +212,7 @@
                     <div class="dropdown">
                         <a
                             class="nav-link-custom border-0 bg-transparent p-0"
-                            href="index.html"
+                            href="index.html/"
                             role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -221,13 +221,27 @@
                     </div>    
                     <div class="dropdown">
                         <a
-                            class="nav-link-custom border-0 bg-transparent p-0"
+                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
                             href="nri-services.html"
                             role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false">
                             NRI Services
                         </a>
+                        <ul class="dropdown-menu shadow-lg">
+                            <li>
+                                <a class="dropdown-item" href="nri-property-disputes.html">Property Dispute</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="nri-power-of-attorney.html">Power of Attorney</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="nri-criminal-case.html">Criminal Cases</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="nri-family-matrimonial.html">Family & Matrimonial</a>
+                            </li>
+                        </ul>
                     </div> 
                     <div class="dropdown">
                         <a
@@ -341,7 +355,17 @@
             <button class="close-menu" id="closeMenu">✕</button>
             <div class="mt-5">
                 <a href="index.html" class="m-link">Home</a>
-                <a href="nri-services.html" class="m-link">NRI Services</a>
+                <div class="m-dropdown">
+                    <a class="m-link m-trigger" href="nri-services.html">
+                        NRI Services <i class="fa fa-chevron-down ms-2"></i>
+                    </a>
+                    <div class="m-submenu" id="mPracticeMenu">
+                        <a class="m-sub-item" href="nri-property-disputes.html">Property Dispute</a>
+                        <a class="m-sub-item" href="nri-power-of-attorney.html">Power of Attorney</a>
+                        <a class="m-sub-item" href="nri-criminal-case.html">Criminal Case</a>
+                        <a class="m-sub-item" href="nri-family-matrimonial.html">Family & Matrimonial</a>
+                    </div>
+                </div>
                 <div class="m-dropdown">
                     <a class="m-link m-trigger" href="practiceareas.html">
                         Practice Areas <i class="fa fa-chevron-down ms-2"></i>
@@ -1498,7 +1522,7 @@
 
                 <div class="info-card">
                     ✉️
-                    <span>durai.balasundaram.advocate@gmail.com</span>
+                    <span>dr.kumar@rrclawassociates.com</span>
                 </div>
 
                 <div class="info-card">
@@ -1626,8 +1650,8 @@
                         <li>
                             <span>Email</span>
                             <a href="mailto:
-durai.balasundaram.advocate@gmail.com">
-                                durai.balasundaram.advocate@gmail.com
+dr.kumar@rrclawassociates.com">
+                                dr.kumar@rrclawassociates.com
                             </a>
                         </li>
                     </ul>
@@ -1755,6 +1779,7 @@ durai.balasundaram.advocate@gmail.com">
     });
 });
 </script>
+
 <script>
             document.addEventListener('DOMContentLoaded', function() {
     // Force direct navigation for desktop links
@@ -1781,6 +1806,7 @@ durai.balasundaram.advocate@gmail.com">
     }
 });
 </script>
+
 <script>
     // 2. Custom Mobile Dropdown Logic (Handles Multiple Dropdowns)
 const mobileTriggers = document.querySelectorAll('.m-trigger');
@@ -1805,30 +1831,7 @@ mobileTriggers.forEach(trigger => {
     });
 });
 </script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    // Force direct navigation for desktop links
-    if (window.innerWidth > 992) {
-        const links = document.querySelectorAll('.nav-link-custom');
-        links.forEach(link => {
-            link.addEventListener('click', function(e) {
-                const href = this.getAttribute('href');
-                if (href && href !== '#' && !this.classList.contains('dropdown-toggle')) {
-                    window.location.href = href;
-                }
-            });
-        });
 
-        // Special case for Practice Areas clickable parent
-        const practiceBtn = document.getElementById('practiceDropdown');
-        if (practiceBtn) {
-            practiceBtn.addEventListener('click', function() {
-                window.location.href = "practiceareas.html";
-            });
-        }
-    }
-});
-</script>
 <script>
 document.addEventListener("DOMContentLoaded", () => {
 // --- 1. Testimonial Slider (Existing) ---
@@ -2165,6 +2168,32 @@ initReveal();
     document.addEventListener('DOMContentLoaded', function() {
     // Select the Practice Areas link
     const practiceLink = document.querySelector('.dropdown-toggle[href="practiceareas.html"]');
+
+    if (practiceLink && window.innerWidth > 992) {
+        practiceLink.addEventListener('click', function(e) {
+            // Redirect to the page immediately on click
+            window.location.href = this.getAttribute('href');
+        });
+    }
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Select the Practice Areas link
+    const practiceLink = document.querySelector('.dropdown-toggle[href="nri-services.html"]');
+
+    if (practiceLink && window.innerWidth > 992) {
+        practiceLink.addEventListener('click', function(e) {
+            // Redirect to the page immediately on click
+            window.location.href = this.getAttribute('href');
+        });
+    }
+});
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    // Select the Practice Areas link
+    const practiceLink = document.querySelector('.dropdown-toggle[href="sectors.html"]');
 
     if (practiceLink && window.innerWidth > 992) {
         practiceLink.addEventListener('click', function(e) {
