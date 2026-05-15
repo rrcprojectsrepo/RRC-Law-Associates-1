@@ -850,7 +850,7 @@
 </head>
 <body>
 
-    <header class="header">
+           <header class="header"> 
             <nav class="container d-flex align-items-center justify-content-between">
                 <a href="index.html">
                     <img src="assets/images/rrclogo.png" alt="RRC Logo" class="logo-img">
@@ -869,14 +869,28 @@
                     </div>    
                     <div class="dropdown">
                         <a
-                            class="nav-link-custom border-0 bg-transparent p-0"
+                            class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
                             href="nri-services.html"
                             role="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false">
                             NRI Services
                         </a>
-                    </div>
+                        <ul class="dropdown-menu shadow-lg">
+                            <li>
+                                <a class="dropdown-item" href="nri-property-disputes.html">Property Dispute</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="nri-power-of-attorney.html">Power of Attorney</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="nri-criminal-case.html">Criminal Cases</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="nri-family-matrimonial.html">Family & Matrimonial</a>
+                            </li>
+                        </ul>
+                    </div> 
                     <div class="dropdown">
                         <a
                             class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0"
@@ -912,7 +926,7 @@
                     </div>
                     <div class="dropdown mx-3 mega-dropdown-static">
                         <a class="nav-link-custom dropdown-toggle border-0 bg-transparent p-0" 
-                        href="./sectors.html"
+                        href="./sectors.html" 
                         role="button" 
                         data-bs-toggle="dropdown">
                             Sectors
@@ -976,39 +990,49 @@
 
                 <div class="d-flex align-items-center gap-3">
                     <div class="cta d-none d-sm-block">
-                        <a href="index.html#contact" class="btn btn-gold">Book Consultation</a>
+                        <a href="./booking.html" class="btn btn-gold">Book Consultation</a>
                     </div>
                     <button class="btn text-white d-lg-none fs-3 p-0" id="menuToggle">
                         <i class="fa fa-bars"></i>
                     </button>
                 </div>
             </nav>
-    </header>
+        </header>
 
-    <div class="mobile-menu" id="mobileMenu">
-        <button class="close-menu" id="closeMenu">✕</button>
-        <div class="mt-5">
-            <a href="index.html" class="m-link">Home</a>
-            <a href="nri-services.html" class="m-link">NRI Services</a>
-            <div class="m-dropdown">
-                <a class="m-link m-trigger" href="practiceareas.html">
-                    Practice Areas <i class="fa fa-chevron-down ms-2"></i>
-                </a>
-                <div class="m-submenu" id="mPracticeMenu">
-                    <a class="m-sub-item" href="./property-disputes.html">Property Dispute</a>
-                    <a class="m-sub-item" href="./property-law.html">Real Estate & Property Law</a>
-                    <a class="m-sub-item" href="./family-law.html">Family Law</a>
-                    <a class="m-sub-item" href="./criminal-defense.html">Criminal Defense</a>
-                    <a class="m-sub-item" href="./cyber-crime-law.html">Cyber Crime Law</a>
-                    <a class="m-sub-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
-                    <a class="m-sub-item" href="./corporate-law.html">Corporate Law</a>
+        <div class="mobile-menu" id="mobileMenu">
+            <button class="close-menu" id="closeMenu">✕</button>
+            <div class="mt-5">
+                <a href="index.html" class="m-link">Home</a>
+                <div class="m-dropdown">
+                    <a class="m-link m-trigger" href="nri-services.html">
+                        NRI Services <i class="fa fa-chevron-down ms-2"></i>
+                    </a>
+                    <div class="m-submenu" id="mPracticeMenu">
+                        <a class="m-sub-item" href="nri-property-disputes.html">Property Dispute</a>
+                        <a class="m-sub-item" href="nri-power-of-attorney.html">Power of Attorney</a>
+                        <a class="m-sub-item" href="nri-criminal-case.html">Criminal Case</a>
+                        <a class="m-sub-item" href="nri-family-matrimonial.html">Family & Matrimonial</a>
+                    </div>
                 </div>
-            </div>
-            <div class="m-dropdown">
-                <a class="m-link m-trigger" href="./sectors.html">
-                    Sectors <i class="fa fa-chevron-down ms-2"></i>
-                </a>
-                <div class="m-submenu" id="mSectorMenu">
+                <div class="m-dropdown">
+                    <a class="m-link m-trigger" href="practiceareas.html">
+                        Practice Areas <i class="fa fa-chevron-down ms-2"></i>
+                    </a>
+                    <div class="m-submenu" id="mPracticeMenu">
+                        <a class="m-sub-item" href="./property-disputes.html">Property Dispute</a>
+                        <a class="m-sub-item" href="./property-law.html">Real Estate & Property Law</a>
+                        <a class="m-sub-item" href="./family-law.html">Family Law</a>
+                        <a class="m-sub-item" href="./criminal-defense.html">Criminal Defense</a>
+                        <a class="m-sub-item" href="./cyber-crime-law.html">Cyber Crime Law</a>
+                        <a class="m-sub-item" href="./cheque-bounce-lawyer.html">Cheque Bounce</a>
+                        <a class="m-sub-item" href="./corporate-law.html">Corporate Law</a>
+                    </div>
+                </div>
+                <div class="m-dropdown">
+                    <a class="m-link m-trigger" href="">
+                        Sectors <i class="fa fa-chevron-down ms-2"></i>
+                    </a>
+                    <div class="m-submenu" id="mSectorMenu">
                         <a class="m-sub-item" href="./sectors.html#four">Agriculture and Forestry</a>
                         <a class="m-sub-item" href="./sectors.html#two">Banking and Financial Services</a>
                         <a class="m-sub-item" href="./sectors.html#two">Capital Markets and Securities</a>
@@ -1030,16 +1054,16 @@
                         <a class="m-sub-item" href="./sectors.html#seven">Transportation & Logistics</a>
                         <a class="m-sub-item" href="./sectors.html#one">Urban Infrastructure</a>
                     </div>
-            </div>
+                </div>
 
-            <a href="lawfirm-blog.html" class="m-link">Blog</a>
-            <a href="index.html#contact" class="m-link">Contact</a>
+                <a href="lawfirm-blog.html" class="m-link">Blog</a>
+                <a href="index.html#contact" class="m-link">Contact</a>
 
-            <div class="mt-4">
-                <a href="./booking.html" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
+                <div class="mt-4">
+                    <a href="./booking.html" class="btn btn-gold w-100 py-3 text-center">Book Consultation</a>
+                </div>
             </div>
         </div>
-    </div>
 
     <nav aria-label="breadcrumb" class="breadcrumb-nav">
         <div class="container">
@@ -1395,8 +1419,8 @@
                                 <span style="color: #c9a24d;">Email</span>
                                 <br>
                                 <a href="mailto:
-durai.balasundaram.advocate@gmail.com">
-                                    durai.balasundaram.advocate@gmail.com
+dr.kumar@rrclawassociates.com">
+                                    dr.kumar@rrclawassociates.com
                                 </a>
                             </li>
                         </ul>
