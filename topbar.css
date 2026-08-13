@@ -1,0 +1,246 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+/* =========================================================
+   RRC LAW ASSOCIATES TOP BAR
+========================================================== */
+
+.rrc-topbar {
+    width: 100%;
+
+    background: #080808;
+
+    border-bottom:
+        1px solid
+        rgba(201, 162, 39, 0.20);
+
+    color: #ffffff;
+
+    font-family: "Inter", sans-serif;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1200;
+}
+
+
+.rrc-topbar-container {
+    width: min(100% - 60px, 1660px);
+
+    min-height: 42px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.rrc-topbar-left {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+.rrc-topbar-left a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color:
+        rgba(255, 255, 255, 0.78);
+
+    font-size: 12px;
+
+    font-weight: 500;
+
+    text-decoration: none;
+
+    transition: color 0.25s ease;
+}
+
+
+.rrc-topbar-left a:hover {
+    color: #c9a227;
+}
+
+
+.rrc-topbar-left i {
+    color: #c9a227;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.rrc-topbar-divider {
+    width: 1px;
+
+    height: 15px;
+
+    background:
+        rgba(255, 255, 255, 0.18);
+}
+
+
+/* =========================================================
+   RIGHT SIDE
+========================================================= */
+
+.rrc-topbar-right {
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.rrc-topbar-right span {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color:
+        rgba(255, 255, 255, 0.70);
+
+    font-size: 12px;
+}
+
+
+.rrc-topbar-right span i {
+    color: #c9a227;
+
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.rrc-topbar-right a {
+    width: 25px;
+    height: 25px;
+
+    display: grid;
+
+    place-items: center;
+
+    color:
+        rgba(255, 255, 255, 0.70);
+
+    font-size: 12px;
+
+    border-radius: 50%;
+
+    text-decoration: none;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.rrc-topbar-right a:hover {
+    color: #000000;
+
+    background: #c9a227;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .rrc-topbar-container {
+        width:
+            min(
+                100% - 30px,
+                700px
+            );
+    }
+
+    .rrc-topbar-right span {
+        display: none;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .rrc-topbar-container {
+        min-height: 38px;
+
+        justify-content: center;
+    }
+
+
+    .rrc-topbar-left {
+        gap: 12px;
+    }
+
+
+    .rrc-topbar-left a {
+        font-size: 10px;
+    }
+
+
+    .rrc-topbar-left a:first-child {
+        display: none;
+    }
+
+
+    .rrc-topbar-divider {
+        display: none;
+    }
+
+
+}
+
+/* =========================================================
+   LAYOUT SHIFT OVERRIDES (Keep fixed header below top bar)
+========================================================= */
+
+.header {
+    top: 43px !important;
+}
+
+body {
+    padding-top: 43px !important;
+}
+
+@media (max-width: 600px) {
+    .header {
+        top: 39px !important;
+    }
+    body {
+        padding-top: 39px !important;
+    }
+}
