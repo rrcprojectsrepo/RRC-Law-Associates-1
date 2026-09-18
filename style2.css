@@ -455,13 +455,17 @@
 }
 
 .dr-kumar-card .content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.25;
+    letter-spacing: normal;
+    color: var(--primary);
+    margin-bottom: 4px;
     white-space: nowrap;
     overflow: visible;
     text-overflow: clip;
-    line-height: 1.2;
-    font-size: 1rem;
-    letter-spacing: -0.01em;
-    width: 100%;
+    display: block;
 }
 
 .text-gold {
@@ -476,22 +480,12 @@
     }
 }
 
-@media (min-width: 769px) {
-    .dr-kumar-card {
-        grid-column: span 2;
-    }
-}
-
 @media (max-width: 768px) {
-    .dr-kumar-card {
-        grid-column: auto;
-    }
-
     .dr-kumar-card .content h3 {
         white-space: normal;
         overflow: visible;
         text-overflow: unset;
-        font-size: 0.95rem;
+        font-size: 15px;
         line-height: 1.35;
     }
 }
