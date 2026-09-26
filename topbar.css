@@ -23,6 +23,10 @@
     z-index: 1200;
 }
 
+html {
+    scroll-padding-top: 130px;
+}
+
 
 .rrc-topbar-container {
     width: min(100% - 60px, 1660px);
@@ -225,22 +229,28 @@
 }
 
 /* =========================================================
-   LAYOUT SHIFT OVERRIDES (Keep fixed header below top bar)
+   COMPLETE HEADER STACKING (top bar + main nav)
 ========================================================= */
 
 .header {
-    top: 43px !important;
+    position: fixed !important;
+    top: 42px !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1190 !important;
+    background: #000000 !important;
 }
 
 body {
-    padding-top: 43px !important;
+    padding-top: 0 !important;
 }
 
 @media (max-width: 600px) {
     .header {
-        top: 39px !important;
+        top: 38px !important;
     }
-    body {
-        padding-top: 39px !important;
+
+    html {
+        scroll-padding-top: 115px;
     }
 }
