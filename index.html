@@ -37,7 +37,7 @@
         gtag('config', 'G-QL9DZ3KGEE');
         </script>
 
-        <script src="script2.js" defer="defer"></script>
+        <script src="script2.js?v=mobile-menu-1" defer="defer"></script>
         <link
             rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -48,7 +48,7 @@
             rel="stylesheet"
             integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
             crossorigin="anonymous">
-        <script src="script.js" defer="defer"></script>
+        <script src="script.js?v=rrc-ai-chat-3" defer="defer"></script>
         <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -1848,6 +1848,7 @@ dr.kumar@rrclawassociates.com">
             <span class="float-text">Chat with us</span>
         </a>
 
+<div data-rrc-ai-chat-root></div>
 </body>
 <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -1876,7 +1877,8 @@ dr.kumar@rrclawassociates.com">
             if (!submenu.classList.contains('active')) {
                 e.preventDefault(); // Stop navigation on first click
                 submenu.classList.add('active');
-                this.querySelector('i').style.transform = 'rotate(180deg)';
+                const icon = this.querySelector('i');
+                if (icon) icon.style.transform = 'rotate(180deg)';
             }
             // If already active, the link (core-practice-areas.html) will naturally follow.
         });
@@ -1980,6 +1982,7 @@ const mobileTriggers = document.querySelectorAll('.m-trigger');
 mobileTriggers.forEach(trigger => {
     trigger.addEventListener('click', function(e) {
         const submenu = this.nextElementSibling; // Finds the m-submenu directly after this link
+        if (!submenu) return;
         
         // If the clicked submenu is not active yet
         if (!submenu.classList.contains('active')) {
@@ -2142,14 +2145,14 @@ const observerOptions = {
     rootMargin: '0px 0px -100px 0px'
 };
 
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
             entry
                 .target
                 .classList
                 .add('visible');
-            observer.unobserve(entry.target); // optional: run once
+            revealObserver.unobserve(entry.target); // optional: run once
         }
     });
 }, observerOptions);
@@ -2159,23 +2162,23 @@ document
         '.section-title, .story-text, .story-image, .feature-visual, .blog-grid, .blog-' +
         'card, .blog-card-image, .blog-card-content'
     )
-    .forEach(el => observer.observe(el));
+    .forEach(el => revealObserver.observe(el));
 
 });
 </script>
 <script>
 const statsHeader = document.querySelector('.stats-header');
 
-const observer = new IntersectionObserver(entries => {
-if (entries[0].isIntersecting) {
-    statsHeader
-        .classList
-        .add('show');
-    observer.disconnect(); // run only once
-}
-}, {threshold: 0.3});
+if (statsHeader instanceof Element) {
+    const statsObserver = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting) {
+            statsHeader.classList.add('show');
+            statsObserver.disconnect();
+        }
+    }, {threshold: 0.3});
 
-observer.observe(statsHeader);
+    statsObserver.observe(statsHeader);
+}
 
 document.addEventListener("DOMContentLoaded", function () {
 // Show the disclaimer only if not accepted

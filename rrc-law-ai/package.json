@@ -1,0 +1,26 @@
+{
+  "name": "rrc-law-ai",
+  "version": "1.0.0",
+  "description": "RRC Law Associates AI assistant backend",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [
+    "rrc",
+    "law",
+    "ai",
+    "groq",
+    "express"
+  ],
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "dotenv": "^18.0.4",
+    "express": "^5.2.1",
+    "express-rate-limit": "^8.7.0",
+    "groq-sdk": "^1.6.0",
+    "helmet": "^8.3.0"
+  }
+}
