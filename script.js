@@ -15,7 +15,7 @@ function initRrcAiAssistant() {
   const root = host.attachShadow({ mode: 'open' });
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = new URL('style.css?v=rrc-ai-chat-2', document.baseURI).href;
+  stylesheet.href = new URL('style.css?v=rrc-ai-chat-3', document.baseURI).href;
   root.appendChild(stylesheet);
 
   const makeElement = (tag, className, text) => {
@@ -413,17 +413,25 @@ function render() {
   });
 }
 
-document.querySelector(".next").onclick = () => {
-  index = (index + 1) % testimonials.length;
-  render();
-};
+const nextButton = document.querySelector(".next");
+if (nextButton) {
+  nextButton.onclick = () => {
+    index = (index + 1) % testimonials.length;
+    render();
+  };
+}
 
-document.querySelector(".prev").onclick = () => {
-  index = (index - 1 + testimonials.length) % testimonials.length;
-  render();
-};
+const prevButton = document.querySelector(".prev");
+if (prevButton) {
+  prevButton.onclick = () => {
+    index = (index - 1 + testimonials.length) % testimonials.length;
+    render();
+  };
+}
 
-render();
+if (text && nameEl && locationEl && starsEl && dotsEl) {
+  render();
+}
 //stats scroll
 
 
@@ -523,10 +531,13 @@ const icons = [
 ];
 
 let i = 0;
-setInterval(() => {
-  i = (i + 1) % icons.length;
-  document.getElementById("iconSwap").src = icons[i];
-}, 2000);
+const iconSwap = document.getElementById("iconSwap");
+if (iconSwap) {
+  setInterval(() => {
+    i = (i + 1) % icons.length;
+    iconSwap.src = icons[i];
+  }, 2000);
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const slider = document.querySelector(".testimonial-slider");
