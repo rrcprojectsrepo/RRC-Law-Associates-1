@@ -1,5 +1,11 @@
 const rrcAssistantOnly = document.currentScript?.hasAttribute('data-rrc-ai-only') === true;
 
+function createLucideIcons() {
+  if (typeof window.lucide?.createIcons === 'function') {
+    window.lucide.createIcons();
+  }
+}
+
 function initRrcAiAssistant() {
   const mount = document.querySelector('[data-rrc-ai-chat-root]');
   if (!document.body || !mount || mount.querySelector('.rrc-ai-chat')) return;
@@ -9,7 +15,7 @@ function initRrcAiAssistant() {
   const root = host.attachShadow({ mode: 'open' });
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = new URL('style.css?v=rrc-ai-chat-1', document.baseURI).href;
+  stylesheet.href = new URL('style.css?v=rrc-ai-chat-2', document.baseURI).href;
   root.appendChild(stylesheet);
 
   const makeElement = (tag, className, text) => {
@@ -279,11 +285,11 @@ if (!rrcAssistantOnly) {
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // Initialize Lucide icons
-lucide.createIcons();
+createLucideIcons();
 
 
 //header
-lucide.createIcons();
+createLucideIcons();
 
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menuToggle');
@@ -328,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // hero section
-lucide.createIcons();
+createLucideIcons();
 
 // Smooth scroll
 document.querySelectorAll("[data-link]").forEach(btn => {
@@ -340,10 +346,10 @@ document.querySelectorAll("[data-link]").forEach(btn => {
   });
 });
 //ptactice section
-lucide.createIcons();
+createLucideIcons();
 
 //testimonial
-lucide.createIcons();
+createLucideIcons();
 
 const testimonials = [
   {
@@ -504,7 +510,7 @@ reveals.forEach(el => observer.observe(el));
 
 
 //footer
-lucide.createIcons();
+createLucideIcons();
 
 // Dynamic year
 document.getElementById("year").textContent = new Date().getFullYear();
