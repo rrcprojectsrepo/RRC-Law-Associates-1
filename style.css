@@ -2530,6 +2530,53 @@ p {
     transform: translateY(-3px);
 }
 
+/* RRC AI Assistant host fallback (LIGHT DOM).
+   Root cause fix: the floating widget is mounted as
+   <div data-rrc-ai-chat-root> -> <div class="rrc-ai-chat"> (ShadowRoot host)
+   AFTER the footer in normal document flow. All of its floating
+   positioning previously lived ONLY inside the Shadow DOM stylesheet
+   (the `:host` rule below), which is loaded asynchronously via a <link>
+   injected into the ShadowRoot. Before that stylesheet loads — or if it
+   is slow/stale/blocked — the host is an unstyled static <div> in normal
+   flow, so its shadow content (toggle "AI", panel text
+   "RRC Law Associates AI Assistant" + "Online", ...) overflows visibly
+   below the footer and extends paint/scroll, and the unpositioned toggle
+   renders at the top-left of that leaked block. These light-DOM rules pin
+   the mount + host out of document flow immediately, even with zero
+   shadow CSS applied. No body/html overflow hiding is used. */
+[data-rrc-ai-chat-root] {
+  position: fixed;
+  right: 18px;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 84px);
+  width: 60px;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  z-index: 1500;
+  pointer-events: none;
+}
+
+[data-rrc-ai-chat-root] .rrc-ai-chat {
+  position: fixed;
+  right: 18px;
+  bottom: calc(env(safe-area-inset-bottom, 0px) + 84px);
+  width: 60px;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  display: block;
+  z-index: 1500;
+  pointer-events: auto;
+}
+
+@media (max-width: 600px) {
+  [data-rrc-ai-chat-root],
+  [data-rrc-ai-chat-root] .rrc-ai-chat {
+    right: 16px;
+  }
+}
+
 /* RRC AI Assistant: loaded inside its Shadow DOM to isolate page styles. */
 :host {
   all: initial;

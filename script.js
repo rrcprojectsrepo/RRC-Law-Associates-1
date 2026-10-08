@@ -7,15 +7,54 @@ function createLucideIcons() {
 }
 
 function initRrcAiAssistant() {
+  if (window.__rrcAiAssistantMounted === true) return;
   const mount = document.querySelector('[data-rrc-ai-chat-root]');
-  if (!document.body || !mount || mount.querySelector('.rrc-ai-chat')) return;
+  if (!document.body || !mount) return;
+  if (mount.querySelector('.rrc-ai-chat') || document.querySelector('.rrc-ai-chat')) return;
 
   const host = document.createElement('div');
   host.className = 'rrc-ai-chat';
+  // Immediate light-DOM positioning: keeps the host out of normal document
+  // flow even before the Shadow DOM stylesheet below has loaded.
+  host.style.position = 'fixed';
+  host.style.right = '18px';
+  host.style.bottom = 'calc(env(safe-area-inset-bottom, 0px) + 84px)';
+  host.style.width = '60px';
+  host.style.height = '60px';
+  host.style.margin = '0';
+  host.style.padding = '0';
+  host.style.zIndex = '1500';
+  host.style.display = 'block';
   const root = host.attachShadow({ mode: 'open' });
+  // Synchronous critical fallback styles: applied instantly inside Shadow DOM
+  // so the toggle/panel are correctly positioned/hidden even while the full
+  // async stylesheet is still loading (or if it fails/stale-cached).
+  const critical = document.createElement('style');
+  critical.textContent = [
+    ':host{position:fixed !important;right:18px !important;',
+    'bottom:calc(env(safe-area-inset-bottom, 0px) + 84px) !important;',
+    'width:60px !important;height:60px !important;margin:0 !important;',
+    'padding:0 !important;display:block !important;z-index:1500 !important;}',
+    ':host(.rrc-ai-open){width:60px;height:60px;}',
+    '.rrc-ai-toggle{position:absolute !important;right:0 !important;bottom:0 !important;}',
+    '.rrc-ai-window{position:absolute !important;right:0 !important;bottom:74px !important;',
+    'visibility:hidden !important;pointer-events:none !important;}',
+    '.rrc-ai-window.rrc-ai-visible{visibility:visible !important;pointer-events:auto !important;}'
+  ].join('');
+  root.appendChild(critical);
   const stylesheet = document.createElement('link');
   stylesheet.rel = 'stylesheet';
-  stylesheet.href = new URL('style.css?v=rrc-ai-chat-3', document.baseURI).href;
+  // Keep the Shadow DOM stylesheet version in sync with the loaded script so
+  // a stale-cached/failed full stylesheet cannot leave fallback-only layout.
+  let aiStyleVersion = 'rrc-ai-chat-3';
+  try {
+    const scriptUrl = document.currentScript && document.currentScript.src
+      ? new URL(document.currentScript.src, document.baseURI)
+      : null;
+    const v = scriptUrl ? scriptUrl.searchParams.get('v') : null;
+    if (v) aiStyleVersion = v;
+  } catch { /* keep default version */ }
+  stylesheet.href = new URL(('style.css?v=' + aiStyleVersion), document.baseURI).href;
   root.appendChild(stylesheet);
 
   const makeElement = (tag, className, text) => {
@@ -135,6 +174,7 @@ function initRrcAiAssistant() {
   panel.append(header, actions, messages, liveStatus, form, disclaimer);
   root.append(toggle, panel);
   mount.appendChild(host);
+  window.__rrcAiAssistantMounted = true;
 
   let isSending = false;
   let isOpen = false;
