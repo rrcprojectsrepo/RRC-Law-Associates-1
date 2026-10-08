@@ -2739,6 +2739,27 @@ a:focus-visible,
   cursor: pointer;
 }
 
+.rrc-ai-refresh {
+  display: grid;
+  flex: 0 0 36px;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.rrc-ai-refresh:hover,
+.rrc-ai-close:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
 .rrc-ai-actions {
   display: flex;
   flex: 0 0 auto;

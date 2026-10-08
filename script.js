@@ -89,29 +89,22 @@ function initRrcAiAssistant() {
   );
   const status = makeElement('span', 'rrc-ai-status', 'Online');
   headingGroup.appendChild(status);
+  const refreshButton = makeElement('button', 'rrc-ai-refresh', '⟳');
+  refreshButton.type = 'button';
+  refreshButton.setAttribute('aria-label', 'Refresh conversation');
+  refreshButton.setAttribute('title', 'Refresh conversation');
   const closeButton = makeElement('button', 'rrc-ai-close', '×');
   closeButton.type = 'button';
   closeButton.setAttribute('aria-label', 'Close AI Assistant');
-  header.append(brandIcon, headingGroup, closeButton);
+  header.append(brandIcon, headingGroup, refreshButton, closeButton);
 
   const actions = makeElement('nav', 'rrc-ai-actions');
   actions.setAttribute('aria-label', 'Contact and consultation links');
   const bookingLink = makeElement('a', 'rrc-ai-action', 'Book Consultation');
   bookingLink.href = './booking.html';
-  const whatsappLink = makeElement('a', 'rrc-ai-action', 'WhatsApp');
-  whatsappLink.href = 'https://wa.me/919751182452?text=Hello%20RRC%20Law%20Associates%2C%20I%20am%20looking%20for%20legal%20consultation.';
-  whatsappLink.target = '_blank';
-  whatsappLink.rel = 'noopener noreferrer';
-  actions.append(bookingLink, whatsappLink);
+  actions.append(bookingLink);
 
-  const messages = makeElement('div', 'rrc-ai-messages');
-  messages.setAttribute('role', 'log');
-  messages.setAttribute('aria-label', 'Chat messages');
-  messages.setAttribute('aria-live', 'polite');
-  messages.setAttribute('aria-relevant', 'additions');
-
-  const welcome = makeElement('p', 'rrc-ai-welcome');
-  welcome.textContent = [
+  const WELCOME_LINES = [
     'Hello! 👋',
     'I’m the RRC Law Associates AI Assistant.',
     '',
@@ -126,19 +119,29 @@ function initRrcAiAssistant() {
     '• Booking a consultation',
     '',
     'How can I help you?'
-  ].join('\n');
-  messages.appendChild(welcome);
-
-  const quickQuestions = makeElement('div', 'rrc-ai-quick-questions');
-  quickQuestions.setAttribute('role', 'group');
-  quickQuestions.setAttribute('aria-label', 'Quick questions');
-  const quickQuestionLabels = [
+  ];
+  const QUICK_QUESTION_LABELS = [
     'NRI Legal Services',
     'Property Matters',
     'Child Custody',
     'Power of Attorney',
     'Book Consultation'
   ];
+
+  const messages = makeElement('div', 'rrc-ai-messages');
+  messages.setAttribute('role', 'log');
+  messages.setAttribute('aria-label', 'Chat messages');
+  messages.setAttribute('aria-live', 'polite');
+  messages.setAttribute('aria-relevant', 'additions');
+
+  const welcome = makeElement('p', 'rrc-ai-welcome');
+  welcome.textContent = WELCOME_LINES.join('\n');
+  messages.appendChild(welcome);
+
+  const quickQuestions = makeElement('div', 'rrc-ai-quick-questions');
+  quickQuestions.setAttribute('role', 'group');
+  quickQuestions.setAttribute('aria-label', 'Quick questions');
+  const quickQuestionLabels = QUICK_QUESTION_LABELS.slice();
   const quickButtons = quickQuestionLabels.map((label) => {
     const button = makeElement('button', 'rrc-ai-quick-question', label);
     button.type = 'button';
@@ -178,6 +181,34 @@ function initRrcAiAssistant() {
 
   let isSending = false;
   let isOpen = false;
+  let conversationResetToken = 0;
+
+  function resetConversation() {
+    // Start a fresh conversation: invalidate in-flight responses, clear
+    // transient loading/error state, drop rendered messages, and restore
+    // the initial welcome + quick questions. Frontend keeps no persisted
+    // chat history (no chat localStorage/sessionStorage), so clearing the
+    // DOM plus these flags fully resets client conversation state.
+    conversationResetToken += 1;
+    const activeToken = conversationResetToken;
+    isSending = false;
+    input.value = '';
+    input.disabled = false;
+    sendButton.disabled = false;
+    quickButtons.forEach((button) => { button.disabled = false; });
+    liveStatus.textContent = '';
+    messages.replaceChildren();
+    const freshWelcome = makeElement('p', 'rrc-ai-welcome');
+    freshWelcome.textContent = WELCOME_LINES.join('\n');
+    messages.appendChild(freshWelcome);
+    messages.appendChild(quickQuestions);
+    messages.scrollTop = 0;
+    liveStatus.textContent = 'Conversation refreshed. How can I help you?';
+    window.setTimeout(() => {
+      if (activeToken === conversationResetToken) liveStatus.textContent = '';
+    }, 2500);
+    if (isOpen) input.focus();
+  }
 
   function setOpen(open) {
     isOpen = open;
@@ -211,6 +242,7 @@ function initRrcAiAssistant() {
       return;
     }
     if (isSending) return;
+    const requestToken = conversationResetToken;
 
     isSending = true;
     liveStatus.textContent = 'Sending your message.';
@@ -247,16 +279,19 @@ function initRrcAiAssistant() {
         return;
       }
       const result = await response.json();
+      if (requestToken !== conversationResetToken) return;
       if (result?.success !== true || typeof result.message !== 'string' || !result.message.trim()) {
         throw new Error('Assistant request failed');
       }
       addMessage('assistant', result.message);
     } catch {
+      if (requestToken !== conversationResetToken) return;
       addMessage(
         'assistant',
         'Sorry, I’m unable to respond right now. Please try again or contact RRC Law Associates directly.'
       );
     } finally {
+      if (requestToken !== conversationResetToken) return;
       thinking.remove();
       isSending = false;
       input.disabled = false;
@@ -268,6 +303,7 @@ function initRrcAiAssistant() {
   }
 
   toggle.addEventListener('click', () => setOpen(!isOpen));
+  refreshButton.addEventListener('click', resetConversation);
   closeButton.addEventListener('click', () => setOpen(false));
   form.addEventListener('submit', (event) => {
     event.preventDefault();

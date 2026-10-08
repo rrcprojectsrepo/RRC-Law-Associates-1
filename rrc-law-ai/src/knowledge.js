@@ -28,7 +28,6 @@ Known contact information from the website:
 - Phone: +91 97511 82452
 - Email: dr.kumar@rrclawassociates.com
 - Address: No 82/6B, Deen Complex, Mary's Corner, Parisutham Nagar, Thanjavur, Tamil Nadu 613001
-- WhatsApp contact: https://wa.me/919751182452?text=Hello RRC Law Associates, I am looking for legal consultation.
 - Consultation/booking: the site includes a booking page and a consultation request flow.
 
 Known website pages and article topics from the project:

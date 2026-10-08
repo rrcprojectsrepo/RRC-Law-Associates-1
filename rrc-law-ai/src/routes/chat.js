@@ -47,6 +47,40 @@ function sanitizeIllegalPromptAttempts(message) {
   return blockedPatterns.some((pattern) => lower.includes(pattern));
 }
 
+// Backend safety net: strip WhatsApp-specific URLs/content from the final
+// model text before it reaches the browser. Narrowly targets WhatsApp
+// endpoints only — normal URLs (e.g. https://rrclawassociates.com/) pass
+// through untouched.
+function sanitizeWhatsAppContent(rawText) {
+  if (typeof rawText !== 'string' || !rawText) return { text: rawText, removed: false };
+  let text = rawText;
+  let removed = false;
+  // WhatsApp markdown links: [label](whatsapp-url) -> keep label only.
+  // Runs BEFORE bare-URL stripping so no "()" residue is left behind.
+  const markdownPattern = /\[([^\]]*)\]\(\s*(?:https?:\/\/)?(?:www\.)?(?:wa\.me|api\.whatsapp\.com|whatsapp\.com)[^)\s]*\s*\)/gi;
+  if (markdownPattern.test(text)) {
+    removed = true;
+    text = text.replace(markdownPattern, '$1');
+  }
+  const linkPattern = /(?:https?:\/\/)?(?:www\.)?(?:wa\.me|api\.whatsapp\.com|whatsapp\.com)[^\s)\]}"'<>]*/gi;
+  if (linkPattern.test(text)) {
+    removed = true;
+    text = text.replace(linkPattern, '').replace(/[ \t]{2,}/g, ' ');
+  }
+  if (/whatsapp/i.test(text)) {
+    removed = true;
+    // Neutralize explicit WhatsApp contact instructions; keep the rest.
+    text = text
+      .replace(/[^\n]*\bwhatsapp\b[^\n]*/gi, (line) => (/book|consult|contact|phone|email|page|website/i.test(line) ? line.replace(/\bwhatsapp\b/gi, 'direct contact') : ''))
+      .replace(/\n{3,}/g, '\n\n');
+  }
+  text = text.replace(/[ \t]{2,}/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
+  if (!text) {
+    text = 'I can share general information here. For consultation or contact details, please use the booking page, phone, or email listed on the official website.';
+  }
+  return { text, removed };
+}
+
 router.post('/', async (req, res) => {
   const validation = validateMessageInput(req.body);
   if (!validation.valid) {
@@ -104,9 +138,10 @@ router.post('/', async (req, res) => {
       });
     }
 
+    const sanitized = sanitizeWhatsAppContent(assistantText.trim());
     return res.json({
       success: true,
-      message: assistantText.trim()
+      message: sanitized.text
     });
   } catch (error) {
     const diagnostic = {
